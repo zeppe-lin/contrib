@@ -1,0 +1,35 @@
+# Description: CLI Tox client
+# URL:         https://github.com/JFreegman/toxic
+# Depends on:  libconfig libidn2 libnotify openldap rtmpdump toxcore zstd
+# Optional:    libnotify qrencode openal freealut python3 asciidoc
+
+name=toxic
+version=0.10.1
+release=1
+source=(https://github.com/JFreegman/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	#set install directory to /usr.
+	sed -i -e "s,/usr/local,${EPREFIX}/usr,g" cfg/global_vars.mk
+
+	# verbose build
+	sed -i -e 's,@$(CC) ,$(CC) ,g' Makefile
+
+	export USER_CFLAGS="$CFLAGS"
+	export USER_LDFLAGS="$LDFLAGS"
+
+	# disable sound
+	export DISABLE_AV=1
+	export DISABLE_SOUND_NOTIFY=1
+
+	# disable video
+	export DISABLE_VI=1
+
+	make PREFIX=/usr
+	make DESTDIR=$PKG install
+
+	rm -f  $PKG/usr/share/toxic/toxic.conf.example
+	rm -rf $PKG/usr/share/toxic/sounds
+}

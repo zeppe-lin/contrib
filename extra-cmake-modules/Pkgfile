@@ -1,0 +1,18 @@
+# Description: Extra cmake modules
+# URL:         https://github.com/KDE/extra-cmake-modules
+# Depends on:  cmake
+
+name=extra-cmake-modules
+version=5.78.0
+release=1
+source=(https://github.com/KDE/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cmake -S$name-$version -Bbuild      \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DBUILD_TESTING=OFF
+
+	cmake --build build -v
+
+	DESTDIR=$PKG cmake --install build
+}

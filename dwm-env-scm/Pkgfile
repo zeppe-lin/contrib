@@ -1,0 +1,14 @@
+# Description: dwm environment scripts
+# URL:         https://github.com/chinarulezzz-de/dwm-env
+
+name=dwm-env-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/chinarulezzz-de/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	find . -maxdepth 1 -type f -not -name INSTALL \
+		-exec install -Dm0755 {} -t $PKG/opt/bin/ \;
+}

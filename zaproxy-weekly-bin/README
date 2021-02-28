@@ -1,0 +1,44 @@
+README for zaproxy-weekly-bin
+
+
+LOOK AND FEEL
+
+Add the following lines into ~/.bash_profile:
+
+xprop -root -f _NET_WM_NAME 32a -set _NET_WM_NAME LG3D
+export DESKTOP_SESSION=gnome
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+And, in case if you have terminus-like fonts systemwide,
+add this line (disabled antialiasing mode):
+
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=off -Dswing.aatext=false -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+Otherwise, add this (enabled antialiasing mode):
+
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+
+DIFFERENT USER
+
+$ useradd -U -m zaproxy
+
+Change the user's appearance:
+$ xhost +SI:localuser:zaproxy
+$ sudo -u zaproxy -H lxappearance
+
+Use this wrapper as zaproxy launcher:
+#!/bin/sh
+xhost +SI:localuser:zaproxy
+sudo -u zaproxy -H /usr/bin/zaproxy-weekly
+# End of file.
+
+Sudo without a password prompt:
+me ALL=(zaproxy) NOPASSWD: /usr/bin/zaproxy-weekly
+
+Add settings from LOOK AND FEEL section to .bash_profile:
+sudo -u zaproxy vim ~/.bash_profile
+
+
+End of file.

@@ -1,0 +1,18 @@
+# Description: library for iscsi clients
+# URL:         https://github.com/sahlberg/libiscsi
+
+name=libiscsi
+version=1.19.0
+release=1
+source=(https://github.com/sahlberg/libiscsi/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./autogen.sh
+  ./configure --prefix=/usr \
+    --disable-werror
+
+  make
+  make DESTDIR=$PKG install
+}

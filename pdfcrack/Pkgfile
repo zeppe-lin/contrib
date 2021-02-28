@@ -1,0 +1,19 @@
+# Description: Recovering passwords and content from PDF-files
+# URL:         http://pdfcrack.sourceforge.net/
+
+name=pdfcrack
+version=0.19
+release=1
+source=(https://downloads.sourceforge.net/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	# remove default optimization flag
+	sed -i 's,-O3 -g,,g' Makefile
+
+	make
+
+	install -Dm755 pdfcrack   -t $PKG/usr/bin
+	install -Dm644 pdfcrack.1 -t $PKG/usr/share/man/man1
+}

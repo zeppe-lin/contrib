@@ -1,0 +1,23 @@
+# Description:	Yet Another JSON Library
+# URL:		http://lloyd.github.com/yajl
+# Depends on:	cmake
+
+name=yajl
+version=2.1.0
+release=3
+source=(https://github.com/lloyd/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	mkdir build
+	cd build
+
+	cmake ..                                           \
+		-DCMAKE_INSTALL_PREFIX=/usr                \
+		-DCMAKE_BUILD_TYPE=Release                 \
+		-DCMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+
+	make VERBOSE=1
+	make DESTDIR=$PKG install
+}

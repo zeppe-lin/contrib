@@ -1,0 +1,19 @@
+# Description: JSON (JavaScript Object Notation) encoder/decoder
+# URL: https://metacpan.org/pod/JSON
+# Depends on:
+
+name=p5-json
+version=4.03
+release=1
+source=(https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-$version.tar.gz)
+
+build() {
+  cd JSON-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

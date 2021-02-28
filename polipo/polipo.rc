@@ -1,0 +1,39 @@
+#!/bin/sh -e
+#
+# /etc/rc.d/polipo: start/stop polipo(1) daemon
+#
+
+# Check for configuration files
+[ -f /etc/polipo/config ] || exit 1
+
+case $1 in
+start)
+	su polipo -c /usr/bin/polipo
+	;;
+stop)
+	if [ -f /var/run/polipo/pid ]; then
+		kill $(< /var/run/polipo/pid)
+	else
+		killall -q /usr/bin/polipo
+	fi
+	;;
+fast-reload)
+	# write out all in-memory objects to disk and reload
+	# the forbidden URLs file
+	kill -USR1 $(< /var/run/polipo/pid)
+	;;
+reload)
+	# write out all in-memory objects to disk, discard all
+	# in-memory objects, and reload the forbidden URLs file
+	kill -USR2 $(< /var/run/polipo/pid)
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+*)
+	echo "Usage: $0 [start|stop|fast-reload|reload|restart]"
+	;;
+esac
+
+# End of file

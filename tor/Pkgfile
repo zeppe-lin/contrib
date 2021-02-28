@@ -1,0 +1,45 @@
+# Description: Anonymizing overlay network
+# URL:         https://www.torproject.org
+# Depends on:  libcap libevent libseccomp
+
+name=tor
+version=0.4.4.6
+release=1
+source=(https://www.torproject.org/dist/$name-$version.tar.gz
+	rc.tor)
+
+build() {
+	cd $name-$version
+
+	export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+	# XXX: doesn't compile with -DNDEBUG flag
+	export CFLAGS="${CFLAGS/-DNDEBUG/}"
+
+	./configure \
+		--prefix=/usr          \
+		--sysconfdir=/etc      \
+		--localstatedir=/var   \
+		--enable-system-torrc  \
+		--disable-libfuzzer    \
+		--disable-android      \
+		--disable-html-manual  \
+		--disable-rust         \
+		--disable-zstd-advanced-apis
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -d $PKG/var/lib $PKG/var/log
+	install -m 0700 -d $PKG/var/lib/tor $PKG/var/log/tor
+
+	mv $PKG/etc/tor/torrc.sample $PKG/etc/tor/torrc
+	sed -i \
+		-e 's/^#Log notice file/Log notice file/' \
+		-e 's/^#DataDirectory/DataDirectory/'     \
+		-e 's/^#RunAsDaemon 1$/RunAsDaemon 1/'    \
+		$PKG/etc/tor/torrc
+	chmod 0600 $PKG/etc/tor/torrc
+
+	install -m 0750 -D $SRC/rc.tor $PKG/etc/rc.d/tor
+}

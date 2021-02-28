@@ -1,0 +1,21 @@
+# Description: A collection of routines used to create PNG format graphics files
+# URL:         http://www.libpng.org/pub/png/libpng.html
+# Depends on:  zlib
+
+name=libpng12
+version=1.2.59
+release=1
+source=(https://sourceforge.net/projects/libpng/files/libpng-$version.tar.xz)
+
+build() {
+	cd libpng-$version
+
+	./configure           \
+		--prefix=/usr \
+		--libdir=/usr/lib/libpng12
+
+	make CFLAGS="$CFLAGS -Wno-error"
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/{bin,include/*.h,lib/{libpng.{a,so},pkgconfig},share}
+}

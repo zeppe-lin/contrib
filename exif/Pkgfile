@@ -1,0 +1,15 @@
+# Description: Simple command line interface to libexif
+# URL:         https://libexif.github.io/
+# Depends on:  libexif popt
+
+name=exif
+version=0.6.22
+release=1
+source=(https://github.com/libexif/$name/releases/download/$name-${version//./_}-release/$name-$version.tar.xz)
+
+build () {
+	cd $name-$version
+	./configure --prefix=/usr --disable-nls
+	make
+	make DESTDIR=$PKG install
+}

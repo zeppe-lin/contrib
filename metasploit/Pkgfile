@@ -1,0 +1,63 @@
+# Description: Penetration testing framework
+# URL:         https://www.metasploit.com/
+# Depends on:  git libpcap libxslt postgresql ruby sqlite3
+
+name=metasploit
+version=6.0.27
+release=1
+source=(https://github.com/rapid7/$name-framework/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-framework-$version
+
+	# https://github.com/bundler/bundler/issues/6882
+	sed -e '/BUNDLED WITH/,+1d' -i Gemfile.lock
+
+	bundle config build.nokogiri --use-system-libraries
+	sed 's|git ls-files|find -type f|' -i metasploit-framework.gemspec
+
+	CFLAGS+=" -I/usr/include/libxml2"
+
+	bundle config set deployment 'true'
+	bundle config set no-cache 'true'
+	bundle install -j${JOBS}
+
+	find vendor/bundle/ruby -exec chmod o+r '{}' \;
+	find vendor/bundle/ruby -name gem_make.out -o -name mkmf.log -delete
+
+	install -d $PKG/opt/$name $PKG/usr/bin
+	cp -r . $PKG/opt/$name
+
+	for f in $PKG/opt/$name/msf*; do
+		local _msffile
+		_msffile=$PKG/usr/bin/$(basename $f)
+
+		cat >${_msffile} <<EOF
+#!/bin/sh
+BUNDLE_GEMFILE=/opt/$name/Gemfile \
+bundle exec ruby /opt/$name/$(basename $f) \$@
+EOF
+
+		chmod 755 ${_msffile}
+	done
+
+	(cd $PKG/opt/$name
+		for f in tools/*/*.rb; do
+			install -Dm 755 $f .$f
+			cat >$f <<EOF
+#!/bin/sh
+BUNDLE_GEMFILE=/opt/$name/Gemfile \
+bundle exec ruby /opt/$name/.$f \$@
+EOF
+
+			chmod 755 $f
+		done
+	)
+
+	#install -Dm 644 external/zsh/_* -t "$PKG/usr/share/zsh/site-functions"
+	rm $PKG/usr/bin/msfupdate
+	rm -r $PKG/opt/metasploit/vendor/bundle/ruby/*/cache
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

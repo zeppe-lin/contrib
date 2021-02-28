@@ -1,0 +1,101 @@
+# Description: Complete solution to record, convert and stream audio and video
+# URL:         http://ffmpeg.org/
+# Depends on:  yasm
+# Optional:    alsa-lib cuda dav1d fdk-aac ffnvcodec-headers gnutls gsm lame libass libsdl2 libtheora libva libvdpau libvorbis libvpx libwebp opus pulseaudio x264 x265
+
+name=ffmpeg
+version=4.3.1
+release=1
+source=(https://ffmpeg.org/releases/$name-$version.tar.bz2
+	ffmpeg-x264-10bit.sh
+	CVE-2018-6621.patch)
+
+build() {
+	cd $name-$version
+
+	#https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6621
+	patch -p1 -i $SRC/CVE-2018-6621.patch
+
+	pkginfo -i | grep -q '^ffnvcodec-headers ' && \
+		PKGMK_FFMPEG+=' --enable-nvdec --enable-nvenc'
+
+	pkginfo -i | grep -q '^amf-headers ' && \
+		PKGMK_FFMPEG+=' --enable-amf'
+
+	pkginfo -i | grep -q '^cuda ' && \
+		PKGMK_FFMPEG+=' --enable-cuda-llvm'
+
+	pkginfo -i | grep -q '^libwebp ' && \
+		PKGMK_FFMPEG+=' --enable-libwebp'
+
+	pkginfo -i | grep -q '^libvdpau ' && \
+		PKGMK_FFMPEG+=' --enable-vdpau'
+
+	pkginfo -i | grep -q '^freetype ' && \
+		PKGMK_FFMPEG+=' --enable-libfreetype'
+
+	pkginfo -i | grep -q '^x264 ' && \
+		PKGMK_FFMPEG+=' --enable-libx264'
+
+	pkginfo -i | grep -q '^x265 ' && \
+		PKGMK_FFMPEG+=' --enable-libx265'
+
+	pkginfo -i | grep -q '^libass ' && \
+		PKGMK_FFMPEG+=' --enable-libass'
+
+	pkginfo -i | grep -q '^gsm ' && \
+		PKGMK_FFMPEG+=' --enable-libgsm'
+
+	pkginfo -i | grep -q '^lame ' && \
+		PKGMK_FFMPEG+=' --enable-libmp3lame'
+
+	pkginfo -i | grep -q '^opus ' && \
+		PKGMK_FFMPEG+=' --enable-libopus'
+
+	pkginfo -i | grep -q '^libvpx ' && \
+		PKGMK_FFMPEG+=' --enable-libvpx'
+
+	pkginfo -i | grep -q '^libvorbis ' && \
+		PKGMK_FFMPEG+=' --enable-libvorbis'
+
+	pkginfo -i | grep -q '^libtheora ' && \
+		PKGMK_FFMPEG+=' --enable-libtheora'
+
+	pkginfo -i | grep -q '^pulseaudio ' && \
+		PKGMK_FFMPEG+=' --enable-libpulse'
+
+	pkginfo -i | grep -q '^fdk-aac ' && \
+		PKGMK_FFMPEG+=' --enable-libfdk-aac --enable-nonfree'
+
+	pkginfo -i | grep -q '^dav1d ' && \
+		PKGMK_FFMPEG+=' --enable-libdav1d'
+
+	pkginfo -i | grep -q '^gnutls ' && \
+		PKGMK_FFMPEG+=' --enable-gnutls' || \
+		PKGMK_FFMPEG+=' --enable-openssl --enable-nonfree'
+
+	./configure ${PKGMK_FFMPEG} \
+		--prefix=/usr       \
+		--disable-debug     \
+		--disable-doc       \
+		--enable-gpl        \
+		--enable-version3   \
+		--enable-shared     \
+		--enable-pic        \
+		--enable-ffplay     \
+		--enable-avfilter   \
+		--enable-postproc   \
+		--enable-pthreads   \
+		--enable-swresample \
+		--enable-avresample \
+
+	make V=1
+	make DESTDIR=$PKG install install-man
+
+	pkginfo -i | grep -q '^x264 ' && {
+		install -Dm0755 $SRC/ffmpeg-x264-10bit.sh \
+			$PKG/usr/bin/ffmpeg-x264-10bit
+	}
+
+	rm -r $PKG/usr/share/ffmpeg/examples
+}

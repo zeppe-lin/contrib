@@ -1,0 +1,21 @@
+# Description: Customizable and lightweight notification-daemon
+# URL:         https://github.com/knopwob/dunst
+# Depends on:  dbus gdk-pixbuf git libxdg-basedir pango xorg-libxinerama xorg-libxrandr xorg-libxscrnsaver
+
+name=dunst-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/knopwob/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	# replace predefined CFLAGS
+	sed -i '/^DEFAULT_CFLAGS/d' config.mk
+	export CFLAGS="$CFLAGS --std=gnu99 -pedantic -Wall -Wno-overlength-strings"
+
+	make PREFIX=/usr VERSION=$version all
+	make DESTDIR=$PKG PREFIX=/usr VERSION=$version install
+
+	rm -rf $PKG/usr/share/dunst
+}

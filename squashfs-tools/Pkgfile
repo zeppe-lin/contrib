@@ -1,0 +1,14 @@
+# Description: Tools to create and extract SquashFS filesystems
+# URL: https://github.com/plougher/squashfs-tools
+# Depends on: gzip lzo xz
+
+name=squashfs-tools
+version=4.4
+release=1
+source=(https://github.com/plougher/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version/$name
+	make GZIP_SUPPORT=1 LZO_SUPPORT=1 XZ_SUPPORT=1 EXTRA_CFLAGS="-fcommon"
+	make install INSTALL_DIR=$PKG/sbin
+}

@@ -1,0 +1,133 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/zaproxy-weekly
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/db/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/db.properties
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/hsqldb.properties
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/mysql.properties
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/mysql.schema
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/zapdb.properties
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/db/zapdb.script
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/lib/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/bcmail-jdk15on-1.67.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/bcpkix-jdk15on-1.67.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/bcprov-jdk15on-1.67.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-beanutils-1.9.4.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-codec-1.15.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-collections-3.2.2.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-configuration-1.10.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-csv-1.8.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-digester-2.1.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-httpclient-3.1.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-io-2.8.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-jxpath-1.3.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-lang-2.6.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-lang3-3.11.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-logging-1.2.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-text-1.9.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/commons-validator-1.7.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/ezmorph-1.0.6.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/flatlaf-0.46.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/harlib-1.1.2.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/hsqldb-2.5.1.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/ice4j-1.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/jackson-core-asl-1.8.5.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/java-semver-0.9.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/javahelp-2.0.05.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/jericho-html-3.4.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/jfreechart-1.5.1.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/jgrapht-core-0.9.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/json-lib-2.4-jdk15.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/log4j-1.2-api-2.14.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/log4j-api-2.14.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/log4j-core-2.14.0.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/rsyntaxtextarea-3.1.2.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/sqlite-jdbc-3.32.3.2.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/swingx-all-1.6.5-1.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/lib/xom-1.2.10.jar
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/plugin/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/accessControl-alpha-7.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/alertFilters-release-11.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/ascanrules-release-39.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/ascanrulesBeta-beta-34.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/bruteforce-beta-11.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/commonlib-release-1.3.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/coreLang-release-14.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/diff-beta-11.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/directorylistv1-release-5.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/domxss-beta-11.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/encoder-beta-0.5.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/formhandler-beta-4.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/fuzz-beta-13.2.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/gettingStarted-release-13.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/graaljs-alpha-0.2.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/graphql-alpha-0.3.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/help-release-12.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/hud-beta-0.13.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/importurls-beta-8.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/invoke-beta-11.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/onlineMenu-release-9.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/openapi-beta-18.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/plugnhack-beta-12.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/portscan-beta-9.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/pscanrules-release-34.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/pscanrulesBeta-beta-25.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/quickstart-release-30.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/replacer-beta-9.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/retire-release-0.7.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/reveal-release-4.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/saverawmessage-release-6.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/savexmlmessage-alpha-0.2.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/scripts-beta-29.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/selenium-release-15.4.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/sequence-alpha-6.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/soap-alpha-6.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/spiderAjax-release-23.3.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/tips-beta-8.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/webdriverlinux-release-26.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/webdrivermacos-release-25.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/webdriverwindows-release-26.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/websocket-release-24.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/zest-beta-34.zap
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/active/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/active/Active default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/authentication/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/authentication/Authentication default template.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/authentication/BodgeIt Store Authentication.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/authentication/Simple Form-Based Authentication.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/authentication/Wordpress Authentication.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/httpsender/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/httpsender/AddZapHeader.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/httpsender/HttpSender default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/passive/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/passive/Passive default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/proxy/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/proxy/Proxy default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/session/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/session/Juice Shop Session Management.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/session/Session Management default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/standalone/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/standalone/Loop through history table.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/standalone/Standalone default template.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/standalone/Traverse sites tree.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/targeted/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/targeted/Find HTML comments.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/targeted/Targeted default template.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/scripts/templates/variant/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/variant/Input Vector default template.js
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/scripts/templates/variant/Site modifying JSON example.js
+drwxr-xr-x	root/root	usr/share/zaproxy-weekly/xml/
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/common-user-agents.txt
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/config.xml
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/drivers.dtd
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/drivers.xml
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.html.xsl
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.md.xsl
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/reportCompare.xsl
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/zap-D-2021-02-01.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/zap.ico
+-rwxr-xr-x	root/root	usr/share/zaproxy-weekly/zap.sh

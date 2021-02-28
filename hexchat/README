@@ -1,0 +1,18 @@
+README for hexchat
+
+
+NOTES
+
+  Optional software for special features:
+
+  dbus-glib:       Used for single-instance and scripting interface
+  enchant:         Spell check
+  iso-codes:       Display language names instead of codes
+  lua:             Lua scripting plugin
+  libcanberra:     Support for sound alerts
+  libnotify:       Support for freedesktop notifications
+  libproxy:        Support for getting proxy information
+  pciutils:        System information plugin
+
+
+End of file.

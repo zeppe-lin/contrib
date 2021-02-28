@@ -1,0 +1,48 @@
+# Description: QEMU VM for x86(_64), ARM and RISCV, with only curses UI
+# URL:         http://www.qemu-project.org/
+# Depends on:  glib xorg-libpixman
+# Optional:    libseccomp libiscsi libusb usbredir spice
+
+name=qemu-x86x-arm-riscv-nogui
+realn=qemu
+version=5.2.0
+release=1
+source=(http://www.qemu-project.org//download/$realn-$version.tar.bz2)
+
+build() {
+  cd $realn-$version
+
+  ./configure --prefix=/usr \
+      --cc="${CC:=gcc}" \
+      --host-cc="${CC:=gcc}" \
+      --sysconfdir=/etc \
+      --libexecdir=/usr/lib/qemu \
+      --localstatedir=/var \
+      \
+      --disable-docs \
+      --disable-gtk \
+      --disable-hax \
+      --disable-sdl \
+      --disable-vde \
+      \
+      --target-list=\
+aarch64-softmmu,\
+arm-softmmu,\
+i386-softmmu,\
+riscv32-softmmu,riscv64-softmmu,\
+x86_64-softmmu,\
+aarch64-linux-user,aarch64_be-linux-user,\
+arm-linux-user,armeb-linux-user,\
+i386-linux-user,\
+riscv32-linux-user,riscv64-linux-user,\
+x86_64-linux-user
+
+  make ${MAKEFLAGS:=}
+
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/locale $PKG/usr/share/locale
+
+  install -d $PKG/etc/udev/rules.d/
+  echo 'KERNEL=="kvm", NAME="kvm", OWNER="root", GROUP="kvm", MODE="0660"' > \
+    $PKG/etc/udev/rules.d/60-kvm.rules
+}

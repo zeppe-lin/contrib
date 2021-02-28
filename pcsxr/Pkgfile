@@ -1,0 +1,34 @@
+# Description: Crossplatform Sony Playstation emulator
+# URL:         http://pcsxr.codeplex.com
+# Depends on:  gtk3 libcdio libsdl mesa xorg-libxcomposite xorg-libxcursor xorg-libxinerama
+
+name=pcsxr
+version=1.9.95
+release=1
+source=(https://github.com/frealgagu/PCSX-Reloaded/archive/$version.tar.gz
+	pcsxr-fix-uncompress2.patch
+	pcsxr-fix-undefined-operations.patch
+	pcsxr-remove-assertion-64bit.patch)
+
+build() {
+	cd PCSX-Reloaded-$version
+
+	patch -Np1 -i $SRC/pcsxr-fix-undefined-operations.patch
+	patch -Np1 -i $SRC/pcsxr-remove-assertion-64bit.patch
+	patch -Np1 -i $SRC/pcsxr-fix-uncompress2.patch
+
+	mkdir $SRC/PCSX-Reloaded-${version}/pcsxr/include
+
+	cd $name
+
+	autoreconf -fi
+	CFLAGS+=" -fcommon" ./configure \
+		--prefix=/usr      \
+		--enable-sound=sdl \
+		--enable-opengl    \
+		--enable-libcdio   \
+		--disable-nls
+
+	make all
+	make DESTDIR=$PKG install
+}

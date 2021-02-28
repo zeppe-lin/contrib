@@ -1,0 +1,3 @@
+#!/bin/sh
+yes | /opt/bin/VBoxManage extpack install \
+  /opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack > /dev/null 2>&1

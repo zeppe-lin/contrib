@@ -1,0 +1,25 @@
+# Description: Fast scan of the Internet
+# URL:         https://github.com/robertdavidgraham/masscan
+# Depends on:  libpcap
+
+name=masscan-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/robertdavidgraham/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	sed -i \
+		-e '/$(CC)/s!$(CFLAGS)!$(LDFLAGS) $(CFLAGS)!g'  \
+		-e '/^GITVER :=/s!= .(.*!=!g'                   \
+		-e '/^SYS/s|gcc|$(CC)|g'                        \
+		-e '/^CFLAGS =/{s,=,+=,;s,-g -ggdb,,;s,-O.,,;}' \
+		-e '/^CC =/d'                                   \
+		Makefile
+
+	make 
+	make DESTDIR=$PKG INSTALL_DATA='-m 755 -D' install
+
+	install -m 644 -D -t $PKG/usr/share/man/man8 doc/masscan.8
+}

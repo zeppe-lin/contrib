@@ -1,0 +1,70 @@
+# Description: NVIDIA's GPU programming toolkit
+# URL: https://developer.nvidia.com/cuda-zone
+# Depends on: nvidia lsb-release
+
+name=cuda
+version=11.2.0
+_driverver=460.27.04
+release=1
+source=(http://developer.download.nvidia.com/compute/cuda/${version}/local_installers/cuda_${version}_${_driverver}_linux.run
+	cuda.sh cuda.conf cuda.revdep
+	cuda-findgllib_mk.diff
+	*.pc)
+
+build() {
+	sh cuda_${version}_${_driverver}_linux.run --target "${SRC}" --noexec
+
+	# Fix up samples that use findgllib_mk
+	for f in builds/cuda_samples/*/*/findgllib.mk; do
+		patch $f cuda-findgllib_mk.diff
+	done
+
+	cd builds
+
+	rm -r NVIDIA*.run bin
+	mkdir -p "${PKG}/opt/cuda/extras"
+	mv cuda_samples "${PKG}/opt/cuda/samples"
+	mv integration nsight_compute nsight_systems EULA.txt "${PKG}/opt/cuda"
+	mv cuda_sanitizer_api/compute-sanitizer "${PKG}/opt/cuda/extras/compute-sanitizer"
+	rmdir cuda_sanitizer_api
+	for lib in *; do
+		cp -r $lib/* "${PKG}/opt/cuda/"
+	done
+
+	# Define compilers for CUDA to use.
+	# This allows us to use older versions of GCC if we have to.
+	ln -s /usr/bin/gcc "${PKG}/opt/cuda/bin/gcc"
+	ln -s /usr/bin/g++ "${PKG}/opt/cuda/bin/g++"
+
+	# Install profile and ld.so.config files
+	install -Dm755 "${SRC}/cuda.sh" "${PKG}/etc/profile.d/cuda.sh"
+	install -Dm644 "${SRC}/cuda.conf" "${PKG}/etc/ld.so.conf.d/cuda.conf"
+
+	# Install pkgconfig files
+	mkdir -p "$PKG"/usr/lib/pkgconfig
+	cp "${SRC}"/*.pc "${PKG}"/usr/lib/pkgconfig
+
+	mkdir -p "${PKG}/usr/share/licenses/${name}"
+	ln -s /opt/cuda/doc/pdf/EULA.pdf "${PKG}/usr/share/licenses/${pkgname}/EULA.pdf"
+
+	# Allow newer compilers to work. This is not officially supported in the Arch package but
+	# if users want to try, let them try.
+	# See https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#system-requirements
+	# for official requirements
+	sed -i "/.*unsupported GNU version.*/d" "${PKG}"/opt/cuda/targets/x86_64-linux/include/crt/host_config.h
+	sed -i "/.*unsupported clang version.*/d" "${PKG}"/opt/cuda/targets/x86_64-linux/include/crt/host_config.h
+
+	# Fix Makefile paths to CUDA
+	for f in $(find "$PKG"/opt/cuda -name Makefile); do
+		sed -i "s|/usr/local/cuda|/opt/cuda|g" "$f"
+	done
+
+	# NVIDIA has trouble with counting and numbering 
+	# as well as the elusive concept of a SONAME so...
+	ln -s /opt/cuda/targets/x86_64-linux/lib/libcudart.so.11.1.74 "${PKG}/opt/cuda/targets/x86_64-linux/lib/libcudart.so.11.1"
+
+	install -d $PKG/etc/revdep.d
+	install -m644 $SRC/$name.revdep $PKG/etc/revdep.d/$name
+
+	find $PKG -iname 'README' -iname 'README.txt' -exec rm '{}' \+
+}

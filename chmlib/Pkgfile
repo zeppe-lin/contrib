@@ -1,0 +1,16 @@
+# Description: Library for dealing with Microsoft ITSS/CHM format files
+# URL: http://www.jedrea.com/chmlib/
+# Depends on:
+
+name=chmlib
+version=0.40
+release=1
+source=(http://www.jedrea.com/chmlib/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --enable-examples=no
+  make
+  make DESTDIR=$PKG install
+}

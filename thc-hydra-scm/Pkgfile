@@ -1,0 +1,42 @@
+# Description: Network logon cracker
+# URL:         https://github.com/vanhauser-thc/thc-hydra
+# Depends on:  freerdp2 gtk libidn libssh mysql postgresql
+
+name=thc-hydra-scm
+version=$(date +%Y%m%d)
+release=1
+
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
+build() {
+	download_git https://github.com/vanhauser-thc/thc-hydra master
+	cd $name
+
+	sed -i 's/dummy_ssh/dummy_sshkey/' hydra-sshkey.c
+	sed -i 's/OPTS=-I. -O3 $(CFLAGS) -fcommon/OPTS=-I. $(CFLAGS) -fcommon/' \
+		Makefile.am
+
+	./configure --prefix=$PKG/usr
+
+	make
+	make MANDIR=/share/man install
+
+	# Move password lists
+	mkdir -p $PKG/usr/share/hydra
+	mv $PKG/usr/etc/* $PKG/usr/share/hydra
+	rm -rf $PKG/usr/etc
+
+	#  Fix paths in dpl4hydra.sh
+	sed -i -e "s|^INSTALLDIR=.*|INSTALLDIR=/usr|" $PKG/usr/bin/dpl4hydra.sh
+	sed -i -e "s|^LOCATION=.*|LOCATION=share/hydra|" $PKG/usr/bin/dpl4hydra.sh
+}

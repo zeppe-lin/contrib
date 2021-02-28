@@ -1,0 +1,14 @@
+README for xtables-addons
+
+
+IPSET
+
+  echo build_ipset6=m >>mconfig
+
+  If you really need ipset in xtables-addons that supports kernel
+  >= 3.2.x
+
+  Or pkgman install --deps ipset if your using a kernel <= 3.1.x
+
+
+End of file.

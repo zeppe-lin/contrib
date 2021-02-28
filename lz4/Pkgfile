@@ -1,0 +1,16 @@
+# Description: extremely fast compression algorithm
+# URL: http://www.lz4.org/
+# Packager: Erich Eckner, crux at eckner dot net
+
+name=lz4
+version=1.9.3
+release=1
+source=("https://github.com/${name}/${name}/archive/v${version}/${name}-${version}.tar.gz")
+
+build() {
+	cd "${name}-${version}"
+
+	make -C lib PREFIX=/usr
+	make -C programs PREFIX=/usr lz4 lz4c
+	make install PREFIX=/usr DESTDIR="$PKG"
+}

@@ -1,0 +1,32 @@
+# Description: ipcalc: calculate broadcast, network and host range.
+# URL:         http://jodies.de/ipcalc
+
+name=ipcalc
+version=0.41
+release=1
+source=(http://jodies.de/${name}-archive/${name}-${version}.tar.gz)
+
+build() {
+   cd $name-$version
+
+   #
+   cat > ./ipcalc.1 <<- \!
+	.Dd January 4, 2021
+	.Dt IPCALC 1
+	.Os
+	.
+	.Sh NAME
+	.Nm ipcalc
+	.Nd Calculate IP broadcast, host range etc
+	.
+	.Bd -literal
+	!
+
+   perl ipcalc >> ./ipcalc.1
+   echo '.Ed' >> ./ipcalc.1
+
+   install -D -m 0755 ipcalc $PKG/usr/bin/ipcalc
+   install -D -m 0644 ipcalc.1 $PKG/usr/share/man/man1/ipcalc.1
+}
+
+# s-sh-mode

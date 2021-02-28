@@ -1,0 +1,13 @@
+README for glib-networking
+
+
+PKCS #11
+
+  For using the PKCS #11 modules, the GIO_USE_TLS variable should
+  be set in the environment. This can be added to the /etc/profile
+  (as the root user):
+
+      export GIO_USE_TLS=gnutls-pkcs11
+
+
+End of file.

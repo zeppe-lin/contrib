@@ -1,0 +1,20 @@
+# Description: Trivial DataBase similar to gdbm
+# URL:         https://tdb.samba.org/
+# Depends on:  python3
+
+name=tdb
+version=1.4.3
+release=2
+source=(https://www.samba.org/ftp/$name/$name-$version.tar.gz
+        $name-man-pages.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/usr/share/man/man8
+	install -m 0644 $SRC/*.8 $PKG/usr/share/man/man8
+}

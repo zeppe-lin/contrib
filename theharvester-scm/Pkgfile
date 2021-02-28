@@ -1,0 +1,41 @@
+# Description: Gathering e-mail accounts and subdomain names from different public sources
+# URL:         https://github.com/laramies/theHarvester
+# Depends on:  libffi libxslt python3-pip
+
+name=theharvester-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/laramies/theHarvester@master
+	theharvester.sh)
+
+build() {
+	cd theHarvester@master
+
+	# fix configs location
+	grep '/usr/local/etc/' -rl | \
+		xargs sed -i 's@/usr/local/etc/@/usr/etc/@g'
+
+	install -dm755 $PKG/usr/share/theHarvester/app
+	cp -a ./* $PKG/usr/share/theHarvester/app/
+	/usr/bin/pip3 install -r requirements.txt --target $PKG/usr/share/theHarvester
+
+	install -Dm755 $SRC/theharvester.sh $PKG/usr/bin/theharvester
+
+	# Install /etc/theHarvester configs
+	install -Dm644 $PKG/usr/share/theHarvester/app/api-keys.yaml -t $PKG/usr/etc/theHarvester
+	install -Dm644 $PKG/usr/share/theHarvester/app/proxies.yaml  -t $PKG/usr/etc/theHarvester
+	cp -r $PKG/usr/share/theHarvester/app/wordlists $PKG/usr/etc/theHarvester
+
+	# Remove junk files
+	rm -rf  $PKG/usr/share/theHarvester/*.dist-info \
+		$PKG/usr/share/theHarvester/*.egg-info \
+		$PKG/usr/share/theHarvester/{CHANGES.md,README.md,LICENSE,Makefile} \
+		$PKG/usr/share/theHarvester/app/{Dockerfile,Pipfile,Pipfile.lock} \
+		$PKG/usr/share/theHarvester/app/{README.md,README} \
+		$PKG/usr/share/theHarvester/app/{api-keys.yaml,mypy.ini,proxies.yaml} \
+		$PKG/usr/share/theHarvester/app/{requirements.txt,requirements} \
+		$PKG/usr/share/theHarvester/app/setup.{cfg,py} \
+		$PKG/usr/share/theHarvester/app/tests \
+		$PKG/usr/share/theHarvester/app/theHarvester-logo.png \
+		$PKG/usr/share/theHarvester/tests
+}

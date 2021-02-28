@@ -1,0 +1,15 @@
+# Description: Command-line utilities for working with desktop entries
+# URL: https://www.freedesktop.org/software/desktop-file-utils/
+# Depends on: glib pkg-config meson
+
+name=desktop-file-utils
+version=0.26
+release=1
+source=(http://freedesktop.org/software/$name/releases/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	meson _build --prefix=/usr
+	DESTDIR=$PKG ninja -C _build install
+	rm -r $PKG/usr/share/emacs
+}

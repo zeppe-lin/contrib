@@ -1,0 +1,23 @@
+# Description: Exploit common IEEE 802.11 protocol weaknesses
+# URL:         https://github.com/aircrack-ng/mdk4
+# Depends on:  libnl libpcap
+
+name=mdk4-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/aircrack-ng/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	# remove default debug/optimization flag
+	sed -i 's/-g -O3//' src/Makefile src/attacks/Makefile
+
+	EXTRAFLAGS="-I.. -I/usr/include/libnl3 -DCONFIG_LIBNL30 -DCONFIG_LIBNL"
+
+	make CFLAGS="$CFLAGS -fcommon $EXTRAFLAGS" -j1 # fix parallel build
+	make -C src install PREFIX=$PKG/usr
+
+	# install man page manually
+	install -Dm644 man/mdk4.1 $PKG/usr/share/man/man8/mdk4.8
+}

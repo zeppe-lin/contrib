@@ -1,0 +1,12 @@
+--- ipc_remote.cc.orig	2020-12-14 12:25:46.010752672 +0200
++++ ipc_remote.cc	2020-12-14 12:26:58.153578880 +0200
+@@ -941,8 +941,8 @@ int RootIPCRemote::OpenFDPassSock() {
+ }
+ 
+ typedef struct {
+-	struct cmsghdr header;
+ 	int            fd;
++	struct cmsghdr header;
+ } __attribute__((packed)) cmsg_fd;
+ 
+ int RootIPCRemote::SendDescriptor(int in_fd) {

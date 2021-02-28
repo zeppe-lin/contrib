@@ -1,0 +1,14 @@
+# Description: A decorator for caching properties in classes
+# URL: https://pypi.org/project/cached-property/
+# Depends on: python3-setuptools
+
+name=python3-cached-property
+version=1.5.2
+release=1
+source=(https://pypi.python.org/packages/source/c/cached-property/cached-property-$version.tar.gz)
+
+build() {
+	cd cached-property-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

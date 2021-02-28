@@ -1,0 +1,38 @@
+README for pulseaudio
+
+NOTES
+
+    0. ALSA configuration for PulseAudio
+
+    install 'alsa-plugins' and add this to ~/.asoundrc:
+
+    # Use PulseAudio by default
+    pcm.!default {
+        type pulse
+        fallback "sysdefault"
+        hint {
+        show on
+        description "Default ALSA Output (currently PulseAudio Sound Server)"
+        }
+    }
+
+    ctl.!default {
+        type pulse
+        fallback "sysdefault"
+    }
+
+    1. Idle shutdown
+
+    If you are not running a fully fledged DE you might have trouble
+    with pulseaudio shutting down after being idle for a while.
+
+    You can work around this by starting pulseaudio like this:
+
+    pulseaudio --start --exit-idle-time=-1 --log-target=syslog &
+
+    2. Bluetooth headsets
+
+    For using bluetooth headsets, add the following command after
+    starting the pulseaudio:
+
+    pactl load-module module-bluetooth-discover &

@@ -1,0 +1,4 @@
+dabed02f71c0018183c4c56c1e0e047e  0001-CMake-FIx-pkg-config-libdir-with-absolute-CMAKE_INST.patch
+4dd3141eece451786eb3ddc2334bce55  0001-Revert-CMake-Enable-building-with-BUILD_SHARED_LIBS-.patch
+51434d9599f748893c3a88562d6e5eca  b27e039c68dd9eb959bb9249fcb2c9a54841474b.zip
+5c37c6f02080b85778c08c17b8df6508  spirv-tools-soversion.patch

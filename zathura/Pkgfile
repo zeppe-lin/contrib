@@ -1,0 +1,44 @@
+# Description: Highly customizable and functional document viewer
+# URL:         https://pwmt.org/projects/zathura
+# Depends on:  girara libseccomp
+# Optional:    texlive
+
+name=zathura
+version=0.4.7
+release=3
+source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build \
+		--prefix=/usr         \
+		--sysconfdir=/usr/etc \
+		--buildtype=plain     \
+		--backend=ninja
+
+	sed -i 's/ \-pipe / /g' build/{compile_commands.json,build.ninja}
+
+	cd build
+	ninja -v
+	DESTDIR=$PKG ninja install
+
+	rm -rf $PKG/usr/share/locale
+
+	# bash completion
+	if ! pkginfo -i | grep '^bash-completion '; then
+		rm -rf $PKG/usr/share/bash-completion
+	fi
+
+	# zsh completion
+	if ! pkginfo -i | grep '^zsh '; then
+		rm -rf $PKG/usr/share/zsh
+	fi
+
+	# fish completion
+	if ! pkginfo -i | grep '^fish '; then
+		rm -rf $PKG/usr/share/fish
+	fi
+
+	find $PKG -perm /go+w -exec chmod go-w {} \;
+}

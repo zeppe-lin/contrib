@@ -1,0 +1,47 @@
+#!/bin/sh
+#@ bluez-alsa startup script.
+#@ Likely requires <- bluetoothd <- dbus 
+
+#@ With bluealsa <2.0.0, the daemon crashed at times
+#@	Nov  5 23:22:25 kent kernel: baio[19242]: segfault at 1 ip \
+#@		00007f06dc0bca31 sp 00007f06da5dce28 error 4 \
+#@		in libc-2.28.so[7f06dbf83000+147000]
+#@ and if we would not remove $RUNDIR, restart would be rejected:
+#@	Nov  5 23:25:07 kent /usr/bin/bluealsa: Couldn't initialize \
+#@		controller thread: Bad file descriptor
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/bin/bluealsa
+PID=/var/run/bluealsa.pid
+RUNDIR=/var/run/bluealsa
+OPTS=-S
+
+case $1 in
+start)
+	rm -rf "${RUNDIR}"
+	$SSD --start --background --make-pidfile --pidfile $PID --exec $PROG \
+		-- $OPTS
+	;;
+stop)
+	$SSD --stop --remove-pidfile --retry 10 --pidfile $PID --exec $PROG
+	rm -rf "${RUNDIR}"
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --pidfile $PID --exec $PROG
+	e=$?
+	case $e in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	exit $e
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac

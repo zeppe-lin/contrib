@@ -1,0 +1,18 @@
+# Description: CLI program to download videos from YouTube and others site
+# URL:         https://youtube-dl.org
+# Depends on:  python3-setuptools
+
+name=youtube-dl
+version=2021.01.24.1
+release=1
+source=(https://youtube-dl.org/downloads/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
+
+	mv $PKG/usr/etc $PKG/etc/
+	rm -r $PKG/etc/fish $PKG/usr/share/doc
+}

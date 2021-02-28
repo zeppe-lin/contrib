@@ -1,0 +1,21 @@
+# Description: Joomla vulnerability scanner
+# URL:         https://github.com/rezasp/joomscan
+# Depends on:  dos2unix p5-lwp-protocol-https p5-http-message
+
+name=joomscan-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/rezasp/${name/-scm}@master
+	joomscan.sh)
+
+build() {
+	cd ${name/-scm}@master
+
+	# fix encoding
+	dos2unix joomscan.pl
+
+	install -d $PKG/usr/lib/joomscan
+	cp -r joomscan.pl core exploit modules $PKG/usr/lib/joomscan/
+
+	install -Dm755 $SRC/joomscan.sh $PKG/usr/bin/joomscan
+}

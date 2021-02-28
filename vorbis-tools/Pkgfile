@@ -1,0 +1,22 @@
+# Description: Tools used to create/alter ogg/vorbis files
+# URL: https://www.xiph.org/vorbis/
+# Depends on: curl libao libvorbis
+
+name=vorbis-tools
+version=1.4.2
+release=1
+source=(https://downloads.xiph.org/releases/vorbis/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--enable-vcut
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

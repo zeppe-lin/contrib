@@ -1,0 +1,22 @@
+# Description: Tools to work with Android's .dex format and Java's .class files
+# URL:         https://github.com/pxb1988/dex2jar
+# Depends on:  jdk8-bin
+
+name=dex2jar-bin
+version=2.1
+release=1
+source=(https://github.com/pxb1988/${name/-bin}/files/1867564/dex-tools-$version-SNAPSHOT.zip)
+
+build () {
+	cd dex-tools-$version-SNAPSHOT
+
+	install -dm 755 $PKG/usr/bin
+	install -dm 755 $PKG/usr/share/${name/-bin}/lib
+
+	install -m 644 lib/*.jar $PKG/usr/share/${name/-bin}/lib
+	install -m 755 *.sh      $PKG/usr/share/${name/-bin}
+
+	for bin in d2j-*.sh; do
+		ln -s /usr/share/${name/-bin}/$bin $PKG/usr/bin/${bin%.*}
+	done
+}

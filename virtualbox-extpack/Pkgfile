@@ -1,0 +1,16 @@
+# Description: Oracle VM VirtualBox Extension Pack (binary version, non-GPL)
+# URL:         http://www.virtualbox.org
+# Depends on:  virtualbox-bin
+
+name=virtualbox-extpack
+version=6.1.18
+sversion=142142
+release=1
+source=(https://download.virtualbox.org/virtualbox/$version/Oracle_VM_VirtualBox_Extension_Pack-$version-$sversion.vbox-extpack)
+
+build() {
+	mkdir -p $PKG/opt/VirtualBox/ExtensionPacks
+
+	cp Oracle_VM_VirtualBox_Extension_Pack-$version-$sversion.vbox-extpack  \
+		$PKG/opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+}

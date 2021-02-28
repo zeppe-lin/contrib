@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/pixload-bmp
+-rwxr-xr-x	root/root	usr/bin/pixload-gif
+-rwxr-xr-x	root/root	usr/bin/pixload-jpg
+-rwxr-xr-x	root/root	usr/bin/pixload-png
+-rwxr-xr-x	root/root	usr/bin/pixload-webp

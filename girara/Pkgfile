@@ -1,0 +1,33 @@
+# Description: User interface library focusing on simplicity and minimalism
+# URL:         https://pwmt.org/projects/girara
+# Depends on:  gtk3 json-c xorg-libxcomposite xorg-libxcursor xorg-libxinerama
+
+name=girara
+version=0.3.5
+release=2
+source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build \
+		--prefix=/usr         \
+		--sysconfdir=/usr/etc \
+		--buildtype=plain     \
+		--backend=ninja       \
+		-Denable-json=true    \
+		-Denable-docs=false
+
+	sed -i 's/ \-pipe / /g' build/{compile_commands.json,build.ninja}
+
+	cd build
+	ninja -v
+	DESTDIR=$PKG ninja install
+
+	rm -rf $PKG/usr/share/locale
+
+	find $PKG -perm -g+w | xargs chmod g-w
+
+	# Remove empty directories
+	find $PKG -depth -empty -exec rm -rf {} \;
+}

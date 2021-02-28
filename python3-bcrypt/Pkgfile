@@ -1,0 +1,14 @@
+# Description: Modern password hashing for your software and your servers
+# URL: https://pypi.org/project/bcrypt/
+# Depends on: python3-six python3-cffi
+
+name=python3-bcrypt
+version=3.2.0
+release=1
+source=(https://pypi.python.org/packages/source/b/bcrypt/bcrypt-$version.tar.gz)
+
+build() {
+	cd bcrypt-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

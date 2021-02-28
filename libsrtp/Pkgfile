@@ -1,0 +1,19 @@
+# Description:  Secure Realtime transport protocol library
+# URL: https://github.com/cisco/libsrtp
+
+name=libsrtp
+version=2.3.0
+release=3
+source=(https://github.com/cisco/libsrtp/archive/v$version/$name-$version.tar.gz
+  libsrtp-2.3.0-shared-fix.patch)
+
+build() {
+  cd $name-$version
+  patch -p1 -i $SRC/libsrtp-2.3.0-shared-fix.patch
+  CFLAGS+=' -fcommon' \
+  ./configure \
+    --prefix=/usr \
+    --enable-openssl
+  make
+  make DESTDIR=$PKG install
+}

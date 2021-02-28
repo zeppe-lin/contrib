@@ -1,0 +1,28 @@
+README for trinity-extra-theme
+
+
+NOTES
+
+  vim
+  ---
+  
+  :colorscheme Trinity
+  
+  
+  hexchat
+  -------
+  
+  cp /usr/share/trinity/hexchat ~/.config/hexchat/colors.conf
+  
+  
+  Xresources
+  ----------
+  
+  Put the following line in ~/.Xresources:
+  #include "/usr/share/trinity/Xresources"
+  
+  And the following line in ~/.xinitrc for persistent setting:
+  [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+
+End of file.

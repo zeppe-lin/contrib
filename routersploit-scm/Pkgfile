@@ -1,0 +1,25 @@
+# Description: Exploitation Framework for Embedded Devices
+# URL:         https://github.com/threat9/routersploit
+# Depends on:  python3-pip
+
+name=routersploit-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/threat9/${name/-scm}@master
+	routersploit.sh)
+
+build() {
+	cd ${name/-scm}@master
+
+	install -dm755 $PKG/usr/share/routersploit
+	/usr/bin/pip3 install . --target $PKG/usr/share/routersploit
+
+	# Create an indirect launcher in /opt/bin
+	install -m644 rsf.py $PKG/usr/share/routersploit/rsf.py
+	install -Dm755 $SRC/routersploit.sh $PKG/usr/bin/routersploit
+
+	# Remove junk files
+	rm -rf $PKG/usr/share/routersploit/*.dist-info
+	rm -rf $PKG/usr/share/routersploit/*.egg-info
+	find $PKG -name README.txt | xargs rm -f
+}

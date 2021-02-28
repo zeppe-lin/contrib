@@ -1,0 +1,15 @@
+README for gimp
+
+
+REQUIREMENTS
+
+  Optional:
+    alsa-lib:     for MIDI event controller module
+    curl:         for URI support
+    ghostscript:  for postscript support
+    gutenprint:   for sophisticated printing only as gimp has built-in
+                  cups print support
+    poppler-glib: for pdf support
+
+
+End of file.

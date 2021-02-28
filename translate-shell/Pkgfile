@@ -1,0 +1,14 @@
+# Description: Command-line translator using Google, Bing, Yandex, etc
+# URL:         https://github.com/soimort/translate-shell
+
+name=translate-shell
+version=0.9.6.12.9bb510b
+_commit=9bb510b55cd7f8eeaa8985162f1a9cc842891249
+release=1
+source=(https://github.com/soimort/$name/archive/$_commit/$name-$_commit.tar.gz)
+
+build() {
+	cd $name-$_commit
+
+	make PREFIX=$PKG/usr install
+}

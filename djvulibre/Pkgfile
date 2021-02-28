@@ -1,0 +1,26 @@
+# Description: DjVu format reader
+# URL:         http://djvu.sourceforge.net/
+# Depends on:  libtiff zstd
+
+name=djvulibre
+version=3.5.28
+release=1
+source=(http://download.sourceforge.net/djvu/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--prefix=/usr  \
+		--disable-i18n \
+		--disable-djview
+
+	# remove default debug flag
+	find . -name Makefile -exec sed '/C\(XX\)?FLAGS = /s/-g / /g' {} \;
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/djvu/osi/{cs,de,fr,ja,zh}
+}

@@ -1,0 +1,14 @@
+# Description: Dynamic window manager for X
+# URL:         https://github.com/chinarulezzz-de/dwm-6.0-chinarulezzz
+# Depends on:  git xorg-libxft xorg-libxinerama
+
+name=dwm-6.0-chinarulezzz-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/chinarulezzz-de/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	make PREFIX=/usr DESTDIR=$PKG install
+}

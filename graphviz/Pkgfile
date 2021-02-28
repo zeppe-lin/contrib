@@ -1,0 +1,20 @@
+# Description: Graph visualization software
+# URL:         https://www.graphviz.org
+# Depends on:  libtool libgd pango
+
+name=graphviz
+version=2.46.0
+release=1
+source=(https://gitlab.com/graphviz/graphviz/-/archive/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure --prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/graphviz/doc
+}

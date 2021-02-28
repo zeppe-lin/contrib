@@ -1,0 +1,52 @@
+# Description: Wireless network sniffer (ncurses-based)
+# URL:         https://www.kismetwireless.net/
+# Depends on:  bluez libcap libnl libpcap libusb-compat openssl
+# Optional:    sox
+
+name=kismet2016
+version=2016-07-R1
+release=1
+source=(https://www.kismetwireless.net/code/${name//2016/}-$version.tar.xz
+	aircrack_crypto_cc.patch fix__cmsg_data_compiling_error.patch)
+
+build() {
+	export KIS_SRC_DIR=$SRC/${name//2016/}-$version
+
+	PLUGINS="plugin-btscan            \
+		 plugin-syslog            \
+		 plugin-spectools         \
+		 plugin-alertsyslog       \
+		 restricted-plugin-ptw    \
+		 disable-plugin-dot15d4   \
+		 restricted-plugin-autowep"
+
+	cd ${name//2016/}-$version
+
+	patch -p0 -i $SRC/fix__cmsg_data_compiling_error.patch
+
+	mkdir -p $PKG/usr/lib/{kismet,kismet_client}
+
+	./configure --prefix=/usr --with-suidgroup=kismet
+
+	sed -e '/LIB_LOC/ s|:/usr/local/lib|/usr/lib|g' -i config.h
+	find . -type f -name Makefile -exec sed -i \
+		-e '/CFLAGS\s*+=\s*/s/-g //'       \
+		-e '/CXXFLAGS\s*+=\s*/s/-g //' {}  \;
+
+	make all
+	make DESTDIR=$PKG suidinstall
+
+	patch -p0 -i $SRC/aircrack_crypto_cc.patch
+
+	for i in $PLUGINS; do 
+		cd $KIS_SRC_DIR/$i
+		make
+		if [ -a *_ui.so ]; then
+			mv *_ui.so $PKG/usr/lib/kismet_client/
+		fi
+		mv *.so $PKG/usr/lib/kismet/
+	done
+
+	mv $PKG/usr/etc/kismet.conf{,.example}
+	mv $PKG/usr/etc/kismet_drone.conf{,.example}
+}

@@ -1,0 +1,23 @@
+# Description: Complete suite of tools to assess WiFi network security
+# URL:         https://github.com/aircrack-ng/aircrack-ng
+# Depends on:  ethtool git hwloc libnl libpcap
+
+name=aircrack-ng-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/${name/-scm}/${name/-scm}@master)
+
+build() {
+	cd ${name/-scm}@master
+
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr --libdir=/usr/lib/$name
+
+	# remove default optimization flags
+	find . -name Makefile -exec \
+		sed -i  -e '/CFLAGS =/s/-O3 //g'      \
+			-e '/CXXFLAGS =/s/-O3 //g' {} \;
+
+	make V=1
+	make DESTDIR=$PKG install
+}

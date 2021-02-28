@@ -1,0 +1,32 @@
+# Description: Automate the process of exploiting SQL injection flaws
+# URL:         http://sqlmap.org
+# Depends on:  python3
+
+name=sqlmap
+version=1.5
+release=1
+source=(https://github.com/sqlmapproject/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	install -d $PKG/usr/share $PKG/usr/bin
+
+	cp -r $name-$version $PKG/usr/share/sqlmap
+	sed -i '1 s/python/python3/' $PKG/usr/share/sqlmap/sqlmap.py
+	ln -s /usr/share/sqlmap/sqlmap.py $PKG/usr/bin/sqlmap
+
+	/usr/bin/python3 -mcompileall $PKG
+
+	# remove junk
+	rm -r \
+		$PKG/usr/share/sqlmap/doc     \
+		$PKG/usr/share/sqlmap/.github \
+
+	find $PKG \( -name README\*           \
+		-or  -name COMMITMENT         \
+		-or  -name LICENSE            \
+		-or  -name .gitattributes     \
+		-or  -name .gitignore         \
+		-or  -name .travis.yml        \
+		-or  -name .pylintrc          \
+		\) -delete
+}

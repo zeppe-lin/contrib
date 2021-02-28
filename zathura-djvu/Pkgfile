@@ -1,0 +1,24 @@
+# Description: DJVU plugin for zathura
+# URL:         https://pwmt.org/projects/zathura-djvu
+# Depends on:  djvulibre zathura
+
+name=zathura-djvu
+version=0.2.9
+release=2
+source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build \
+		--prefix=/usr      \
+		--sysconfdir=/etc  \
+		--buildtype=plain  \
+		--backend=ninja
+
+	cd build
+	ninja -v
+	DESTDIR=$PKG ninja install
+
+	find $PKG -perm /go+w -exec chmod go-w {} \;
+}

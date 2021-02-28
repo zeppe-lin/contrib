@@ -1,0 +1,20 @@
+# Description: Brute force attack against Wifi Protected Setup (WPS)
+# URL:         https://github.com/t6x/reaver-wps-fork-t6x
+# Depends on:  libpcap
+# Optional:    aircrack-ng pixiewps
+
+name=reaver-wps-t6x-scm
+version=$(date +%Y%m%d)
+release=1
+source=(git+https://github.com/t6x/reaver-wps-fork-t6x@master)
+
+build() {
+	cd reaver-wps-fork-t6x@master
+
+	cd src
+	./configure --prefix=/usr
+	make DESTDIR=$PKG install
+
+	cd ..
+	install -m 644 -D -t $PKG/usr/share/man/man1 docs/reaver.1
+}

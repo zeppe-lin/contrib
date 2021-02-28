@@ -1,0 +1,14 @@
+# Description: X11 keyboard layout index switcher
+# URL:         https://github.com/chinarulezzz-de/xkbswitch
+# Depends on:  xorg-libx11
+
+name=xkbswitch
+version=0.1
+release=1
+source=(https://github.com/chinarulezzz-de/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make PREFIX=/usr DESTDIR=$PKG install
+}

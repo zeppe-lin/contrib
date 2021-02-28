@@ -1,0 +1,20 @@
+# Description: Tools for CramFs (Compressed ROM File System)
+# URL:         https://github.com/npitre/cramfs-tools
+# Depends on:  zlib
+
+name=cramfs-tools
+version=2.1
+release=1
+source=(https://github.com/npitre/$name/archive/v$version/$name-v$version.tar.gz
+	fix-build-undefined-reference-to-major-and-minor-1.1.diff)
+
+build () {
+	cd $name-$version
+
+	patch -p1 -i $SRC/fix-build-undefined-reference-to-major-and-minor-1.1.diff
+
+	make CFLAGS="$CFLAGS -Wall -W"
+
+	install -d $PKG/usr/bin	
+	install -m755 {cramfsck,mkcramfs} $PKG/usr/bin/
+}

@@ -1,0 +1,28 @@
+# Description:  Secure, configuration-free, P2P Skype replacement backend
+# URL:          https://github.com/TokTok/c-toxcore
+# Depends on:   cmake libsodium
+# Optional:     libvpx opus
+
+name=toxcore
+version=0.2.12
+release=2
+source=(https://github.com/TokTok/c-$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd c-$name-$version
+
+	mkdir _build
+	cd _build
+
+	cmake \
+		-DCMAKE_INSTALL_PREFIX=/usr      \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib  \
+		-DBUILD_TOXAV=off                \
+		-DDHT_BOOTSTRAP=off              \
+		-DBOOTSTRAP_DAEMON=off           \
+		-DBUILD_AV_TEST=off              \
+		..
+
+	make VERBOSE=1
+	make DESTDIR=$PKG install
+}

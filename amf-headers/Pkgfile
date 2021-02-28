@@ -1,0 +1,12 @@
+# Description: Header files for AMD Advanced Media Framework
+# URL: https://github.com/GPUOpen-LibrariesAndSDKs/AMF/
+
+name=amf-headers
+version=1.4.18
+release=1
+source=(https://github.com/GPUOpen-LibrariesAndSDKs/AMF/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	install -dm 755 $PKG/usr/include
+	cp -dr --no-preserve=ownership AMF-$version/amf/public/include "${PKG}"/usr/include/AMF
+}

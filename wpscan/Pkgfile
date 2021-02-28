@@ -1,0 +1,47 @@
+# Description: Black box WordPress vulnerability scanner
+# URL:         https://wpscan.org
+# Depends on:  curl libxslt ruby
+
+name=wpscan
+version=3.8.14
+release=1
+source=(https://github.com/wpscanteam/$name/archive/v$version/$name-$version.tar.gz
+	$name.sh)
+
+build() {
+	cd $name-$version
+
+	sed -i '/bundler/ s|~>|>=|g' $name.gemspec
+	bundle config build.nokogiri --use-system-libraries
+	bundle config set --local path vendor/bundle
+	bundle config set --local without development test
+	bundle config set deployment 'false'
+	bundle config set no-cache 'true'
+	sed 's|git ls-files|find -type f|' -i $name.gemspec
+
+	CFLAGS+=" -I/usr/include/libxml2"
+
+	bundle install -j${JOBS}
+
+	# reproducible builds: don't leak jobs count
+	sed '/BUNDLE_JOBS/d' -i .bundle/config
+
+	install -d $PKG/opt/$name
+	cp -ra --no-preserve=owner . $PKG/opt/$name
+
+	install -Dm755 $SRC/$name.sh $PKG/opt/bin/$name
+
+	# remove junk
+	find $PKG \( \
+		-name gem_make.out -or \
+		-name mkmf.log     -or \
+		-name README*      -or \
+		-name README       -or \
+		-name ChangeLog.*  -or \
+		-name COPYING          \
+	\) -delete
+	rm -r $PKG/opt/wpscan/vendor/bundle/ruby/*/cache
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

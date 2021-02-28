@@ -1,0 +1,24 @@
+# Description: DNS Enum, Attack Surface Mapping and External Asset Discovery
+# URL:         https://github.com/OWASP/Amass
+# Depends on:  go git
+
+name=amass
+version=3.11.2
+release=1
+source=(https://github.com/OWASP/Amass/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd Amass-$version
+
+	export HOST_EXTRA_CFLAGS=$CFLAGS
+	export HOST_EXTRA_LDFLAGS=$LDFLAGS
+
+	mkdir bin
+	go build \
+		-trimpath \
+		-ldflags "-extldflags $LDFLAGS" \
+		-v -o bin/ ./cmd/...
+
+	install -Dm0755 bin/amass -t $PKG/usr/bin
+	install -Dm0755 examples/wordlists/*.txt -t $PKG/usr/share/amass/wordlists
+}

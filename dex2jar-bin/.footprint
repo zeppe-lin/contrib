@@ -1,0 +1,55 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/d2j-apk-sign -> /usr/share/dex2jar/d2j-apk-sign.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-asm-verify -> /usr/share/dex2jar/d2j-asm-verify.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-baksmali -> /usr/share/dex2jar/d2j-baksmali.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-class-version-switch -> /usr/share/dex2jar/d2j-class-version-switch.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-decrypt-string -> /usr/share/dex2jar/d2j-decrypt-string.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-dex-recompute-checksum -> /usr/share/dex2jar/d2j-dex-recompute-checksum.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-dex-weaver -> /usr/share/dex2jar/d2j-dex-weaver.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-dex2jar -> /usr/share/dex2jar/d2j-dex2jar.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-dex2smali -> /usr/share/dex2jar/d2j-dex2smali.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-jar-access -> /usr/share/dex2jar/d2j-jar-access.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-jar-weaver -> /usr/share/dex2jar/d2j-jar-weaver.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-jar2dex -> /usr/share/dex2jar/d2j-jar2dex.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-jar2jasmin -> /usr/share/dex2jar/d2j-jar2jasmin.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-jasmin2jar -> /usr/share/dex2jar/d2j-jasmin2jar.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-smali -> /usr/share/dex2jar/d2j-smali.sh
+lrwxrwxrwx	root/root	usr/bin/d2j-std-apk -> /usr/share/dex2jar/d2j-std-apk.sh
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/dex2jar/
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-apk-sign.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-asm-verify.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-baksmali.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-class-version-switch.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-decrypt-string.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-dex-recompute-checksum.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-dex-weaver.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-dex2jar.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-dex2smali.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-jar-access.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-jar-weaver.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-jar2dex.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-jar2jasmin.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-jasmin2jar.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-smali.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j-std-apk.sh
+-rwxr-xr-x	root/root	usr/share/dex2jar/d2j_invoke.sh
+drwxr-xr-x	root/root	usr/share/dex2jar/lib/
+-rw-r--r--	root/root	usr/share/dex2jar/lib/ST4-4.0.8.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/antlr-3.5.2.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/antlr-runtime-3.5.2.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/antlr4-4.5.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/antlr4-runtime-4.5.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/asm-debug-all-5.0.3.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/d2j-base-cmd-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/d2j-jasmin-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/d2j-smali-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-ir-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-reader-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-reader-api-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-tools-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-translator-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dex-writer-2.1-SNAPSHOT.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/dx-23.0.0.jar
+-rw-r--r--	root/root	usr/share/dex2jar/lib/org.abego.treelayout.core-1.0.1.jar
