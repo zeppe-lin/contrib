@@ -1,11 +1,11 @@
 # Description: Firefox binary
 # URL:         http://www.mozilla.com
-# Depends on:  gtk3 dbus-glib
+# Depends on:  dbus-glib gsettings-desktop-schemas gtk3
 
 name=firefox-bin
 version=85.0
 release=1
-source=(http://ftp.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2 \
+source=(http://ftp.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2
 	policies.json firefox.desktop)
 
 build() {
@@ -20,9 +20,9 @@ build() {
 
 	#We don't want these 'features'
 	rm -r $PKG/usr/lib/firefox/browser/features
+
 	# Disable autoupdate
 	mkdir $PKG/usr/lib/firefox/distribution
-
 	install -m644 $SRC/policies.json $PKG/usr/lib/firefox/distribution/
 
 	install -m644 -D $SRC/firefox.desktop $PKG/usr/share/applications/firefox.desktop
