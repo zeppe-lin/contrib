@@ -26,3 +26,5 @@ drwxr-xr-x	root/root	var/lib/
 drwx------	root/root	var/lib/tor/
 drwxr-xr-x	root/root	var/log/
 drwx------	root/root	var/log/tor/
+drwxr-xr-x	root/root	var/run/
+drwxr-xr-x	root/root	var/run/tor/
