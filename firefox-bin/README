@@ -8,7 +8,7 @@ RUN AS DIFFERENT USER
 
   Change the user's appearance:
     $ xhost +SI:localuser:firefox
-   $ sudo -u firefox -H lxappearance
+    $ sudo -u firefox -H lxappearance
 
   Use this wrapper as firefox launcher:
     #!/bin/sh
@@ -23,19 +23,20 @@ RUN AS DIFFERENT USER
     # End of file.
 
   Sudo without a password:
-    cat > /etc/sudoers.d/firefox <<EOF
+    $ cat > /etc/sudoers.d/firefox <<EOF
     user ALL=(firefox) NOPASSWD: /usr/bin/firefox
     EOF
 
    In case of using apulse:
-    cat > /etc/sudoers.d/firefox <<EOF
+    $ cat > /etc/sudoers.d/firefox <<EOF
     user ALL=(firefox) NOPASSWD: /usr/bin/apulse /usr/bin/firefox
     EOF
 
     # usermod -aG audio,video firefox
 
   Use the above wrapper as default firefox launcher:
-    sudo cp wrapper.sh /opt/bin/firefox
+    $ sudo cp wrapper.sh /opt/bin/firefox
+
   Export "/opt/bin" before "/usr/bin" in PATH variable, for example:
     export PATH="/bin:/sbin:/opt/bin:/opt/sbin:/usr/bin:/usr/sbin"
 
