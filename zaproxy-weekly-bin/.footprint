@@ -58,7 +58,7 @@ drwxr-xr-x	root/root	usr/share/zaproxy-weekly/plugin/
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/diff-beta-11.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/directorylistv1-release-5.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/domxss-beta-11.zap
--rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/encoder-beta-0.5.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/encoder-beta-0.6.0.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/formhandler-beta-4.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/fuzz-beta-13.2.0.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/gettingStarted-release-13.zap
@@ -128,6 +128,6 @@ drwxr-xr-x	root/root	usr/share/zaproxy-weekly/xml/
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.html.xsl
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.md.xsl
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/reportCompare.xsl
--rw-r--r--	root/root	usr/share/zaproxy-weekly/zap-D-2021-02-01.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/zap-D-2021-03-01.jar
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/zap.ico
 -rwxr-xr-x	root/root	usr/share/zaproxy-weekly/zap.sh
