@@ -23,14 +23,12 @@ build() {
   install -d $PKG/var/{named,run/named}
 
   install -D -m755 $SRC/named $PKG/etc/rc.d/named
-  install -D -m640 -gnamed $SRC/named.conf $PKG/etc/named.conf
-  install -m640 -gnamed $SRC/named.root $SRC/db.* $PKG/var/named/
+  install -D -m640 $SRC/named.conf $PKG/etc/named.conf
+  install -m640 $SRC/named.root $SRC/db.* $PKG/var/named/
 
-  chown root:named $PKG/var/named
   chmod 1770 $PKG/var/named
 
   touch $PKG/etc/rndc.{conf,key}
-  chown root:named $PKG/var/run/named $PKG/etc/rndc.{conf,key}
   chmod 770 $PKG/var/run/named
   chmod 640 $PKG/etc/rndc.{conf,key}
   touch $PKG/var/run/named/named.pid
@@ -42,6 +40,4 @@ build() {
   rm -rf $PKG/usr/share/man/man8/dnssec-{checkds,coverage}.8
 
   rm -rf $PKG/usr/share/man/man1
-
-  chown named:named $PKG/var/run/named/named.pid
 }

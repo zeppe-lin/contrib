@@ -11,4 +11,11 @@ then
   /usr/bin/passwd -l named
 fi
 
+/bin/chown root:named  /etc/named.conf
+/bin/chown root:named  /var/named
+/bin/chown root:named  /var/run/named
+/bin/chown root:named  /etc/rndc.conf
+/bin/chown root:named  /etc/rndc.key
+/bin/chown named:named /var/run/named/named.pid
+
 # End of file
