@@ -3,14 +3,15 @@
 # Depends on:
 
 name=sslscan
-version=2.0.6
+version=2.0.8
 release=1
-source=(https://github.com/rbsec/sslscan/archive/$version/$name-$version.tar.gz)
+source=(https://github.com/rbsec/$name/archive/$version/$name-$version.tar.gz)
 
 build() {
-  cd $name-$version
-  make
+	cd $name-$version
 
-  install -m 755 -d $PKG/usr/bin $PKG/usr/share/man/man1
-  make install DESTDIR=$PKG MANDIR=/usr/share/man
+	install -m 755 -d $PKG/usr/bin $PKG/usr/share/man/man1
+
+	make GIT_VERSION=$version
+	make install GIT_VERSION=$version DESTDIR=$PKG MANDIR=/usr/share/man
 }
