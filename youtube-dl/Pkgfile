@@ -3,7 +3,7 @@
 # Depends on:  python3-setuptools
 
 name=youtube-dl
-version=2021.01.24.1
+version=2021.03.03
 release=1
 source=(https://youtube-dl.org/downloads/$version/$name-$version.tar.gz)
 
@@ -14,5 +14,10 @@ build() {
 	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
 
 	mv $PKG/usr/etc $PKG/etc/
-	rm -r $PKG/etc/fish $PKG/usr/share/doc
+
+	# remove fish-completion
+	rm -r $PKG/etc/fish
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
 }
