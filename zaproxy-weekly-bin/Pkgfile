@@ -3,7 +3,7 @@
 # Depends on:  jdk8-bin
 
 name=zaproxy-weekly-bin
-version=2021-03-01
+version=2021-03-09
 release=1
 source=(https://github.com/zaproxy/zaproxy/releases/download/w$version/ZAP_WEEKLY_D-$version.zip
 	zaproxy-weekly.sh)
@@ -16,5 +16,5 @@ build() {
 	rm -rf zap.bat README plugin/Readme.txt license/ lang/
 	cp -pR . $PKG/usr/share/${name/-bin}
 
-	install -Dm755 $SRC/${name/-bin}.sh $PKG/usr/bin/${name/-bin}
+	install -m 755 -D $SRC/${name/-bin}.sh $PKG/usr/bin/${name/-bin}
 }
