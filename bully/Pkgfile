@@ -1,6 +1,6 @@
 # Description: WPS brute force attack tool, similar to reaver
 # URL:         https://github.com/aanarchy/bully
-# Depends on:  #aircrack-ng pixiewps
+# Depends on:  aircrack-ng-scm pixiewps
 
 name=bully
 version=1.1.3ab3bc8
