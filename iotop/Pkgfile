@@ -1,19 +1,14 @@
-# Description: top like program to display I/O load.
-# URL: http://guichaz.free.fr/iotop/
-# Depends on: python3
+# Description: Top like program to display I/O load
+# URL:         https://github.com/Tomas-M/iotop
 
 name=iotop
-version=0.6
-release=2
-source=(http://guichaz.free.fr/$name/files/$name-$version.tar.bz2 \
-	0001-Make-setp.py-compatible-with-python3.patch)
+version=1.17
+release=1
+source=(https://github.com/Tomas-M/$name/releases/download/v$version/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	chmod ag+r iotop.8
-	patch -p1 -i $SRC/0001-Make-setp.py-compatible-with-python3.patch
-
-	/usr/bin/python3 setup.py install --root=$PKG --prefix=/usr
-	rm -r $PKG/usr/lib/python*/site-packages/iotop-*.egg-info
+	make V=1
+	make DESTDIR=$PKG install
 }
