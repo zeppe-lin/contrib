@@ -1,6 +1,6 @@
 # Description: Wireless RogueAP MITM Phishing attack framework
 # URL:         https://github.com/chinarulezzz/captal
-# Depends on:  lighttpd aircrack-ng p5-net-dns hostapd dhcp php-cgi
+# Depends on:  lighttpd aircrack-ng-scm p5-net-dns hostapd dhcp php-cgi
 
 name=captal
 version=0.3
