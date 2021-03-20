@@ -9,7 +9,6 @@ NOTES
   enchant:         Spell check
   iso-codes:       Display language names instead of codes
   lua:             Lua scripting plugin
-  libcanberra:     Support for sound alerts
   libnotify:       Support for freedesktop notifications
   libproxy:        Support for getting proxy information
   pciutils:        System information plugin
