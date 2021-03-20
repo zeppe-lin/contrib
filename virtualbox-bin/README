@@ -1,9 +1,11 @@
 README for virtualbox-bin
 
+
 PRECAUTION
 
-    If you have any machines in a saved state it is recommeneded that
-    you shut them down before updating this port.
+    If you have any machines in a saved state it is recommended that
+    you shut them down before updating this package.
+
 
 NOTE
 
@@ -13,3 +15,15 @@ NOTE
     if [ -f /sbin/rcvboxdrv ]; then
         rcvboxdrv start
     fi
+
+VBOXSDL
+
+    VBoxSDL is a simple graphical user interface (GUI) that lacks
+    the nice point-and-click support which VirtualBox (main GUI),
+    provides. VBoxSDL is currently primarily used internally for
+    debugging VirtualBox and therefore not officially supported.
+
+    If you want to use VBoxSDL, install `libsdl'.
+
+
+End of file.

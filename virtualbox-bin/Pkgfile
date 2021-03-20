@@ -1,6 +1,7 @@
 # Description: Virtualisation software for x86 hardware (binary version, non-GPL)
 # URL:         http://www.virtualbox.org
 # Depends on:  libidl libxslt xorg-libxcursor xorg-libxinerama
+# Optional:    libsdl
 
 name=virtualbox-bin
 version=6.1.18
