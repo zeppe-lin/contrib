@@ -1,6 +1,6 @@
 # Description: GTK+ based IRC client
 # URL:         https://hexchat.github.io
-# Depends on:  dbus-glib desktop-file-utils enchant iso-codes libnotify libproxy libtool lua pciutils python
+# Depends on:  dbus-glib desktop-file-utils iso-codes libnotify libproxy libtool lua pciutils python
 
 name=hexchat
 version=2.14.3
