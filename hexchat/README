@@ -7,7 +7,6 @@ NOTES
 
   dbus-glib:       Used for single-instance and scripting interface
   enchant:         Spell check
-  iso-codes:       Display language names instead of codes
   lua:             Lua scripting plugin
   libnotify:       Support for freedesktop notifications
   libproxy:        Support for getting proxy information
