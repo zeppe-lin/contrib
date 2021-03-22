@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/usr/bin/getent group  nogroup || /usr/sbin/groupadd --system nogroup
+/usr/bin/getent passwd nogroup || {
+	/usr/sbin/useradd -r -g nobody -M -s /bin/false nobody
+	/usr/bin/passwd -l nobody
+}
+
+# End of file.
