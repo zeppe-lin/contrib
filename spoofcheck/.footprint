@@ -46,10 +46,10 @@ drwxr-xr-x	root/root	opt/spoofcheck/chardet/__pycache__/
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/jisfreq.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/jpcntx.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langbulgarianmodel.cpython-39.pyc
--rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langcyrillicmodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langgreekmodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langhebrewmodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langhungarianmodel.cpython-39.pyc
+-rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langrussianmodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langthaimodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/langturkishmodel.cpython-39.pyc
 -rw-r--r--	root/root	opt/spoofcheck/chardet/__pycache__/latin1prober.cpython-39.pyc
@@ -90,16 +90,22 @@ drwxr-xr-x	root/root	opt/spoofcheck/chardet/cli/__pycache__/
 -rw-r--r--	root/root	opt/spoofcheck/chardet/jisfreq.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/jpcntx.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langbulgarianmodel.py
--rw-r--r--	root/root	opt/spoofcheck/chardet/langcyrillicmodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langgreekmodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langhebrewmodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langhungarianmodel.py
+-rw-r--r--	root/root	opt/spoofcheck/chardet/langrussianmodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langthaimodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/langturkishmodel.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/latin1prober.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/mbcharsetprober.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/mbcsgroupprober.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/mbcssm.py
+drwxr-xr-x	root/root	opt/spoofcheck/chardet/metadata/
+-rw-r--r--	root/root	opt/spoofcheck/chardet/metadata/__init__.py (EMPTY)
+drwxr-xr-x	root/root	opt/spoofcheck/chardet/metadata/__pycache__/
+-rw-r--r--	root/root	opt/spoofcheck/chardet/metadata/__pycache__/__init__.cpython-39.pyc
+-rw-r--r--	root/root	opt/spoofcheck/chardet/metadata/__pycache__/languages.cpython-39.pyc
+-rw-r--r--	root/root	opt/spoofcheck/chardet/metadata/languages.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/sbcharsetprober.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/sbcsgroupprober.py
 -rw-r--r--	root/root	opt/spoofcheck/chardet/sjisprober.py
