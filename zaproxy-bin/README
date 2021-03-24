@@ -1,0 +1,61 @@
+README for zaproxy-bin
+
+
+LOOK AND FEEL
+
+  Add the following lines into ~/.bash_profile:
+
+    xprop -root -f _NET_WM_NAME 32a -set _NET_WM_NAME LG3D
+
+    export DESKTOP_SESSION=gnome
+    export AWT_TOOLKIT=MToolkit
+    export _JAVA_AWT_WM_NONREPARENTING=1
+
+  And, in case if you have terminus-like fonts system-wide,
+  add this line (disabled antialiasing mode):
+
+    export _JAVA_OPTIONS="\
+    -Dawt.useSystemAAFontSettings=off \
+    -Dswing.aatext=false \
+    -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
+    -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+  Otherwise, add this (enabled antialiasing mode):
+
+    export _JAVA_OPTIONS="\
+    -Dawt.useSystemAAFontSettings=on \
+    -Dswing.aatext=true \
+    -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
+    -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+
+DIFFERENT USER
+
+  Add the user:
+    # useradd -U -m zaproxy
+
+  Change the user's appearance:
+    $ xhost +SI:localuser:zaproxy
+    $ sudo -u zaproxy -H lxappearance
+
+  Use this wrapper as zaproxy launcher:
+    #!/bin/sh
+    xhost +SI:localuser:zaproxy
+    sudo -u zaproxy -H /usr/bin/zaproxy-weekly
+    # End of file.
+
+  Sudo without a password:
+    # cat > /etc/sudoers.d/zaproxy <<EOF
+    user ALL=(zaproxy) NOPASSWD: /usr/bin/zaproxy-weekly
+    EOF
+
+    # usermod -aG audio,video zaproxy
+
+  Add settings from <LOOK AND FEEL> section to .bash_profile:
+    $ sudo -u zaproxy vim ~/.bash_profile
+
+  Also, if you run firefox as different user and have 
+  the launcher in /opt/bin, add correct PATH to .bash_profile:
+    export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin"
+
+End of file.
