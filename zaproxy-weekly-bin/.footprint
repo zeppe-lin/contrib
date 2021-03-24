@@ -77,7 +77,7 @@ drwxr-xr-x	root/root	usr/share/zaproxy-weekly/plugin/
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/pscanrulesBeta-beta-25.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/quickstart-release-30.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/replacer-beta-9.zap
--rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/reports-alpha-0.1.0.zap
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/reports-alpha-0.2.0.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/retire-release-0.7.0.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/reveal-release-4.zap
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/plugin/saverawmessage-release-6.zap
@@ -130,6 +130,6 @@ drwxr-xr-x	root/root	usr/share/zaproxy-weekly/xml/
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.html.xsl
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/report.md.xsl
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/xml/reportCompare.xsl
--rw-r--r--	root/root	usr/share/zaproxy-weekly/zap-D-2021-03-16.jar
+-rw-r--r--	root/root	usr/share/zaproxy-weekly/zap-D-2021-03-22.jar
 -rw-r--r--	root/root	usr/share/zaproxy-weekly/zap.ico
 -rwxr-xr-x	root/root	usr/share/zaproxy-weekly/zap.sh
