@@ -3,7 +3,7 @@
 # Depends on:  go git
 
 name=amass
-version=3.11.2
+version=3.11.11
 release=1
 source=(https://github.com/OWASP/Amass/archive/v$version/$name-$version.tar.gz)
 
@@ -13,12 +13,12 @@ build() {
 	export HOST_EXTRA_CFLAGS=$CFLAGS
 	export HOST_EXTRA_LDFLAGS=$LDFLAGS
 
-	mkdir bin
 	go build \
 		-trimpath \
 		-ldflags "-extldflags $LDFLAGS" \
-		-v -o bin/ ./cmd/...
+		-v -o . ./cmd/...
 
-	install -Dm0755 bin/amass -t $PKG/usr/bin
-	install -Dm0755 examples/wordlists/*.txt -t $PKG/usr/share/amass/wordlists
+	install -m 0755 -D -t $PKG/usr/bin amass
+	install -m 0755 -D -t $PKG/usr/share/amass/wordlists \
+		examples/wordlists/*.txt
 }
