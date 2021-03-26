@@ -3,7 +3,7 @@
 # Depends on:  libpcre python3-pygments docbook-xsl
 
 name=cppcheck
-version=2.3
+version=2.4.1
 release=1
 source=(https://github.com/danmar/$name/archive/$version/$name-$version.tar.gz)
 
@@ -13,11 +13,11 @@ build() {
 	sed -i -e 's,python,python3,' htmlreport/cppcheck-htmlreport
 
 	make install \
-		HAVE_RULES=yes	\
-		MATCHCOMPILER=yes	\
-		FILESDIR=/usr/share/cppcheck	\
-		DESTDIR=$PKG
+		HAVE_RULES=yes                \
+		MATCHCOMPILER=yes             \
+		FILESDIR=/usr/share/cppcheck  \
+		DESTDIR=$PKG                  \
 
 	make man DB2MAN=/usr/share/xml/docbook/xsl-stylesheets/manpages/docbook.xsl
-	install -Dm 0644 $name.1 $PKG/usr/share/man/man1/$name.1
+	install -m 0644 -D $name.1 $PKG/usr/share/man/man1/$name.1
 }
