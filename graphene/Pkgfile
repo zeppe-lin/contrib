@@ -3,7 +3,7 @@
 # Depends on:  gobject-introspection
 
 name=graphene
-version=1.10.2
+version=1.10.4
 release=1
 source=(https://github.com/ebassi/$name/releases/download/$version/$name-$version.tar.xz)
 
