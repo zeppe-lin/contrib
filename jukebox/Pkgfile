@@ -1,6 +1,6 @@
 # Description: Customizable open-source jukebox for large collections
 # URL:         https://github.com/chinarulezzz-de/jukebox
-# Depends on:  p5-gstreamer1 p5-gtk2-notify
+# Depends on:  p5-glib-object-introspection p5-gtk2-notify
 
 name=jukebox
 version=1.1.15.10
