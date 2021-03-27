@@ -1,17 +1,16 @@
-# Description: Library to handle keyboard descriptions
+# Description: Handle keyboard descriptions
 # URL:         https://xkbcommon.org
 # Depends on:  xkeyboard-config
 
 name=libxkbcommon
-version=0.10.0
+version=1.1.0
 release=1
 source=(https://github.com/xkbcommon/$name/archive/xkbcommon-$version.tar.gz)
 
 build() {
-	cd libxkbcommon-xkbcommon-$version
-
-	meson build \
+	meson build libxkbcommon-xkbcommon-$version \
 		--prefix=/usr          \
+		--libexecdir=/usr/lib  \
 		-Denable-wayland=false \
 		-Denable-docs=false    \
 
