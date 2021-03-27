@@ -1,5 +1,5 @@
 # Description: Provides useful functions found on BSD systems
-# URL:         https://libbsd.freedesktop.org/
+# URL:         https://libbsd.freedesktop.org
 
 name=libbsd
 version=0.10.0
@@ -8,7 +8,9 @@ source=(https://libbsd.freedesktop.org/releases/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
+
 	./configure --prefix=/usr
-	make
+
+	make V=1
 	make install DESTDIR=$PKG
 }
