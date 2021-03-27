@@ -3,7 +3,7 @@
 # Depends on:  xz libtiff
 
 name=lcms2
-version=2.11
+version=2.12
 release=1
 source=(http://downloads.sourceforge.net/project/lcms/lcms/$version/$name-$version.tar.gz)
 
@@ -12,6 +12,6 @@ build() {
 
 	./configure --prefix=/usr
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }
