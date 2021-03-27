@@ -1,7 +1,6 @@
 # Description: Collection of tools, libraries and tests for shader compilation
 # URL:         https://github.com/google/shaderc
 # Depends on:  glslang
-# Optional:    asciidoctor
 
 name=shaderc
 version=2020.3
@@ -38,20 +37,9 @@ EOF
 		-D SHADERC_SKIP_TESTS=ON \
 		-Wno-dev
 
-	cmake --build build -j ${JOBS:-1}
-
+	cmake --build build -j ${JOBS:-1} -v
 	DESTDIR=$PKG cmake --install build
 
-	if [ -e '/usr/bin/asciidoctor' ]; then
-		cd ../glslc
-		asciidoctor -b manpage README.asciidoc -o glslc.1
-		install -D -m 0644 -t $PKG/usr/share/man/man1 glslc.1
-
-		cd ../spvc
-		asciidoctor -b manpage README.asciidoc -o spvc.1
-		install -D -m 0644 -t $PKG/usr/share/man/man1 spvc.1
-	else
-		install -D -m 0644 -t $PKG/usr/share/man/man1 $SRC/glslc.1
-		install -D -m 0644 -t $PKG/usr/share/man/man1 $SRC/spvc.1
-	fi
+	install -m 0644 -D -t $PKG/usr/share/man/man1 $SRC/glslc.1
+	install -m 0644 -D -t $PKG/usr/share/man/man1 $SRC/spvc.1
 }
