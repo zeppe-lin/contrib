@@ -1,15 +1,12 @@
-# Description: Qt Free Edition, version 5.x.
-# URL: http://www.qt.io/
-# Depends on: dbus gdk-pixbuf gst-plugins-base libepoxy libmng libxkbcommon xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama xorg-xcb-util-image xorg-xcb-util-keysyms xorg-xcb-util-wm xorg-xcb-util-renderutil
-# Optional: icu
+# Description: Qt Free Edition, version 5.x
+# URL:         http://www.qt.io/
+# Depends on:  dbus gdk-pixbuf libepoxy libmng libxkbcommon xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama xorg-xcb-util-image xorg-xcb-util-keysyms xorg-xcb-util-wm xorg-xcb-util-renderutil
 
 name=qt5
 version=5.15.2
 release=1
 source=(https://download.qt.io/official_releases/qt/${version::4}/$version/single/qt-everywhere-src-$version.tar.xz
-	qt5-cflags.patch
-	fix-sqlite-plugin-compile-failure.diff
-	qt5-logo.png)
+	qt5-cflags.patch qt5-logo.png)
 
 build() {
 	cd qt-everywhere-src-$version
@@ -62,7 +59,7 @@ build() {
 		-skip qtwebengine \
 		-silent
 
-	make
+	make V=1
 	make -j1 INSTALL_ROOT=$PKG install
 
 	# Fix paths
