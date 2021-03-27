@@ -3,13 +3,15 @@
 # Depends on:  alsa-lib
 
 name=mpg123
-version=1.26.4
+version=1.26.5
 release=1
 source=(https://www.mpg123.de/download/$name-$version.tar.bz2)
 
 build() {
-    cd $name-$version
-    ./configure --prefix=/usr
-    make
-    make DESTDIR=$PKG install
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
 }
