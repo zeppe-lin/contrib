@@ -21,7 +21,7 @@ build() {
 	install -Dm644 documentation/nikto.1       $PKG/usr/share/man/man1/nikto.1
 
 	rm $PKG/usr/share/nikto/nikto.conf.default
-	rm $PKG/usr/share/nikto/docs/{CHANGES.txt,manual.xml,nikto.1}
+	rm $PKG/usr/share/nikto/docs/nikto.1
 
 	sed -i 's|"$NIKTODIR/nikto.conf.default"|"/usr/etc/nikto.conf"|g' \
 		$PKG/usr/share/nikto/nikto.pl
