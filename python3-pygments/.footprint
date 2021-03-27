@@ -4,13 +4,13 @@ drwxr-xr-x	root/root	usr/bin/
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/python3.9/
 drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/
-drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/PKG-INFO
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/SOURCES.txt
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/dependency_links.txt
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/entry_points.txt
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/not-zip-safe
--rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.7.4-py3.9.egg-info/top_level.txt
+drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/PKG-INFO
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/SOURCES.txt
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/dependency_links.txt
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/entry_points.txt
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/not-zip-safe
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/Pygments-2.8.1-py3.9.egg-info/top_level.txt
 drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/__init__.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/__main__.py
@@ -148,6 +148,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/algebra.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/ambient.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/ambient.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/amdgpu.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/amdgpu.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/ampl.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/ampl.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/apl.cpython-39.opt-1.pyc
@@ -176,6 +178,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/c_like.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/capnproto.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/capnproto.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/cddl.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/cddl.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/chapel.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/chapel.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/clean.cpython-39.opt-1.pyc
@@ -240,6 +244,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/freefem.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/functional.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/functional.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/futhark.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/futhark.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/gdscript.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/gdscript.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/go.cpython-39.opt-1.pyc
@@ -250,6 +256,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/graph.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/graphics.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/graphics.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/graphviz.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/graphviz.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/haskell.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/haskell.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__/haxe.cpython-39.opt-1.pyc
@@ -466,6 +474,7 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/agile.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/algebra.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/ambient.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/amdgpu.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/ampl.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/apl.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/archetype.py
@@ -480,6 +489,7 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/c_cpp.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/c_like.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/capnproto.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/cddl.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/chapel.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/clean.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/compiled.py
@@ -512,11 +522,13 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/lexers/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/foxpro.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/freefem.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/functional.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/futhark.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/gdscript.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/go.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/grammar_notation.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/graph.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/graphics.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/graphviz.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/haskell.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/haxe.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/lexers/hdl.py
@@ -656,6 +668,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/lovelace.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/manni.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/manni.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/material.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/material.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/monokai.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/monokai.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/murphy.cpython-39.opt-1.pyc
@@ -692,6 +706,8 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/vs.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/xcode.cpython-39.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/xcode.cpython-39.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/zenburn.cpython-39.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__/zenburn.cpython-39.pyc
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/abap.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/algol.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/algol_nu.py
@@ -708,6 +724,7 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/inkpot.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/lovelace.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/manni.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/material.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/monokai.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/murphy.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/native.py
@@ -726,6 +743,7 @@ drwxr-xr-x	root/root	usr/lib/python3.9/site-packages/pygments/styles/__pycache__
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/vim.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/vs.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/xcode.py
+-rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/styles/zenburn.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/token.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/unistring.py
 -rw-r--r--	root/root	usr/lib/python3.9/site-packages/pygments/util.py
