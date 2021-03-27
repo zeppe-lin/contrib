@@ -3,7 +3,7 @@
 # Depends on:  libcap libevent libseccomp
 
 name=tor
-version=0.4.4.6
+version=0.4.4.8
 release=1
 source=(https://www.torproject.org/dist/$name-$version.tar.gz
 	torrc tor.rc)
