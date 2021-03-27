@@ -1,6 +1,6 @@
-# Description: Internationalized Domain Names in Applications (IDNA).
-# URL: https://github.com/kjd/idna
-# Depends on: python3-setuptools
+# Description: Internationalized Domain Names in Applications (IDNA)
+# URL:         https://github.com/kjd/idna
+# Depends on:  python3-setuptools
 
 ## don't bump this to 3.x until "python3-requests idna<3,>=2.5" gets updated
 name=python3-idna
@@ -10,6 +10,7 @@ source=(https://files.pythonhosted.org/packages/source/${name:8:1}/${name#*-}/${
 
 build() {
 	cd ${name#*-}-$version
+
 	/usr/bin/python3 setup.py build
 	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
 }
