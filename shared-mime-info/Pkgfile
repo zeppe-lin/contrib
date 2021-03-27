@@ -1,6 +1,6 @@
-# Description: core database of common types
-# URL: http://freedesktop.org/Software/shared-mime-info
-# Depends on: glib libxml2 intltool
+# Description: Core database of common types
+# URL:         http://freedesktop.org/Software/shared-mime-info
+# Depends on:  glib libxml2 intltool
 
 name=shared-mime-info
 version=1.10
