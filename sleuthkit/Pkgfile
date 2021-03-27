@@ -3,7 +3,7 @@
 # Depends on:  libewf-legacy perl sqlite3
 
 name=sleuthkit
-version=4.10.1
+version=4.10.2
 release=1
 source=(https://github.com/$name/$name/releases/download/$name-$version/$name-$version.tar.gz)
 
@@ -14,6 +14,6 @@ build() {
 	automake
 	./configure --prefix=/usr
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }

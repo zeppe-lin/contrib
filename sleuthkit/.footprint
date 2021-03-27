@@ -86,9 +86,9 @@ drwxr-xr-x	root/root	usr/include/tsk/vs/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libtsk.a
 -rwxr-xr-x	root/root	usr/lib/libtsk.la
-lrwxrwxrwx	root/root	usr/lib/libtsk.so -> libtsk.so.19.1.3
-lrwxrwxrwx	root/root	usr/lib/libtsk.so.19 -> libtsk.so.19.1.3
--rwxr-xr-x	root/root	usr/lib/libtsk.so.19.1.3
+lrwxrwxrwx	root/root	usr/lib/libtsk.so -> libtsk.so.19.1.5
+lrwxrwxrwx	root/root	usr/lib/libtsk.so.19 -> libtsk.so.19.1.5
+-rwxr-xr-x	root/root	usr/lib/libtsk.so.19.1.5
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
