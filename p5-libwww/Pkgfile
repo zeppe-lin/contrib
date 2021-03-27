@@ -1,14 +1,15 @@
-# Description: The World-Wide Web library for Perl.
-# URL: https://metacpan.org/release/libwww-perl
-# Depends on: p5-html-parser p5-uri
+# Description: World-Wide Web library for Perl
+# URL:         https://metacpan.org/release/libwww-perl
+# Depends on:  p5-html-parser p5-uri
 
 name=p5-libwww
-version=6.52
+version=6.53
 release=1
 source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-$version.tar.gz)
 
 build() {
 	cd libwww-perl-$version
+
 	perl Makefile.PL --aliases INSTALLDIRS=vendor
 	make
 	make DESTDIR=$PKG install
