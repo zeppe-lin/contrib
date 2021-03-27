@@ -1,8 +1,8 @@
 # Description: Perl Uniform Resource Identifiers Library.
-# URL: https://metacpan.org/release/URI
+# URL:         https://metacpan.org/release/URI
 
 name=p5-uri
-version=1.76
+version=5.09
 release=1
 source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-$version.tar.gz)
 
@@ -10,6 +10,7 @@ build() {
 	cd URI-$version
 
 	perl Makefile.PL INSTALLDIRS=vendor
+
 	make
 	make install DESTDIR=$PKG
 
