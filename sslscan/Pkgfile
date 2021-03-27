@@ -1,9 +1,8 @@
-# Description: test SSL/TLS enabled services to discover supported cipher suites
-# URL: https://github.com/rbsec/sslscan
-# Depends on:
+# Description: Test SSL/TLS enabled services to discover supported cipher suites
+# URL:         https://github.com/rbsec/sslscan
 
 name=sslscan
-version=2.0.8
+version=2.0.9
 release=1
 source=(https://github.com/rbsec/$name/archive/$version/$name-$version.tar.gz)
 
