@@ -1,6 +1,6 @@
 # Description: RSS/Atom feed reader for text terminals
-# URL:         http://www.newsboat.org/
-# Depends on:  json-c libidn2 libxml2 rtmpdump sqlite3 stfl zstd
+# URL:         http://www.newsboat.org
+# Depends on:  json-c libidn2 libxml2 sqlite3 stfl zstd
 
 name=newsboat
 version=2.13
