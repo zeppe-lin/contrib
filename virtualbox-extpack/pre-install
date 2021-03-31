@@ -1,2 +1,0 @@
-#!/bin/sh
-/opt/bin/VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
