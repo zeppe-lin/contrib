@@ -1,29 +1,48 @@
 # Description: Fast CPU emulator and virtualizer for the x86 platform
 # URL:         https://www.qemu.org/
-# Depends on:  libusb linux-pam util-linux glib libsdl2 xorg-libpixman libxkbcommon
- 
+# Depends on:  gtk3 libusb libxkbcommon linux-pam
+
 name=qemu
 version=5.2.0
 release=1
 source=(https://download.qemu.org/$name-$version.tar.xz
-	$name-man-$version.tar.xz)
+	$name-man-$version.tar.xz
+	qemu-5.2.0-cleaner-werror.patch
+	qemu-5.2.0-disable-keymap.patch
+	qemu-5.2.0-fix-firmware-path.patch
+	qemu-5.2.0-no-pie-ld.patch
+	qemu-5.2.0-strings.patch
+	qemu-9999-fix-firmware-path.patch)
 
 build() {
 	cd $name-$version
 
+	patch -p1 -i $SRC/qemu-5.2.0-cleaner-werror.patch
+	#patch -p1 -i $SRC/qemu-5.2.0-disable-keymap.patch
+	patch -p1 -i $SRC/qemu-5.2.0-fix-firmware-path.patch
+	patch -p1 -i $SRC/qemu-5.2.0-no-pie-ld.patch
+	patch -p1 -i $SRC/qemu-5.2.0-strings.patch
+	#patch -p1 -i $SRC/qemu-9999-fix-firmware-path.patch
+
+	# fix include issues with libcap
+	sed -i  -e '/#include "qemu\/xattr.h"/d' \
+		-e 's|#include <sys/resource.h>|#include <sys/resource.h>\r\n#include "qemu\/xattr.h"|g' \
+		fsdev/virtfs-proxy-helper.c
+
+	OPTS="--enable-gtk --disable-sdl --disable-sdl-image"
 	./configure \
-		--prefix=/usr \
-		--cc="${CC:=gcc}" \
-		--host-cc="${CC:=gcc}" \
-		--sysconfdir=/etc \
-		--disable-docs \
-		--libexecdir=/usr/lib/qemu \
-		--disable-gtk \
-		--localstatedir=/var \
-		--python=/usr/bin/python3 \
+		--prefix=/usr               \
+		--sysconfdir=/etc           \
+		--libexecdir=/usr/lib/qemu  \
+		--localstatedir=/var        \
+		--disable-docs              \
+		--disable-sdl               \
+		--disable-sdl-image         \
+		--enable-gtk                \
+		--python=/usr/bin/python3   \
 		--target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu
 
-	make
+	make V=1 ${MAKEFLAGS:=}
 	make DESTDIR=$PKG install
 
 	cp -r $SRC/man $PKG/usr/share
@@ -31,5 +50,4 @@ build() {
 	install -d $PKG/etc/udev/rules.d/
 	echo 'KERNEL=="kvm", NAME="kvm", OWNER="root", GROUP="kvm", MODE="0660"' > \
 		$PKG/etc/udev/rules.d/60-kvm.rules
-
 }
