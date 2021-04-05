@@ -3,7 +3,7 @@
 # Depends on:  jdk8-bin
 
 name=zaproxy-weekly-bin
-version=2021-03-22
+version=2021-03-29
 release=1
 source=(https://github.com/zaproxy/zaproxy/releases/download/w$version/ZAP_WEEKLY_D-$version.zip
 	zaproxy-weekly.sh)
