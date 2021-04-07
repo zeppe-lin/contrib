@@ -20,5 +20,4 @@ drwxr-xr-x	root/root	opt/bin/
 -rwxr-xr-x	root/root	opt/bin/urgentize
 -rwxr-xr-x	root/root	opt/bin/wtf
 -rwxr-xr-x	root/root	opt/bin/xlogout
--rwxr-xr-x	root/root	opt/bin/xtermLESS
 -rwxr-xr-x	root/root	opt/bin/zaproxy-weekly

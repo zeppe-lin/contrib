@@ -1,5 +1,6 @@
 # Description: dwm environment scripts
 # URL:         https://github.com/chinarulezzz-de/dwm-env
+# Depends on:  xorg-xwininfo xorg-xhost xdotool imagemagick slock xkbswitch xautolock
 
 name=dwm-env-scm
 version=$(date +%Y%m%d)
