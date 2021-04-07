@@ -1,6 +1,6 @@
 # Description: CLI Tox client
 # URL:         https://github.com/JFreegman/toxic
-# Depends on:  libconfig libidn2 libnotify toxcore zstd
+# Depends on:  libconfig libidn2 toxcore zstd
 # Optional:    libnotify qrencode openal freealut python3 asciidoc
 
 name=toxic
@@ -18,7 +18,14 @@ build() {
 	sed -i -e 's,@$(CC) ,$(CC) ,g' Makefile
 
 	export USER_CFLAGS="$CFLAGS"
-	export USER_LDFLAGS="$LDFLAGS"
+	export USER_LDFLAGS="$LDFLAGS -pthread"
+
+	# disable QR stuff
+	export DISABLE_QRCODE=1
+	export DISABLE_QRPNG=1
+
+	# disable dbus and co
+	export DISABLE_DESKTOP_NOTIFY=1
 
 	# disable sound
 	export DISABLE_AV=1
