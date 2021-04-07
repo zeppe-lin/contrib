@@ -1,7 +1,6 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/cppcheck
--rwxr-xr-x	root/root	usr/bin/cppcheck-htmlreport
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/cppcheck/
 drwxr-xr-x	root/root	usr/share/cppcheck/addons/
@@ -79,6 +78,3 @@ drwxr-xr-x	root/root	usr/share/cppcheck/platforms/
 -rw-r--r--	root/root	usr/share/cppcheck/platforms/pic8.xml
 -rw-r--r--	root/root	usr/share/cppcheck/platforms/unix32-unsigned.xml
 -rw-r--r--	root/root	usr/share/cppcheck/platforms/unix64-unsigned.xml
-drwxr-xr-x	root/root	usr/share/man/
-drwxr-xr-x	root/root	usr/share/man/man1/
--rw-r--r--	root/root	usr/share/man/man1/cppcheck.1.gz
