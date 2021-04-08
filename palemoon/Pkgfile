@@ -1,0 +1,35 @@
+# Description: Web browser based on Firefox
+# URL:         https://www.palemoon.org
+# Depends on:  alsa-lib autoconf-2.13 desktop-file-utils xorg-libxt zip
+
+name=palemoon
+version=29.1.0
+_upxrel=20210302
+release=1
+
+source=(https://repo.palemoon.org/MoonchildProductions/Pale-Moon/archive/${version}_Release.tar.gz
+	https://repo.palemoon.org/MoonchildProductions/UXP/archive/RELBASE_${_upxrel}.tar.gz
+	mozconfig.in)
+
+build() {
+	(cd uxp; cp -R . $SRC/pale-moon/platform/); cd pale-moon
+
+	sed \
+		-e "s#%SRCDIR%#$SRC#g"      \
+		-e "s#%NAME%#$name#g"       \
+		-e "s#%VERSION%#$version#g" \
+		$SRC/mozconfig.in > mozconfig
+
+	export MOZBUILD_STATE_PATH=$SRC/mozbuild
+	export MOZCONFIG=$SRC/pale-moon/mozconfig
+	export MOZ_MAKE_FLAGS="$MAKEFLAGS"
+	export CPPFLAGS="$CPPFLAGS -Wno-format-overflow"
+	
+	./mach build
+	DESTDIR=$PKG ./mach install
+
+	# we don't need these (just symlink anyway)
+	rm -rf $PKG/usr/lib/$name-devel-$version
+	# avoid duplicate binaries
+	rm -f $PKG/usr/lib/$name-$version/$name-bin
+}
