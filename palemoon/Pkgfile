@@ -1,6 +1,6 @@
 # Description: Web browser based on Firefox
 # URL:         https://www.palemoon.org
-# Depends on:  alsa-lib autoconf-2.13 desktop-file-utils xorg-libxt zip
+# Depends on:  alsa-lib autoconf-2.13 desktop-file-utils gtk xorg-libxdamage xorg-libxt zip
 
 name=palemoon
 version=29.1.0
