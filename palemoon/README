@@ -1,7 +1,8 @@
-README for palemoon
+-=[ README for palemoon ]=-
 
 
 RUN AS DIFFERENT USER
+=====================
 
   Add new user and change default gtk theme:
     # useradd -G video,audio -U -m palemoon
