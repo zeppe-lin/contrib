@@ -1,12 +1,12 @@
-README for zaproxy-weekly-bin
+-=[ README for zaproxy-weekly-bin ]=-
 
 
 LOOK AND FEEL
+=============
 
   Add the following lines into ~/.bash_profile:
 
     xprop -root -f _NET_WM_NAME 32a -set _NET_WM_NAME LG3D
-
     export DESKTOP_SESSION=gnome
     export AWT_TOOLKIT=MToolkit
     export _JAVA_AWT_WM_NONREPARENTING=1
@@ -29,33 +29,50 @@ LOOK AND FEEL
     -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 
-DIFFERENT USER
+RUN AS DIFFERENT USER
+=====================
 
-  Add the user:
-    # useradd -U -m zaproxy
-
-  Change the user's appearance:
+  Add new user and change default gtk theme:
+    # useradd -G video,video -U -m zaproxy
     $ xhost +SI:localuser:zaproxy
     $ sudo -u zaproxy -H lxappearance
 
-  Use this wrapper as zaproxy launcher:
+  Use a wrapper as zaproxy launcher:
     #!/bin/sh
     xhost +SI:localuser:zaproxy
     sudo -u zaproxy -H /usr/bin/zaproxy-weekly
-    # End of file.
 
-  Sudo without a password:
-    # cat > /etc/sudoers.d/zaproxy <<EOF
+  To run this wrapper without asking the password, add
     user ALL=(zaproxy) NOPASSWD: /usr/bin/zaproxy-weekly
-    EOF
+  into /etc/sudoers.d/99_zaproxy
 
-    # usermod -aG audio,video zaproxy
 
-  Add settings from <LOOK AND FEEL> section to .bash_profile:
-    $ sudo -u zaproxy vim ~/.bash_profile
+PALEMOON AND SELF-SIGNED CERTIFICATE
+====================================
 
-  Also, if you run firefox as different user and have 
-  the launcher in /opt/bin, add correct PATH to .bash_profile:
-    export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin"
+  Generate a unique private key (KEY):
+    openssl genrsa -out mydomain.key 2048
+
+  Generating a Certificate Signing Request (CSR):
+    openssl req -new -key mydomain.key -out mydomain.csr
+
+  Creating a Self-Signed Certificate (CRT):
+    openssl x509 -req -days 365 -in mydomain.csr \
+	-signkey mydomain.key -out mydomain.crt
+
+  Append KEY and CRT to mydomain.pem:
+    cat mydomain.key mydomain.crt > mydomain.pem
+
+  Adjust pem to OWASP ZAP' compatibility:
+    sed -i 's| RSA PRIVATE | PRIVATE |' mydomain.pem
+
+  Next, import domain.pem into palemoon:
+
+    Tools -> Preferences -> Advanced -> Certificates
+      -> View Certificates -> Import
+
+  And into zaproxy:
+    Tools -> Options -> Dynamic SSL Certificates -> Import
+
 
 End of file.
