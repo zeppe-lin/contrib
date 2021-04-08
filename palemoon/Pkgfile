@@ -1,4 +1,4 @@
-# Description: Web browser based on Firefox
+# Description: Pale Moon is what FireFox Web Browser ought to have been
 # URL:         https://www.palemoon.org
 # Depends on:  alsa-lib autoconf-2.13 desktop-file-utils gtk xorg-libxdamage xorg-libxt zip
 
@@ -28,6 +28,14 @@ build() {
 	./mach build
 	DESTDIR=$PKG ./mach install
 
+	# revdep additional library directories
+	install -d $PKG/etc/revdep.d
+	cat > $PKG/etc/revdep.d/palemoon <<EOF
+/usr/lib/$name-$version/
+/usr/lib/$name-$version/browser/components/
+EOF
+
+	# remove junk:
 	# we don't need these (just symlink anyway)
 	rm -rf $PKG/usr/lib/$name-devel-$version
 	# avoid duplicate binaries
