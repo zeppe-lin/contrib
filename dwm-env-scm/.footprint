@@ -4,10 +4,11 @@ drwxr-xr-x	root/root	opt/bin/
 -rwxr-xr-x	root/root	opt/bin/audiotoggle
 -rwxr-xr-x	root/root	opt/bin/battlow
 -rwxr-xr-x	root/root	opt/bin/dwmstatus
--rwxr-xr-x	root/root	opt/bin/firefox
 -rwxr-xr-x	root/root	opt/bin/irc
 -rwxr-xr-x	root/root	opt/bin/mail
+-rwxr-xr-x	root/root	opt/bin/mixer
 -rwxr-xr-x	root/root	opt/bin/notes.txt
+-rwxr-xr-x	root/root	opt/bin/palemoon
 -rwxr-xr-x	root/root	opt/bin/print256color
 -rwxr-xr-x	root/root	opt/bin/radio-fallout
 -rwxr-xr-x	root/root	opt/bin/rss
