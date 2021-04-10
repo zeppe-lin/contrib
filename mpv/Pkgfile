@@ -4,7 +4,7 @@
 # Optional:    libbluray libcdio-paranoia libdvdnav libvdpau rubberband 
 
 name=mpv
-version=0.33.0
+version=0.33.1
 release=1
 source=(https://github.com/$name-player/$name/archive/v$version/$name-v$version.tar.gz
 	https://waf.io/waf-2.0.9)
@@ -23,7 +23,7 @@ build() {
 		--enable-libmpv-shared \
 		-j ${JOBS-1}
 
-	/usr/bin/python3 waf build
+	/usr/bin/python3 waf build -v
 	/usr/bin/python3 waf install --destdir=$PKG
 
 	rm -r $PKG/usr/share/doc
