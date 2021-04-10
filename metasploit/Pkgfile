@@ -3,7 +3,7 @@
 # Depends on:  git libpcap libxslt postgresql ruby sqlite3
 
 name=metasploit
-version=6.0.37
+version=6.0.39
 release=1
 source=(https://github.com/rapid7/$name-framework/archive/$version/$name-$version.tar.gz)
 
