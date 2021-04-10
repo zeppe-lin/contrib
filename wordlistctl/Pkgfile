@@ -3,7 +3,7 @@
 # Depends on:  python3-requests
 
 name=wordlistctl
-version=0.9.0
+version=0.9.1
 release=1
 source=(https://github.com/BlackArch/$name/archive/v$version/$name-$version.tar.gz
 	0001-remove-unnecessary-termcolor-dependency.patch
@@ -12,13 +12,11 @@ source=(https://github.com/BlackArch/$name/archive/v$version/$name-$version.tar.
 build() {
 	cd $name-$version
 
-	patch -p1 < $SRC/0001-remove-unnecessary-termcolor-dependency.patch
-	patch -p1 < $SRC/0001-fix-repo.json-path.patch
+	patch -p1 -i $SRC/0001-remove-unnecessary-termcolor-dependency.patch
+	patch -p1 -i $SRC/0001-fix-repo.json-path.patch
 
-	install -pDm644 bash-completion/$name \
-		$PKG/usr/share/bash-completion/completions/$name
-	install -pDm644 man/$name.1 $PKG/usr/share/man/man1/$name.1
-
-	install -pDm755 wordlistctl.py $PKG/usr/bin/$name
-	install -pDm644 repo.json -t $PKG/usr/share/$name
+	install -p -m 755 -D wordlistctl.py        $PKG/usr/bin/$name
+	install -p -m 644 -D bash-completion/$name $PKG/etc/bash_completion.d/$name
+	install -p -m 644 -D man/$name.1           $PKG/usr/share/man/man1/$name.1
+	install -p -m 644 -D repo.json             $PKG/usr/share/$name/repo.json
 }
