@@ -3,7 +3,7 @@
 # Depends on:  python3
 
 name=sqlmap
-version=1.5.3
+version=1.5.4
 release=1
 source=(https://github.com/sqlmapproject/$name/archive/$version/$name-$version.tar.gz)
 
@@ -28,5 +28,5 @@ build() {
 		-or  -name .gitignore         \
 		-or  -name .travis.yml        \
 		-or  -name .pylintrc          \
-		\) -delete
+	\) -delete
 }
