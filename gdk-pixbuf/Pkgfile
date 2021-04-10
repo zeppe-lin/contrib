@@ -3,7 +3,7 @@
 # Depends on:  gobject-introspection libpng libtiff shared-mime-info
 
 name=gdk-pixbuf
-version=2.42.4
+version=2.42.6
 release=1
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz
 	gdk-pixbuf.loaders gdk-pixbuf-register.sh)
