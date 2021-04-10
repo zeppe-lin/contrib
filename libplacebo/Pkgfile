@@ -4,7 +4,7 @@
 # Optional:    libepoxy
 
 name=libplacebo
-version=2.72.2
+version=3.120.1
 release=1
 source=(https://code.videolan.org/videolan/$name/-/archive/v$version/$name-v$version.tar.gz)
 
