@@ -1,6 +1,6 @@
-# Description: FFmpeg version of headers required to interface with Nvidias codec APIs.
-# URL: https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git
-# Depends on: git
+# Description: FFmpeg version of headers required to interface with Nvidias codec APIs
+# URL:         https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git
+# Depends on:  git
 
 name=ffnvcodec-headers
 version=10.0.26.1
