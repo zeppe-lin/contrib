@@ -2,7 +2,7 @@
 # URL:         https://metacpan.org/release/Perl-Tidy
 
 name=perltidy
-version=20210111
+version=20210402
 release=1
 source=(https://cpan.metacpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-$version.tar.gz)
 
