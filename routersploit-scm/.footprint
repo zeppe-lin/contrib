@@ -1248,7 +1248,7 @@ drwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/__pycac
 -rw-r--r--	root/root	usr/share/routersploit/cryptography/hazmat/bindings/__pycache__/__init__.cpython-39.pyc
 -rwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/_openssl.abi3.so
 -rwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/_padding.abi3.so
--rw-r--r--	root/root	usr/share/routersploit/cryptography/hazmat/bindings/_rust.abi3.so
+-rwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/_rust.abi3.so
 drwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/openssl/
 -rw-r--r--	root/root	usr/share/routersploit/cryptography/hazmat/bindings/openssl/__init__.py
 drwxr-xr-x	root/root	usr/share/routersploit/cryptography/hazmat/bindings/openssl/__pycache__/
