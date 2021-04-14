@@ -1,7 +1,8 @@
-README for polipo
+-=[ README for polipo ]=-
 
 
 TOR
+===
 
   For using tor with polipo add the following lines in
   /etc/polipo/config:

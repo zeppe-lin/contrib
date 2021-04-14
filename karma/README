@@ -1,9 +1,10 @@
-README for karma
+-=[ README for karma ]=-
 
 
 REQUIREMENTS
+============
 
-Start tor service before running karma.
+  Start tor service before running karma.
 
 
 End of file.

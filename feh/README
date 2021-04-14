@@ -1,20 +1,24 @@
-README for feh
+-=[ README for feh ]=-
 
 
 SVG IMAGES
+==========
 
-$ feh --conversion-timeout 1 file.svg
-Note that this requires the imagemagick.
+  $ feh --conversion-timeout 1 file.svg
+
+  Note that this requires the imagemagick.
 
 
 BROWSE IMAGES
+=============
 
-$ feh -g 640x480 -d -S filename /path/to/dir
+  $ feh -g 640x480 -d -S filename /path/to/dir
 
 
 RANDOM BACKGROUND IMAGE
+=======================
 
-feh --bg-[tile|center|max|file] [--recursive] --randomize ~/wall/*
+  $ feh --bg-[tile|center|max|file] [--recursive] --randomize ~/wall/*
 
 
 End of file.

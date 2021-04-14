@@ -1,7 +1,8 @@
-README for trinity-extra-theme
+-=[ README for trinity-extra-theme ]=-
 
 
 DIRCOLORS
+=========
 
   cp /usr/share/trinity/dircolors ~/.dircolors
 
@@ -17,12 +18,14 @@ DIRCOLORS
 
 
 DUNST
+=====
 
   cp /usr/share/trinity/dunstrc ~/.config/dunstrc
   killall /usr/bin/dunst
 
 
 HEXCHAT
+=======
 
   cp /usr/share/trinity/hexchat ~/.config/hexchat/colors.conf
 
@@ -30,22 +33,25 @@ HEXCHAT
 
 
 VIM
+===
 
   :colorscheme trinity
 
 
 XRESOURCES
-  
+==========
+
   Put the following line in ~/.Xresources:
 
     #include "/usr/share/trinity/xresources"
-  
+
   And the following line in ~/.xinitrc for persistent setting:
 
     [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 
 ZATHURA
+=======
 
   cp /usr/share/trinity/zathurarc ~/.config/zathura/zathurarc
 

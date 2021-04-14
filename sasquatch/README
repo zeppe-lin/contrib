@@ -1,7 +1,8 @@
-README for sasquatch
+-=[ README for sasquatch ]=-
 
 
 TROUBLESHOOTING
+===============
 
   Q: patch: **** Can't rename file A to B : Too many open files
   A: ulimit -n 10000

@@ -1,10 +1,11 @@
-README for bully
+-=[ README for bully ]=-
 
 
 REQUIREMENTS
+============
 
-- aircrack-ng
-- pixiewps
+  - aircrack-ng
+  - pixiewps
 
 
 End of file.

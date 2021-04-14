@@ -1,7 +1,11 @@
-README for pcsxr
+-=[ README for pcsxr ]=-
 
-NOTES
 
-    Fix ix86-64.c:160: MEMADDR_OP: Assertion `!isreg || reg != X86_TEMP' failed.
-    ----------------------------------------------------------------------------
-    Edit '~/.pcsx/pcsx.cfg' and change 'Cpu = 0' to 'Cpu = 1'.
+TROUBLESHOOTING
+===============
+
+  Q: Fix ix86-64.c:160: MEMADDR_OP: Assertion `!isreg || reg != X86_TEMP' failed.
+  A: Edit '~/.pcsx/pcsx.cfg' and change 'Cpu = 0' to 'Cpu = 1'.
+
+
+End of file.

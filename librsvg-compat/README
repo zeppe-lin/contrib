@@ -1,6 +1,8 @@
-README for librsvg
+-=[ README for librsvg-compat ]=-
+
 
 POST-INSTALL
+============
 
   To register SVG as a loadable module for gdk-pixbuf you must run:
   

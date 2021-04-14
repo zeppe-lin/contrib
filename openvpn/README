@@ -1,7 +1,8 @@
-README for openvpn
+-=[ README for openvpn ]=-
 
 
 KERNEL CONFIGURATION
+====================
 
   Enable Universal TUN/TAP device driver support in your kernel.
     CONFIG_TUN=y
