@@ -3,7 +3,7 @@
 # Depends on:  python3-setuptools tcpdump
 
 name=scapy
-version=2.4.4
+version=2.4.5
 release=1
 source=(https://github.com/secdev/$name/archive/v$version/$name-$version.tar.gz
 	scapy.py
@@ -19,8 +19,8 @@ build() {
 	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
 
 	# install wrappers
-	install -Dm755 $SRC/scapy.py   $PKG/usr/bin/scapy
-	install -Dm755 $SRC/UTscapy.sh $PKG/usr/bin/UTscapy
+	install -m 755 -D $SRC/scapy.py   $PKG/usr/bin/scapy
+	install -m 755 -D $SRC/UTscapy.sh $PKG/usr/bin/UTscapy
 
 	# remove junk
 	rm -r $PKG/usr/lib/python*/site-packages/scapy-*-py*.egg-info
