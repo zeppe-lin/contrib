@@ -3,8 +3,8 @@
 # Depends on:  alsa-lib autoconf-2.13 desktop-file-utils gtk xorg-libxdamage xorg-libxt zip
 
 name=palemoon
-version=29.1.0
-_upxrel=20210302
+version=29.1.1
+_upxrel=20210330
 release=1
 
 source=(https://repo.palemoon.org/MoonchildProductions/Pale-Moon/archive/${version}_Release.tar.gz
