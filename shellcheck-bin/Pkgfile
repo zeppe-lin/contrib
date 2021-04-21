@@ -2,12 +2,12 @@
 # URL:         https://github.com/koalaman/shellcheck
 
 name=shellcheck-bin
-version=0.7.1
-release=2
+version=0.7.2
+release=1
 source=(https://github.com/koalaman/${name/-bin}/releases/download/v$version/${name/-bin}-v$version.linux.x86_64.tar.xz)
 
 build() {
 	cd ${name/-bin}-v$version
 
-	install -Dm755 ${name/-bin} -t $PKG/usr/bin
+	install -m 755 -D ${name/-bin} -t $PKG/usr/bin
 }
