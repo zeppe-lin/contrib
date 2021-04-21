@@ -59,6 +59,7 @@ drwxr-xr-x	root/root	usr/lib/jdk/bin/
 -rwxr-xr-x	root/root	usr/lib/jdk/bin/wsgen
 -rwxr-xr-x	root/root	usr/lib/jdk/bin/wsimport
 -rwxr-xr-x	root/root	usr/lib/jdk/bin/xjc
+-rw-r--r--	root/root	usr/lib/jdk/commitId.txt
 drwxr-xr-x	root/root	usr/lib/jdk/include/
 -rw-r--r--	root/root	usr/lib/jdk/include/classfile_constants.h
 -rw-r--r--	root/root	usr/lib/jdk/include/jawt.h
