@@ -1,9 +1,9 @@
-# Description: Tool to diagnose issues with power consumption and power management
+# Description: Diagnose issues with power consumption and power management
 # URL:         https://01.org/powertop/
 # Depends on:  libnl ncurses
 
 name=powertop
-version=2.13
+version=2.14
 release=1
 source=(https://01.org/sites/default/files/downloads/$name-$version.tar.gz)
 
