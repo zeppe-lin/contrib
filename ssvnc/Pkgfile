@@ -1,0 +1,57 @@
+# Description: SSL/SSH VNC viewer
+# URL:         http://www.karlrunge.com/x11vnc/ssvnc.html
+# Depends on:  libjpeg-turbo xorg-libxaw openssl tk tcl stunnel xorg-imake
+# Optional:    jdk8-bin
+
+name=ssvnc
+version=1.0.29
+release=1
+source=(http://downloads.sf.net/sourceforge/$name/$name-$version.src.tar.gz
+	Makefile.libvncauth
+	Makefile.vncviewer
+	0001-ssvnc-confusing-help.patch
+	0002-ultraftp-path.patch
+	0003-format-security.patch
+	0004-desktop-auto-scale.patch
+	0005-samemachine-ip6-overflow.patch
+	0006-libvncclient_CVE-2018-20020.patch
+	0007-libvncclient_CVE-2018-20021.patch
+	0008-libvncclient_CVE-2018-20022.patch
+	0009-libvncclient_CVE-2018-20024.patch
+	0010-Makefile.patch
+	0011-openssl1.1.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/0001-ssvnc-confusing-help.patch
+	patch -p1 -i $SRC/0002-ultraftp-path.patch
+	patch -p1 -i $SRC/0003-format-security.patch
+	patch -p1 -i $SRC/0004-desktop-auto-scale.patch
+	patch -p1 -i $SRC/0005-samemachine-ip6-overflow.patch
+	patch -p1 -i $SRC/0006-libvncclient_CVE-2018-20020.patch
+	patch -p1 -i $SRC/0007-libvncclient_CVE-2018-20021.patch
+	patch -p1 -i $SRC/0008-libvncclient_CVE-2018-20022.patch
+	patch -p1 -i $SRC/0009-libvncclient_CVE-2018-20024.patch
+	patch -p1 -i $SRC/0010-Makefile.patch
+	patch -p1 -i $SRC/0011-openssl1.1.patch
+
+	sed -i -e "/^LIB/s:lib/:lib/:" Makefile
+
+	# ultraftp
+	if ! pkginfo -i | grep -q '^jdk8-bin '; then
+		sed -i -e '/^JSRC/s:=.*:=:' Makefile
+	fi
+
+	sed -i -e '/^CC/s:=.*:+= $(CFLAGS) $(CPPFLAGS) $(LDFLAGS):' \
+		vncstorepw/Makefile
+
+	cp $SRC/Makefile.libvncauth vnc_unixsrc/libvncauth/Makefile
+
+	(cd vnc_unixsrc/vncviewer;
+	sed -n '/^SRCS/,/^$/p' Imakefile > Makefile.in
+	cp $SRC/Makefile.vncviewer Makefile)
+
+	make all
+	make DESTDIR=$PKG PREFIX=/usr install
+}

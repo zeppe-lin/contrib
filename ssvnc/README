@@ -1,0 +1,11 @@
+-=[ README for ssvnc ]=-
+
+
+REQUIREMENTS
+============
+
+  jdk8-bin : JavaViewer supports Ultr@VNC FileTransfer
+             (>= RC19 protocole version) as well as Ultr@VNC MS Logon.
+
+
+End of file.
