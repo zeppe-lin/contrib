@@ -1,0 +1,36 @@
+# Description: CGI version of the PHP interpreter
+# URL:         http://www.php.net
+# Depends on:  db gdbm libpcre2 libxml2 libzip
+
+name=php-cgi
+version=7.4.16
+release=1
+source=(http://php.net/distributions/php-$version.tar.xz)
+
+build(){
+	cd php-$version
+
+	local PHP_CONFIG="
+	--prefix=/usr                               \
+	--sysconfdir=/etc/php                       \
+	--localstatedir=/var                        \
+	--mandir=/usr/share/man                     \
+	--with-config-file-path=/etc/php            \
+	--with-config-file-scan-dir=/etc/php/conf.d \
+	--with-pcre-regex=/usr                      \
+	--disable-static                            \
+	--disable-debug                             \
+	--without-sqlite3                           \
+	--without-pdo-sqlite                        \
+	--enable-zip                                \
+	--without-pear                              \
+	--disable-opcache"
+
+	EXTENSION_DIR=/usr/lib/php/extensions       \
+	./configure $PHP_CONFIG --enable-cli
+
+	make V=1
+
+	#install -m 644 -D $SRC/php.ini $PKG/etc/php/php.ini
+	install -m 755 -D sapi/cgi/php-cgi $PKG/usr/bin/php-cgi
+}
