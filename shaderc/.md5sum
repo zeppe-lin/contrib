@@ -1,8 +1,2 @@
-a1783061d331a61be57001066a59eba6  0001-Drop-third-party-code-in-CMakeLists.txt.patch
-07eebfd4c1501bd0a80087ec4a3286a9  0001-Fix-SPIRV-includes-location.patch
-1758e402552e0978a7f957e7a8377365  glslc-asciidoc.patch
-2606de2f6c45781b6634769a05353679  glslc.1
-d2e7103e30b40427a8bf7947bd86f19d  shaderc-2020.3-system-glslang.patch
-7415b7c5376dd36c610b9cc53c7dbe1b  shaderc-v2020.3.tar.gz
-96d99cfca4c7a007773de1f6e391fbd4  spvc-asciidoc.patch
-da9cd4bbb1a3486b50b1eb7933176807  spvc.1
+93cdc69c2d0cb9f097541c1bac0fde0d  SPIRV-Headers-dafead1765f6c1a5f9f8a76387dcb2abe4e54acd.tar.gz
+0391f2345f0cfdd6a9995535606d66b3  shaderc-v2021.0.tar.gz
