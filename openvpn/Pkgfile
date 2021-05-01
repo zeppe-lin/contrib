@@ -3,7 +3,7 @@
 # Depends on:  lzo
 
 name=openvpn
-version=2.5.1
+version=2.5.2
 release=1
 source=(http://swupdate.openvpn.net/community/releases/$name-$version.tar.xz
         $name.rc)
@@ -20,7 +20,7 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	install -m 755 -D $name.rc $PKG/etc/rc.d/$name
+	install -m 755 -D $SRC/$name.rc $PKG/etc/rc.d/$name
 
 	rm -r $PKG/usr/share
 }
