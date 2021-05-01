@@ -1,7 +1,7 @@
-# Description: Remote desktop protocol implementation.
-# URL: https://www.freerdp.com/
-# Depends on: cmake glib xorg-libxcursor xorg-libxinerama xorg-libxkbfile xorg-libxrandr xorg-libxv
-# Optional: ffmpeg gst-plugins-base alsa-lib cups directfb neon pulseaudio xmlto
+# Description: Remote desktop protocol implementation
+# URL:         https://www.freerdp.com/
+# Depends on:  cmake glib xorg-libxcursor xorg-libxinerama xorg-libxkbfile xorg-libxrandr xorg-libxv
+# Optional:    ffmpeg gst-plugins-base alsa-lib cups directfb neon pulseaudio xmlto
 
 name=freerdp2
 version=2.2.0
