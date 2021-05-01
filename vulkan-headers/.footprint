@@ -1,5 +1,12 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/vk_video/
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codec_h264std.h
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codec_h264std_decode.h
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codec_h264std_encode.h
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codec_h265std.h
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codec_h265std_decode.h
+-rw-r--r--	root/root	usr/include/vk_video/vulkan_video_codecs_common.h
 drwxr-xr-x	root/root	usr/include/vulkan/
 -rw-r--r--	root/root	usr/include/vulkan/vk_icd.h
 -rw-r--r--	root/root	usr/include/vulkan/vk_layer.h
@@ -16,6 +23,7 @@ drwxr-xr-x	root/root	usr/include/vulkan/
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_ios.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_macos.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_metal.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_screen.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_vi.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_wayland.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_win32.h

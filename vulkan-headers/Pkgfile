@@ -1,18 +1,18 @@
 # Description: Vulkan Header files and API registry
-# URL: https://www.khronos.org/vulkan/
-# Depends on: cmake ninja
+# URL:         https://github.com/KhronosGroup/Vulkan-Headers
+# Depends on:  cmake ninja
 
 name=vulkan-headers
-version=1.2.154.0
+version=1.2.177
 release=1
-source=(https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-$version/Vulkan-Headers-sdk-$version.tar.gz)
+source=(https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/$name-v$version.tar.gz)
 
 build() {
-	cmake -SVulkan-Headers-sdk-$version -Bbuild -GNinja \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_INSTALL_LIBDIR=lib \
-		-DCMAKE_BUILD_TYPE=Release
+	cmake -S Vulkan-Headers-$version -B build -GNinja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release
 
-	cmake --build build
+	cmake --build build -v
 	DESTDIR=$PKG cmake --install build
 }
