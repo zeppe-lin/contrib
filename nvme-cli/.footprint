@@ -24,6 +24,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-discover.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-dsm.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-effects-log.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-endurance-event-agg-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-endurance-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-error-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-flush.1.gz
@@ -50,6 +51,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-intel-smart-log-add.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-intel-temp-stats.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-io-passthru.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-lba-status-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-list-ctrl.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-list-ns.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-list-subsys.1.gz
@@ -73,12 +75,18 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-netapp-smdevices.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ns-descs.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ns-rescan.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-nvm-id-ctrl.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-persistent-event-log.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-pred-lat-event-agg-log.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-predictable-lat-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-read.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-reset.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-resv-acquire.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-resv-notif-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-resv-register.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-resv-release.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-resv-report.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-rpmb.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sanitize-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sanitize.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-security-recv.1.gz
@@ -103,6 +111,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-clear-assert-dump.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-clear-fw-activate-history.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-clear-pcie-correctable-errors.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-cloud-SSD-plugin-version.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-essentials.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-resize.1.gz
