@@ -1,6 +1,4 @@
-0ccba62d9a5f444580c2494dfa0494c8  0001-CMake-Allow-linking-against-system-installed-SPIRV-T.patch
-dcc182b726a1a41890cfeb90b0015e67  0001-CMake-Make-glslang-default-resource-limits-STATIC.patch
-b874788a8d986f0ff1c0881d87ce2cc6  0001-glslang-Rename-and-move-cmake-export.patch
-9085e74a2ebf8f777e7906c7c1bb762e  0002-CMake-Use-VERSION-SOVERSION-for-all-shared-libs.patch
-d3b4895c515ba9e494292ae70a5eca1d  0002-cmake-Use-the-same-export-config-for-all-installed-t.patch
-aab0a49159a4ab4af678d127b9ae57a8  bacaef3237c515e40d1a24722be48c0a0b30f75f.zip
+93cdc69c2d0cb9f097541c1bac0fde0d  SPIRV-Headers-dafead1765f6c1a5f9f8a76387dcb2abe4e54acd.tar.gz
+2c5f49d14c1251a029d49f4ee588f0f3  SPIRV-Tools-dc72924cb31cd9f3dbc3eb47e9d926cf641e3a07.tar.gz
+40780ba8c5475482c047027487e56466  glslang-11.4.0.tar.gz
+9ebdde36708b9ff633963eb45373f5da  known_good.py.in
