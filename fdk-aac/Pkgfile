@@ -1,8 +1,8 @@
-# Description: Library of OpenCORE Framework implementation of Adaptive Multi Rate Narrowband and Wideband (AMR-NB and AMR-WB) speech codec.
-# URL: https://sourceforge.net/projects/opencore-amr/
+# Description: Fraunhofer FDK AAC codec library
+# URL:         https://sourceforge.net/projects/opencore-amr/
 
 name=fdk-aac
-version=2.0.1
+version=2.0.2
 release=1
 source=(https://downloads.sourceforge.net/project/opencore-amr/$name/$name-$version.tar.gz)
 
@@ -11,6 +11,6 @@ build() {
 
 	./configure --prefix=/usr
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }
