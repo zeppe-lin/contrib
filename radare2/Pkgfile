@@ -3,7 +3,7 @@
 # Depends on:  capstone file libuv lz4 openssl xxhash
 
 name=radare2
-version=5.2.0
+version=5.2.1
 release=1
 source=(https://github.com/radare/$name/archive/$version/$name-$version.tar.gz)
 
@@ -11,11 +11,11 @@ build() {
 	cd $name-$version
 
 	./configure \
-		--prefix=/usr      \
-		--with-sysmagic    \
-		--with-syscapstone \
-		--with-syszip      \
-		--with-sysxxhash
+		--prefix=/usr       \
+		--with-sysmagic     \
+		--with-syscapstone  \
+		--with-syszip       \
+		--with-sysxxhash    \
 
 	make V=1
 	make DESTDIR=$PKG install
