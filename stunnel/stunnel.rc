@@ -1,42 +1,33 @@
-#!/bin/sh
+#!/bin/sh -e
 #
-# /etc/rc.d/stunnel: start/stop stunnel daemon
+# /etc/rc.d/stunnel: start/stop stunnel(8) daemon
 #
 
-SSD=/sbin/start-stop-daemon
-PROG=/usr/sbin/stunnel
-NAME=stunnel
-PID=/var/run/stunnel/stunnel.pid
-CFG=/etc/stunnel.conf
-
-CRT=/etc/ssl/certs/stunnel.crt
-KEY=/etc/ssl/keys/stunnel.key
+PIDFILE=/var/run/stunnel/stunnel.pid
+CFGFILE=/etc/stunnel.conf
+CRTFILE=/etc/ssl/certs/stunnel.crt
+KEYFILE=/etc/ssl/keys/stunnel.key
 
 case $1 in
 start)
-	if [ ! -s $KEY -o ! -s $CRT ]; then 
-		/usr/bin/mksslcert $KEY $CRT
+	if [ ! -s $KEYFILE ] || [ ! -s $CRTFILE ]; then
+		/usr/bin/mksslcert $KEYFILE $CRTFILE
 	fi
-	$SSD --start --pidfile $PID --exec $PROG -- $CFG
+	/usr/sbin/stunnel $CFGFILE
 	;;
 stop)
-	$SSD --stop --retry 10 --name $NAME --pidfile $PID
+	if [ -f "$PIDFILE" ]; then
+		kill "$(cat "$PIDFILE")"
+	fi
 	;;
 restart)
 	$0 stop
+	sleep 2
 	$0 start
 	;;
-status)
-	$SSD --status --name $NAME --pidfile $PID
-	case $? in
-	0) echo "$PROG is running with pid $(cat $PID)" ;;
-	1) echo "$PROG is not running but the pid file $PID exists" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine the program status" ;;
-	esac
-	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "usage: $0 [start|stop|restart]"
 	;;
 esac
+
 # End of file

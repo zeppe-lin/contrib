@@ -1,12 +1,12 @@
 #!/bin/sh
 
-getent group stunnel  || /usr/sbin/groupadd -g 48 stunnel
-getent passwd stunnel || /usr/sbin/useradd -g stunnel -u 48 \
+/usr/bin/getent group  stunnel || /usr/sbin/groupadd -g 48 stunnel
+/usr/bin/getent passwd stunnel || /usr/sbin/useradd -g stunnel -u 48 \
 	-d /var/run/stunnel -s /bin/false stunnel
 
 /usr/bin/passwd -l stunnel
 
-chown stunnel:stunnel /var/run/stunnel
-chmod 770 /var/run/stunnel
+/bin/chown stunnel:stunnel /var/run/stunnel
+/bin/chmod 770 /var/run/stunnel
 
 # End of file.
