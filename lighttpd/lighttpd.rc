@@ -1,36 +1,33 @@
-#!/bin/sh
+#!/bin/sh -e
 #
-# /etc/rc.d/lighttpd: start/stop lighttpd daemon
+# /etc/rc.d/lighttpd: start/stop lighttpd(8) daemon
 #
 
-SSD=/sbin/start-stop-daemon
-PROG=/usr/sbin/lighttpd
-PID=/var/run/lighttpd.pid
-OPTS="-f /etc/lighttpd.conf"
+CHROOT=/var/www/lighttpd
+PIDFILE=/var/run/lighttpd.pid
 
 case $1 in
 start)
-        $SSD --start --pidfile $PID --exec $PROG -- $OPTS
-        ;;
+	# prepare chroot environment
+	cp -Pf /dev/null $CHROOT/dev/null
+	chmod 777 $CHROOT/dev/null
+
+	/usr/sbin/lighttpd -f /etc/lighttpd.conf
+	;;
 stop)
-        $SSD --stop --remove-pidfile --retry 10 --pidfile $PID
-        ;;
+	if [ -f $PIDFILE ]; then
+		kill "$(cat "$PIDFILE")"
+	fi
+	rm -f /var/www/lighttpd/dev/null
+	;;
 restart)
-        $0 stop
-        $0 start
-        ;;
-status)
-        $SSD --status --pidfile $PID
-        case $? in
-        0) echo "$PROG is running with pid $(cat $PID)" ;;
-        1) echo "$PROG is not running but the pid file $PID exists" ;;
-        3) echo "$PROG is not running" ;;
-        4) echo "Unable to determine the program status" ;;
-        esac
-        ;;
+	$0 stop
+	sleep 2
+	$0 start
+	;;
 *)
-        echo "usage: $0 [start|stop|restart|status]"
-        ;;
+	echo "usage: $0 [start|stop|restart]"
+	;;
 esac
 
 # End of file

@@ -23,7 +23,7 @@ build() {
 	install -m 644 -D $SRC/$name.conf $PKG/etc/$name.conf
 	install -m 755 -D $SRC/$name.rc   $PKG/etc/rc.d/$name
 
-	install -d $PKG/var/www/{htdocs,logs}
+	install -o www -g www -d $PKG/var/www/lighttpd/{dev,htdocs,logs,tmp}
 	install -d $PKG/var/run
 	install -d $PKG/etc/ssl/certs
 	#touch $PKG/var/run/lighttpd.pid

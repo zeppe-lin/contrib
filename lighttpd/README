@@ -17,9 +17,9 @@ POST-INSTALL
   /etc/lighttpd.conf and generate a self-signed certificate:
 
     openssl req -new -x509 \
-    -keyout /etc/ssl/certs/lighttpd.pem \
-    -out    /etc/ssl/certs/lighttpd.pem \
-    -days 365 -nodes
+      -keyout /etc/ssl/certs/lighttpd.pem \
+      -out    /etc/ssl/certs/lighttpd.pem \
+      -days 365 -nodes
 
 
 PRECAUTION
