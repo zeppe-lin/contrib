@@ -4,5 +4,4 @@ c648c66019bed76071ec51c4dd1db328  qemu-5.2.0-fix-firmware-path.patch
 ff0467d6f96d717d5c257a4a6bf0b364  qemu-5.2.0-no-pie-ld.patch
 cbfd51be3d306012e513c040239c8a02  qemu-5.2.0-strings.patch
 179f86928835da857c237b42f4b2df73  qemu-5.2.0.tar.xz
-34800e1556e21bbd5acb86d53845575c  qemu-9999-fix-firmware-path.patch
 e40a761c65a0389f0ef64016c98ef65c  qemu-man-5.2.0.tar.xz
