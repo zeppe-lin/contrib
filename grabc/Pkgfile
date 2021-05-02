@@ -1,0 +1,18 @@
+# Description: Identify a pixel color on an X Window
+# URL:         https://github.com/muquit/grabc
+# Depends on:  xorg-libx11
+
+name=grabc
+version=1.0.2
+release=1
+source=(https://github.com/muquit/grabc/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	sed 's/^CFLAGS= /CFLAGS+= /' -i Makefile
+
+	make
+	install -m 0755 -D -t $PKG/usr/bin            $name
+	install -m 0644 -D -t $PKG/usr/share/man/man1 $name.1
+}
