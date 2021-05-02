@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+# /etc/rc.d/dhcpd: start/stop dhcpd(8) daemon
+#
+
+PIDFILE=/var/run/dhcpd.pid
+
+case $1 in
+start)
+	/usr/sbin/dhcpd
+	;;
+stop)
+	[ -f $PIDFILE ] && kill $(cat $PIDFILE)
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+reload)
+	[ -f $PIDFILE ] && kill -HUP $(cat $PIDFILE)
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|reload]"
+	;;
+esac
+
+# End of file
