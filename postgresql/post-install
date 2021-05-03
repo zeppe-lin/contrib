@@ -1,15 +1,12 @@
 #!/bin/sh -e
 
-USER=postgres
-HOME=/var/pgsql/data
-GROUP=postgres
-ID=42
+/usr/bin/getent group  postgres || /usr/sbin/groupadd -r postgres
+/usr/bin/getent passwd postgres || /usr/sbin/useradd -u 42 \
+	-d /var/pgsql/data -g postgres -s /bin/false postgres
 
-getent group ${GROUP} >/dev/null || groupadd -r ${GROUP}
-getent passwd ${USER} >/dev/null || useradd -u $ID -d ${HOME} -g ${GROUP} -s /bin/false ${USER}
+/usr/bin/test -d /var/pgsql/data && exit 0
 
-test -d ${HOME} && exit 0
+/usr/bin/install -d -o postgres -g postgres /var/pgsql/data
+su -s /bin/sh -c "pg_ctl -D /var/pgsql/data initdb" postgres
 
-install -d -o ${USER} -g ${GROUP} ${HOME}
-su -s /bin/sh -c "pg_ctl -D ${HOME} initdb" ${USER}
-
+# End of file.
