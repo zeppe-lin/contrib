@@ -4,12 +4,18 @@
 
 name=gtk3
 version=3.24.24
-release=2
+release=3
 source=(https://download.gnome.org/sources/gtk+/${version:0:4}/gtk+-$version.tar.xz
+	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version.tar.gz
 	gtk.immodules gtk-register-3.sh)
 
 build() {
 	cd gtk+-$version
+
+	while read p; do
+		case $p in \#*) continue ;; esac
+		patch -Np1 -i $SRC/gtk3-classic-$version/$p
+	done < $SRC/gtk3-classic-$version/series
 
 	# Remove 'atk-bridge' dependency which removes the 'dbus' dependency.
 	sed -i 's/ATK_PACKAGES="atk atk-bridge-2.0"/ATK_PACKAGES="atk"/' \
