@@ -9,5 +9,5 @@ source=(https://github.com/koalaman/${name/-bin}/releases/download/v$version/${n
 build() {
 	cd ${name/-bin}-v$version
 
-	install -m 755 -D ${name/-bin} -t $PKG/usr/bin
+	install -m 755 -D -t $PKG/usr/bin ${name/-bin}
 }
