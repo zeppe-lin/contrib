@@ -1,0 +1,2 @@
+#!/bin/sh -e
+/sbin/udevadm trigger -s backlight -c add
