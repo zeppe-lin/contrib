@@ -3,16 +3,14 @@
 # /etc/rc.d/tor: start/stop tor(1) daemon
 #
 
+PIDFILE=/var/run/tor/pid
+
 case $1 in
 start)
-	su  - tor -s /bin/sh -c /usr/bin/tor
+	su - tor -s /bin/sh -c '/usr/bin/tor --quiet'
 	;;
 stop)
-	if [ -f /var/run/tor/pid ]; then
-		kill $(< /var/run/tor/pid)
-	else
-		killall -q /usr/bin/tor
-	fi
+	[ -f $PIDFILE ] && kill `cat $PIDFILE`
 	;;
 restart)
 	$0 stop
@@ -20,9 +18,7 @@ restart)
 	$0 start
 	;;
 reload)
-	if [ -f /var/run/tor/pid ]; then
-		kill -HUP "$(< /var/run/tor/pid)"
-	fi
+	[ -f /var/run/tor/pid ] && kill -HUP `cat $PIDFILE`
 	;;
 chkconf)
 	su - tor -s /bin/sh -c '/usr/bin/tor --verify-config'
