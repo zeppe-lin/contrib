@@ -3,7 +3,7 @@
 # Depends on:  xorg-libsm xorg-libxft gobject-introspection fribidi harfbuzz
 
 name=pango
-version=1.48.4
+version=1.48.5
 release=1
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
