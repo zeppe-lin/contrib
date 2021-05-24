@@ -3,7 +3,7 @@
 # Depends on:  meson ninja vulkan-loader
 
 name=dav1d
-version=0.8.2
+version=0.9.0
 release=1
 source=(https://code.videolan.org/videolan/dav1d/-/archive/$version/$name-$version.tar.gz)
 
