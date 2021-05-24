@@ -139,6 +139,7 @@ drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/Lang/
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MPC.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MPEG.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MPF.pm
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MRC.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MWG.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MXF.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.34/Image/ExifTool/MacOS.pm
@@ -330,6 +331,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MPC.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MPEG.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MPF.3pm.gz
+-r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MRC.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MWG.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MXF.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::MacOS.3pm.gz
@@ -436,6 +438,7 @@ drwxr-xr-x	root/root	usr/share/p5-image-exiftool/config_files/
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/age.config
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/bibble.config
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/convert_regions.config
+-rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/cuepointlist.config
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/depthmap.config
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/example.config
 -rw-r--r--	root/root	usr/share/p5-image-exiftool/config_files/fotoware.config
