@@ -3,7 +3,7 @@
 # Depends on:  perl xorg-libxft xorg-libxpm
 
 name=rxvt-unicode
-version=9.22
+version=9.26
 release=1
 source=(http://dist.schmorp.de/$name/Attic/$name-$version.tar.bz2
 	secondaryWheel.patch)
