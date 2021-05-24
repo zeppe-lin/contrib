@@ -13,7 +13,7 @@ build() {
 
 	patch -p1 -i ../secondaryWheel.patch
 
-	./configure \
+	CXXFLAGS+=" -std=c++14" ./configure \
 		--prefix=/usr \
 		--enable-utmp \
 		--enable-wtmp \
