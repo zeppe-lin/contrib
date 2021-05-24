@@ -3,7 +3,7 @@
 # Depends on:  libtool lcms2 pango xorg-libxt chrpath
 
 name=imagemagick
-version=7.0.11-10
+version=7.0.11-13
 release=1
 source=(https://www.imagemagick.org/download/releases/ImageMagick-$version.tar.xz)
 
