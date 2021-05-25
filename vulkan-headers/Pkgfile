@@ -3,7 +3,7 @@
 # Depends on:  cmake
 
 name=vulkan-headers
-version=1.2.177
+version=1.2.179
 release=1
 source=(https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/$name-v$version.tar.gz)
 
