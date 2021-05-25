@@ -13,9 +13,10 @@ build() {
 	export CFLAGS+=" -Wno-deprecated-declarations"
 
 	./configure \
-		--prefix=/usr \
-		--with-proxy  \
-		--with-perl-lib=site
+		--prefix=/usr         \
+		--enable-true-color   \
+		--with-perl-lib=site  \
+		--with-proxy          \
 
 	make V=1
 	make DESTDIR=$PKG install
