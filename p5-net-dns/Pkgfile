@@ -1,5 +1,6 @@
 # Description: Perl Library Net::DNS
 # URL:         https://metacpan.org/release/Net-DNS
+# Depends on:  perl
 
 name=p5-net-dns
 capsname=Net-DNS
