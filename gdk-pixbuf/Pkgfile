@@ -4,14 +4,20 @@
 
 name=gdk-pixbuf
 version=2.42.6
-release=1
+release=2
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz
 	gdk-pixbuf.loaders gdk-pixbuf-register.sh)
 
 build() {
+	export DESTDIR=$PKG
+
+	# disable tests
+	sed -i "/subdir('tests')/d" $name-$version/meson.build
+
 	meson setup build $name-$version \
 		--prefix=/usr            \
 		--buildtype=plain        \
+		-D docs=false            \
 		-D installed_tests=false \
 		-D man=false             \
 
@@ -23,6 +29,4 @@ build() {
 
 	install -m 755 $SRC/gdk-pixbuf-register.sh \
 		$PKG/usr/bin/gdk-pixbuf-register
-
-	rm -r $PKG/usr/share/locale
 }
