@@ -1,0 +1,6 @@
+18d7298dca72b53271d68646c34b6a39  Net-Pcap-0.18.tar.gz
+8c982b3e323f67cc718d9bffc7843548  listdatalinks.patch
+9a8647b3eaacfed4a0d49cd74f20f8b7  makefile.patch
+1bee68bd698e24935d14dcfafc6439cd  newapi.patch
+61d809cea0de225f859b9f6971ea27ed  pcapapi.patch
+a32fdc3a26cb34732d0e927287922450  pcapapi2.patch
