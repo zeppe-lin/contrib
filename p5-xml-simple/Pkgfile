@@ -1,5 +1,6 @@
-# Description: An API for simple XML files
-# URL: https://metacpan.org/release/XML-Simple
+# Description: API for simple XML files
+# URL:         https://metacpan.org/release/XML-Simple
+# Depends on:  perl
 
 name=p5-xml-simple
 version=2.25
