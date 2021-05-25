@@ -1,5 +1,6 @@
 # Description: Reader and rewriter of EXIF informations that supports raw files
 # URL:         https://exiftool.org
+# Depends on:  perl
 
 name=p5-image-exiftool
 version=12.26
@@ -19,6 +20,6 @@ build() {
 	find $PKG \( \
 		   -name '.packlist' \
 		-o -name '*.pod'     \
-		-o -name 'README' \) \
-		-delete
+		-o -name 'README'    \
+		\) -delete
 }
