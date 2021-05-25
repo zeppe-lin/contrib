@@ -1,6 +1,6 @@
 # Description: Interface to the pcap(3) LBL packet capture library
 # URL:         https://metacpan.org/pod/Net::Pcap
-# Depends on:  libpcap
+# Depends on:  libpcap perl
 
 name=p5-net-pcap
 version=0.18
