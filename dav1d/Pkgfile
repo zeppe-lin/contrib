@@ -1,6 +1,6 @@
 # Description: AV1 decoder
 # URL:         https://code.videolan.org/videolan/dav1d
-# Depends on:  meson ninja vulkan-loader
+# Depends on:  meson samurai vulkan-loader
 
 name=dav1d
 version=0.9.0

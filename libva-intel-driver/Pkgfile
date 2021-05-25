@@ -1,6 +1,6 @@
 # Description: libva video acceleration for newer intel based setups
 # URL:         https://github.com/intel/intel-vaapi-driver
-# Depends on:  glu ffmpeg libva meson ninja
+# Depends on:  glu ffmpeg libva meson samurai
 
 name=libva-intel-driver
 version=2.4.1

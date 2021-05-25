@@ -1,6 +1,6 @@
 # Description: Brotli compression library
 # URL: https://github.com/google/brotli
-# Depends on: cmake ninja
+# Depends on: cmake samurai
 
 name=brotli
 version=1.0.9

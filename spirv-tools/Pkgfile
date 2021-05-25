@@ -1,6 +1,6 @@
 # Description: API and commands for processing SPIR-V modules
 # URL:         https://www.khronos.org/vulkan/
-# Depends on:  cmake ninja
+# Depends on:  cmake samurai
 
 name=spirv-tools
 version=2021.1

@@ -1,6 +1,6 @@
 # Description: Vulkan ICD desktop loader
 # URL:         https://www.khronos.org/vulkan
-# Depends on:  vulkan-headers ninja xorg-libxrandr
+# Depends on:  vulkan-headers samurai xorg-libxrandr
 
 name=vulkan-loader
 version=1.2.179
