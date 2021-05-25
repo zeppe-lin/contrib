@@ -12,7 +12,7 @@ build() {
 
 	perl Makefile.PL INSTALLDIRS=vendor
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 
 	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
