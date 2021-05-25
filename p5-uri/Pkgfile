@@ -1,5 +1,6 @@
 # Description: Perl Uniform Resource Identifiers Library.
 # URL:         https://metacpan.org/release/URI
+# Depends on:  perl
 
 name=p5-uri
 version=5.09
