@@ -1,5 +1,6 @@
 # Description: Low-level HTTP connection (client)
 # URL:         https://metacpan.org/pod/Net::HTTP
+# Depends on:  perl
 
 name=p5-net-http
 version=6.21
