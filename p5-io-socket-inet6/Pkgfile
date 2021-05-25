@@ -1,6 +1,6 @@
 # Description: Object interface for AF_INET|AF_INET6 domain sockets
-# URL: https://metacpan.org/release/IO-Socket-INET6
-# Depends on: p5-socket6
+# URL:         https://metacpan.org/release/IO-Socket-INET6
+# Depends on:  p5-socket6
 
 name=p5-io-socket-inet6
 version=2.72
@@ -17,12 +17,12 @@ build() {
 		MODULEBUILDRC=/dev/null
 
 		/usr/bin/perl Makefile.PL
-		make
+		make V=1
 	)
 
 	make DESTDIR=$PKG install
 	
-	#Remove perlcrap
+	# Remove perlcrap
 	find $PKG -type f \( \
 		-name '.packlist' -or \
 		-name '*.bs' -or \
