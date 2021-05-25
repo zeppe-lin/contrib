@@ -1,6 +1,6 @@
-# Description: an exporter with the features of Sub::Exporter but only core dependencies
-# URL: https://metacpan.org/pod/Exporter::Tiny
-# Depends on:
+# Description: Exporter with the features of Sub::Exporter but only core dependencies
+# URL:         https://metacpan.org/pod/Exporter::Tiny
+# Depends on:  perl
 
 name=p5-exporter-tiny
 version=1.002002
@@ -8,16 +8,20 @@ release=1
 source=(https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-$version.tar.gz)
 
 build() {
-  cd Exporter-Tiny-$version
-  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
-      PERL_AUTOINSTALL=--skipdeps \
-      PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='$PKG'" \
-      PERL_MB_OPT="--installdirs vendor --destdir '$PKG'" \
-      MODULEBUILDRC=/dev/null
-  /usr/bin/perl Makefile.PL
-  make install
-  find $PKG -name .packlist -o \
-    -name perllocal.pod -o \
-    -name README -o \
-    -name '*.bs' | xargs rm
+	cd Exporter-Tiny-$version
+
+	export	PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+		PERL_AUTOINSTALL=--skipdeps \
+		PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='$PKG'" \
+		PERL_MB_OPT="--installdirs vendor --destdir '$PKG'" \
+		MODULEBUILDRC=/dev/null
+
+	/usr/bin/perl Makefile.PL
+
+	make install
+
+	find $PKG -name .packlist -o \
+		-name perllocal.pod -o \
+		-name README -o \
+		-name '*.bs' | xargs rm
 }
