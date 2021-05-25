@@ -1,6 +1,6 @@
-# Description: Perl extension for using OpenSSL.
-# URL: https://metacpan.org/release/Net-SSLeay
-# Depends on: openssl
+# Description: Perl extension for using OpenSSL
+# URL:         https://metacpan.org/release/Net-SSLeay
+# Depends on:  openssl perl
 
 name=p5-net-ssleay
 version=1.90
