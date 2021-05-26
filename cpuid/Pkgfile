@@ -1,5 +1,5 @@
-# Description: Dumps detailed information about the CPU(s) gathered from the CPUID instruction, and also determines the exact model of CPU(s).
-# URL: http://www.etallen.com/cpuid.html
+# Description: Dump x86 CPUID information about the CPU(s)
+# URL:         http://www.etallen.com/cpuid.html
 
 name=cpuid
 version=20201006
@@ -8,6 +8,7 @@ source=(http://www.etallen.com/cpuid/$name-$version.src.tar.gz)
 
 build() {
 	cd $name-$version
+
 	make -e CFLAGS="$CFLAGS"
 	make BUILDROOT=$PKG install
 }
