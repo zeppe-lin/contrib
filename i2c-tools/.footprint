@@ -24,6 +24,8 @@ drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/decode-dimms.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/decode-vaio.1.gz
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/libi2c.3.gz
 drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/i2c-stub-from-dump.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/i2cdetect.8.gz
