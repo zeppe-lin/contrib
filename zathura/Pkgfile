@@ -1,44 +1,35 @@
 # Description: Highly customizable and functional document viewer
 # URL:         https://pwmt.org/projects/zathura
-# Depends on:  girara libseccomp
+# Depends+on:  girara libseccomp
 # Optional:    texlive
 
 name=zathura
 version=0.4.7
-release=3
-source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz)
+release=4
+source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz
+	remove_gettext.patch)
 
 build() {
 	cd $name-$version
+
+	export DESTDIR=$PKG
+
+	patch -p1 -i $SRC/remove_gettext.patch
+
+	# Fix build errors when desktop-file-utils is installed.
+	sed -i 's/desktop-file-validate//' data/meson.build
 
 	meson build \
 		--prefix=/usr         \
 		--sysconfdir=/usr/etc \
 		--buildtype=plain     \
-		--backend=ninja
+		--backend=ninja       \
+		-Dsynctex=disabled    \
 
-	sed -i 's/ \-pipe / /g' build/{compile_commands.json,build.ninja}
+	ninja -C build -j $JOBS -v
+	ninja -C build install
 
-	cd build
-	ninja -v
-	DESTDIR=$PKG ninja install
-
-	rm -rf $PKG/usr/share/locale
-
-	# bash completion
-	if ! pkginfo -i | grep '^bash-completion '; then
-		rm -rf $PKG/usr/share/bash-completion
-	fi
-
-	# zsh completion
-	if ! pkginfo -i | grep '^zsh '; then
-		rm -rf $PKG/usr/share/zsh
-	fi
-
-	# fish completion
-	if ! pkginfo -i | grep '^fish '; then
-		rm -rf $PKG/usr/share/fish
-	fi
+	rm -rf $PKG/usr/share/{dbus-1,fish,zsh}
 
 	find $PKG -perm /go+w -exec chmod go-w {} \;
 }
