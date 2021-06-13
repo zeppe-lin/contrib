@@ -217,8 +217,6 @@ drwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/debug.so
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/dib.la
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/dib.so
--rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/djvu.la
--rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/djvu.so
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/dng.la
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/dng.so
 -rwxr-xr-x	root/root	usr/lib/ImageMagick-7.0.11/modules-Q16HDRI/coders/dot.la
