@@ -26,5 +26,5 @@ build () {
 	install -m 0644 $name.desktop  $PKG/usr/share/applications
 	install -m 0644 $name.png      $PKG/usr/share/pixmaps
 
-	rm -r $PKG/usr/share/{locale,sylpheed}
+	rm -r $PKG/usr/share/sylpheed
 }
