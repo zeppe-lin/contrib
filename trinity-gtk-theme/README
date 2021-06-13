@@ -1,0 +1,52 @@
+README for trinity-gtk-theme
+
+
+CONFIGURATION
+=============
+
+  GTK-2.0
+  -------
+
+  Create ~/.gtkrc-2.0 with approximately the following content:
+
+    gtk-theme-name="Trinity"
+    gtk-icon-theme-name="Trinity"
+    gtk-font-name="Terminus (TTF) Medium 9"
+    gtk-cursor-theme-name="Trinity-Cursor-Theme"
+    gtk-cursor-theme-size=0
+    gtk-toolbar-style=GTK_TOOLBAR_BOTH
+    gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+    gtk-button-images=1
+    gtk-menu-images=1
+    gtk-enable-event-sounds=1
+    gtk-enable-input-feedback-sounds=1
+    gtk-xft-antialias=0
+    gtk-xft-hinting=0
+    gtk-xft-hintstyle="none"
+    gtk-xft-rgba="none"
+
+  GTK-3.0
+  -------
+
+  Create ~/.config/gtk-3.0/settings.ini with approximately the
+  following content:
+
+    [Settings]
+    gtk-theme-name=Trinity
+    gtk-icon-theme-name=Trinity
+    gtk-font-name=Terminus (TTF) Medium 9
+    gtk-cursor-theme-size=0
+    gtk-toolbar-style=GTK_TOOLBAR_BOTH
+    gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+    gtk-button-images=1
+    gtk-menu-images=1
+    gtk-enable-event-sounds=1
+    gtk-enable-input-feedback-sounds=1
+    gtk-xft-antialias=0
+    gtk-xft-hinting=0
+    gtk-xft-hintstyle=none
+    gtk-xft-rgba=none
+    gtk-cursor-theme-name=Trinity-Cursor-Theme
+
+
+End of file.
