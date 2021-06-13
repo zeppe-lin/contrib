@@ -1,4 +1,4 @@
-# Description: Mmulti-platform toolkit for creating graphical user interfaces
+# Description: Multi-platform toolkit for creating graphical user interfaces
 # URL:         https://www.gtk.org
 # Depends on:  atk gdk-pixbuf hicolor-icon-theme pango xorg-libxcomposite xorg-libxcursor xorg-libxinerama xorg-libxrandr
 
@@ -16,12 +16,13 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	install -Dm0644 $SRC/gtk.immodules \
+	install -m 0644 -D $SRC/gtk.immodules \
 		$PKG/usr/lib/gtk-2.0/2.10.0/immodules.cache
 
-	install -m0755 $SRC/gtk-register.sh $PKG/usr/bin/gtk-register
+	install -m 0755 -D $SRC/gtk-register.sh \
+		$PKG/usr/bin/gtk-register
 
 	rm -r \
-		$PKG/usr/share/{locale,gtk-doc,gtk-2.0} \
+		$PKG/usr/share/{gtk-doc,gtk-2.0} \
 		$PKG/usr/bin/{gtk-demo,gtk-update-icon-cache}
 }
