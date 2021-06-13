@@ -1,0 +1,17 @@
+README for trinity-cursor-theme
+
+
+CONFIGURATION
+=============
+
+  Create ~/.icons/default/index.theme with the following content:
+
+    [Icon Theme]
+    Name=Default
+    Comment=Default Cursor Theme
+    Inherits=Trinity-Cursor-Theme
+
+  And restart WM.
+
+
+End of file.
