@@ -4,6 +4,14 @@ README for trinity-cursor-theme
 CONFIGURATION
 =============
 
+  Add the following line to ~/.Xresources:
+
+    Xcursor.theme: Trinity-Cursor-Theme
+
+  Then, run xrdb -load ~/.Xresources and restart your WM.
+
+  Or, there is the 2nd way:
+
   Create ~/.icons/default/index.theme with the following content:
 
     [Icon Theme]
@@ -11,7 +19,7 @@ CONFIGURATION
     Comment=Default Cursor Theme
     Inherits=Trinity-Cursor-Theme
 
-  And restart WM.
+  And restart your WM.
 
 
 End of file.
