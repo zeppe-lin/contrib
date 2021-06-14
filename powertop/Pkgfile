@@ -1,6 +1,6 @@
 # Description: Diagnose issues with power consumption and power management
 # URL:         https://01.org/powertop/
-# Depends on:  libnl ncurses
+# Depends on:  eudev gcc libnl ncurses pciutils
 
 name=powertop
 version=2.14
