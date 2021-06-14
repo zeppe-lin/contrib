@@ -1,6 +1,6 @@
 # Description: Multi-platform toolkit for creating graphical user interfaces
 # URL:         https://www.gtk.org
-# Depends on:  atk gdk-pixbuf hicolor-icon-theme pango xorg-libxcomposite xorg-libxcursor xorg-libxinerama xorg-libxrandr
+# Depends on:  atk bzip2 cairo e2fsprogs expat fontconfig freetype fribidi gdk-pixbuf glib harfbuzz libffi libjpeg-turbo libpcre libpng libtiff pango xorg-libpixman xorg-libx11 xorg-libxau xorg-libxcb xorg-libxcomposite xorg-libxcursor xorg-libxdamage xorg-libxdmcp xorg-libxext xorg-libxfixes xorg-libxinerama xorg-libxrandr xorg-libxrender xz zlib zstd hicolor-icon-theme
 
 name=gtk
 version=2.24.33

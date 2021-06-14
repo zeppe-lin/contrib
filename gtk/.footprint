@@ -274,10 +274,6 @@ drwxr-xr-x	root/root	usr/include/gtk-unix-print-2.0/gtk/
 -rw-r--r--	root/root	usr/include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 -rw-r--r--	root/root	usr/include/gtk-unix-print-2.0/gtk/gtkunixprint.h
 drwxr-xr-x	root/root	usr/lib/
-drwxr-xr-x	root/root	usr/lib/girepository-1.0/
--rw-r--r--	root/root	usr/lib/girepository-1.0/Gdk-2.0.typelib
--rw-r--r--	root/root	usr/lib/girepository-1.0/GdkX11-2.0.typelib
--rw-r--r--	root/root	usr/lib/girepository-1.0/Gtk-2.0.typelib
 drwxr-xr-x	root/root	usr/lib/gtk-2.0/
 drwxr-xr-x	root/root	usr/lib/gtk-2.0/2.10.0/
 drwxr-xr-x	root/root	usr/lib/gtk-2.0/2.10.0/engines/
@@ -341,10 +337,6 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/aclocal/
 -rw-r--r--	root/root	usr/share/aclocal/gtk-2.0.m4
-drwxr-xr-x	root/root	usr/share/gir-1.0/
--rw-r--r--	root/root	usr/share/gir-1.0/Gdk-2.0.gir
--rw-r--r--	root/root	usr/share/gir-1.0/GdkX11-2.0.gir
--rw-r--r--	root/root	usr/share/gir-1.0/Gtk-2.0.gir
 drwxr-xr-x	root/root	usr/share/themes/
 drwxr-xr-x	root/root	usr/share/themes/Default/
 drwxr-xr-x	root/root	usr/share/themes/Default/gtk-2.0-key/
