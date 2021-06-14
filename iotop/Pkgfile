@@ -1,5 +1,6 @@
 # Description: Top like program to display I/O load
 # URL:         https://github.com/Tomas-M/iotop
+# Depends on:  ncurses
 
 name=iotop
 version=1.17
@@ -9,6 +10,8 @@ source=(https://github.com/Tomas-M/$name/releases/download/v$version/$name-$vers
 build() {
 	cd $name-$version
 
-	make V=1
+	sed -i 's/install -TD/install -D/g' Makefile
+
+	make V=1 STRIP=
 	make DESTDIR=$PKG install
 }
