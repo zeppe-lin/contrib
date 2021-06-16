@@ -10,7 +10,9 @@ source=(http://downloads.sourceforge.net/project/lcms/lcms/$version/$name-$versi
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
 
 	make V=1
 	make DESTDIR=$PKG install
