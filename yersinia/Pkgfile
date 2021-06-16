@@ -1,6 +1,6 @@
 # Description:  Framework for layer 2 attacks
 # URL:          https://github.com/tomac/yersinia
-# Depends on:   gtk libdnet xorg-libxdamage
+# Depends on:   gtk libnet libpcap
 
 name=yersinia
 version=0.8.2-15d41ff
@@ -19,6 +19,6 @@ build() {
 		--disable-nls \
 		--disable-admin # Disable the remote admin interface
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }
