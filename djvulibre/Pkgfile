@@ -17,7 +17,8 @@ build() {
 		--disable-djview
 
 	# remove default debug flag
-	find . -name Makefile -exec sed '/C\(XX\)?FLAGS = /s/-g / /g' {} \;
+	find . -name Makefile \
+		-exec sed '/C\(XX\)?FLAGS = /s/-g / /g' {} \;
 
 	make V=1
 	make DESTDIR=$PKG install
