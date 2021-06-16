@@ -27,6 +27,7 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
+	install -d $PKG/var/lib $PKG/var/log
 	install -m 0700 -d $PKG/var/lib/tor $PKG/var/log/tor
 	install -d $PKG/var/run/tor
 
