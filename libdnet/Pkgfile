@@ -1,6 +1,6 @@
-# Description: daemon and tools to handle all ARP # aspects
+# Description: Simple interface to low level networking routines
 # URL:         https://github.com/dugsong/libdnet
-# Depends on:  libpcap, libnet
+# Depends on:  libpcap libnet
 
 name=libdnet
 version=1.14
@@ -8,13 +8,17 @@ release=1
 source=(https://github.com/dugsong/$name/archive/$name-$version.tar.gz)
 
 build() {
-    cd  $name-$name-$version
+	cd  $name-$name-$version
 
-    # fix FS#1144
-    autoreconf -i -Iconfig
+	# fix FS#1144
+	autoreconf -i -Iconfig
 
-    ./configure --prefix=/usr
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
+		--without-check  \
 
-    make
-    make install DESTDIR=$PKG
+
+	make V=1
+	make install DESTDIR=$PKG
 }

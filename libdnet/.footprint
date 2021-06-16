@@ -21,7 +21,6 @@ drwxr-xr-x	root/root	usr/include/dnet/
 -rw-r--r--	root/root	usr/include/dnet/tun.h
 -rw-r--r--	root/root	usr/include/dnet/udp.h
 drwxr-xr-x	root/root	usr/lib/
--rw-r--r--	root/root	usr/lib/libdnet.a
 -rwxr-xr-x	root/root	usr/lib/libdnet.la
 lrwxrwxrwx	root/root	usr/lib/libdnet.so -> libdnet.so.1.0.1
 lrwxrwxrwx	root/root	usr/lib/libdnet.so.1 -> libdnet.so.1.0.1
