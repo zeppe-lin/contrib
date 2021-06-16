@@ -8,16 +8,16 @@ release=1
 source=(https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-$version.tar.bz2)
 
 build() {
-    cd pinentry-$version
+	cd pinentry-$version
 
-    ./configure \
-      --prefix=/usr \
-      --disable-pinentry-{curses,qt,qt5} \
-      --enable-pinentry-gtk2
+	./configure \
+		--prefix=/usr \
+		--disable-pinentry-{curses,qt,qt5} \
+		--enable-pinentry-gtk2
 
-    make
-    make DESTDIR=$PKG install
+	make V=1
+	make DESTDIR=$PKG install
 
-    rm -rf $PKG/usr/share
-    rm $PKG/usr/bin/pinentry
+	rm -rf $PKG/usr/share
+	rm $PKG/usr/bin/pinentry
 }
