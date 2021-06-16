@@ -13,6 +13,6 @@ build() {
 	./bootstrap
 	./configure --prefix=/usr
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }
