@@ -1,5 +1,5 @@
 # Description: Unicode Bidirectional (BiDi) Algorithm.
-# URL: https://github.com/fribidi/fribidi/
+# URL:         https://github.com/fribidi/fribidi/
 
 name=fribidi
 version=1.0.10
@@ -8,7 +8,9 @@ source=(https://github.com/$name/$name/releases/download/v$version/$name-$versio
 
 build() {
 	cd $name-$version
+
 	./configure --prefix=/usr
-	make
+
+	make V=1
 	make DESTDIR=$PKG install
 }
