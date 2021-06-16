@@ -1,4 +1,4 @@
-# Description: A patched version of xorg's transset
+# Description: Patched version of xorg's transset
 # URL:         https://forchheimer.se/transset-df
 # Depends on:  xorg-libxcomposite xorg-libxdamage xorg-libxrender
 
