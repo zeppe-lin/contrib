@@ -1,5 +1,5 @@
 # Description: Library for Linux Kernel's syscall filtering mechanism
-# URL: https://github.com/seccomp/libseccomp
+# URL:         https://github.com/seccomp/libseccomp
 
 name=libseccomp
 version=2.5.1
@@ -7,11 +7,13 @@ release=1
 source=(https://github.com/seccomp/libseccomp/archive/v${version}/libseccomp-${version}.tar.gz)
 
 build() {
-  cd $name-$version
+	cd $name-$version
 
-  ./autogen.sh
-  ./configure --prefix=/usr
+	./autogen.sh
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
 
-  make
-  make DESTDIR=$PKG install
+	make V=1
+	make DESTDIR=$PKG install
 }
