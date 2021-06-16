@@ -1,7 +1,6 @@
 # Description: Highly customizable and functional document viewer
 # URL:         https://pwmt.org/projects/zathura
-# Depends+on:  girara libseccomp
-# Optional:    texlive
+# Depends on:  file girara libseccomp
 
 name=zathura
 version=0.4.7
