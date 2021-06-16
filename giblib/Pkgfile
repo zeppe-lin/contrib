@@ -1,7 +1,6 @@
 # Description: Library for doubly linked lists and a wrapper for imlib2.
-# URL: http://freshmeat.net/projects/giblib/
-# Packager: Mark Rosenstand, mark at borkware dot net
-# Depends on: imlib2
+# URL:         http://freshmeat.net/projects/giblib/
+# Depends on:  imlib2
 
 name=giblib
 version=1.2.4
@@ -10,8 +9,13 @@ source=(http://crux.ster.zone/downloads/$name/$name-$version.tar.gz)
 
 build() {
 	cd giblib-$version
-	./configure --prefix=/usr
-	make
+
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
+
+	make V=1
 	make DESTDIR=$PKG install
+
 	rm -r $PKG/usr/doc
 }
