@@ -1,6 +1,6 @@
-# Description: A C, CXX, and lisp API for GnuPG.
-# URL: https://www.gnupg.org/related_software/gpgme/
-# Depends on: gnupg
+# Description: C, CXX, and Lisp API for GnuPG
+# URL:         https://www.gnupg.org/related_software/gpgme/
+# Depends on:  gnupg
 
 name=gpgme
 version=1.15.1
@@ -14,7 +14,7 @@ build() {
 		--prefix=/usr \
 		--enable-languages='cl cpp'
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 
 	install -d $PKG/usr/etc/gpgme
