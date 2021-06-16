@@ -1,10 +1,10 @@
 # Description: Set of interfaces for accessibility
 # URL:         https://www.gtk.org/
-# Depends on:  glib gobject-introspection
+# Depends on:  glib
 
 name=atk
 version=2.36.0
-release=1
+release=2
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
@@ -17,8 +17,8 @@ build() {
 		--prefix=/usr            \
 		--buildtype=plain        \
 		-D docs=false            \
-		-D introspection=true    \
+		-D introspection=false   \
 
-	ninja -C build -v
+	ninja -C build -j $JOBS -v
 	ninja -C build install
 }
