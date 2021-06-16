@@ -13,6 +13,7 @@ build() {
 	sed 's/^CFLAGS= /CFLAGS+= /' -i Makefile
 
 	make
+
 	install -m 0755 -D -t $PKG/usr/bin            $name
 	install -m 0644 -D -t $PKG/usr/share/man/man1 $name.1
 }
