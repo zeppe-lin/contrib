@@ -1,21 +1,22 @@
 # Description: Text layout and rendering
 # URL:         https://github.com/GNOME/pango
-# Depends on:  xorg-libsm xorg-libxft gobject-introspection fribidi harfbuzz
+# Depends on:  fribidi xorg-libxft
 
 # XXX !!! Don't upgrade since pango broke non-ttf fonts!!!
 
 name=pango
 version=1.43.0
-release=1
+release=2
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
 	meson build $name-$version \
-		--prefix=/usr            \
-		--buildtype=plain        \
-		-D introspection=enabled \
-		-D gtk_doc=false         \
-		-D installed_tests=false \
+		--prefix=/usr             \
+		--buildtype=plain         \
+		-D gir=false              \
+		-D introspection=disabled \
+		-D gtk_doc=false          \
+		-D installed_tests=false  \
 
 	ninja -C build -j $JOBS -v
 	DESTDIR=$PKG ninja -C build install
