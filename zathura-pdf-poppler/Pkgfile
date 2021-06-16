@@ -8,19 +8,18 @@ release=3
 source=(https://pwmt.org/projects/$name/download/$name-$version.tar.xz)
 
 build() {
-	cd $name-$version
+	export DESTDIR=$PKG
 
-	meson build \
+	meson build $name-$version    \
 		--prefix=/usr         \
 		--sysconfdir=/usr/etc \
 		--buildtype=plain     \
-		--backend=ninja
+		--backend=ninja       \
 
 	sed -i 's/ \-pipe / /g' build/{compile_commands.json,build.ninja}
 
-	cd build
-	ninja -v
-	DESTDIR=$PKG ninja install
+	ninja -C build -j $JOBS -v
+	ninja -C build install
 
 	find $PKG -perm /go+w -exec chmod go-w {} \;
 }
