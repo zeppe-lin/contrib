@@ -1,6 +1,6 @@
 # Description: User interface library focusing on simplicity and minimalism
 # URL:         https://pwmt.org/projects/girara
-# Depends on:  gtk3 json-c xorg-libxcomposite xorg-libxcursor xorg-libxinerama
+# Depends on:  gtk3 json-c
 
 name=girara
 version=0.3.5
