@@ -1,6 +1,5 @@
 # Description: Simple interface to low level networking routines
 # URL:         https://github.com/dugsong/libdnet
-# Depends on:  libpcap libnet
 
 name=libdnet
 version=1.14
