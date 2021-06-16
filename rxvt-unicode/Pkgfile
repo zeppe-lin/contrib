@@ -1,6 +1,6 @@
 # Description: Rxvt fork with unicode and xft support
 # URL:         http://software.schmorp.de/#rxvt-unicode
-# Depends on:  perl xorg-libxft xorg-libxpm
+# Depends on:  gdk-pixbuf perl xorg-libxft xorg-libxmu
 
 name=rxvt-unicode
 version=9.26
