@@ -1,6 +1,6 @@
-# Description: Generic Cascading Style Sheet parsing and manipulation toolkit.
-# URL: https://gitlab.gnome.org/GNOME/libcroco
-# Depends on: glib libxml2
+# Description: Generic Cascading Style Sheet parsing and manipulation toolkit
+# URL:         https://gitlab.gnome.org/GNOME/libcroco
+# Depends on:  glib libxml2
 
 name=libcroco
 version=0.6.13
@@ -11,10 +11,11 @@ build() {
 	cd $name-$version
 
 	./configure \
-		--prefix=/usr \
-		--disable-gtk-doc
+		--prefix=/usr     \
+		--disable-static  \
+		--disable-gtk-doc \
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 
 	ln -s libcroco-${version%.*}.la $PKG/usr/lib/libcroco.la
