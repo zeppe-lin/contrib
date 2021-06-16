@@ -1,6 +1,6 @@
-# Description: A fast image manipulation library
+# Description: Fast image manipulation library
 # URL:         http://freshmeat.net/projects/imlib2/
-# Depends on:  freetype libtiff xorg-libsm xorg-libxext
+# Depends on:  freetype libtiff xorg-libxext
 # Optional:    libid3tag giflib
 
 name=imlib2
@@ -11,8 +11,10 @@ source=(http://download.sourceforge.net/enlightenment/$name-$version.tar.bz2)
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
 
-	make
+	make V=1
 	make DESTDIR=$PKG install
 }
