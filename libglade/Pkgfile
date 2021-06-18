@@ -28,10 +28,9 @@ build() {
 		--prefix=/usr     \
 		--disable-debug   \
 		--disable-gtk-doc \
+		--disable-static  \
 
-	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-	make
+	make V=1
 	make DESTDIR=$PKG install
 
 	install -m755 libglade-convert $PKG/usr/bin/
