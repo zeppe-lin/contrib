@@ -18,11 +18,9 @@ build() {
 	patch -p1 -i $SRC/fix-leaks-of-pango-objects.patch
 
 	PKG_CONFIG_PATH+="/usr/lib/pango-compat/pkgconfig:/usr/lib/libcairo-compat/pkgconfig" \
-	./configure --prefix=/usr
+	./configure --prefix=/usr --disable-static
 
-	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-	make
+	make V=1
 	make DESTDIR=$PKG install
 
 	install -m 0644 gtk/gtk-extrafuncs.defs $PKG/usr/share/pygtk/2.0/defs/
