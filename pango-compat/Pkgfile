@@ -1,4 +1,4 @@
-# Description: A library for layout and rendering of text (required for pangox-compat)
+# Description: Library for layout and rendering of text (required for pangox-compat)
 # URL:         https://www.gtk.org
 # Depends on:  xorg-libsm xorg-libxft
 
