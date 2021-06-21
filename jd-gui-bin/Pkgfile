@@ -9,6 +9,6 @@ source=(https://github.com/java-decompiler/jd-gui/releases/download/v$version/${
 	jd-gui.sh)
 
 build() {
-	install -m 644 -D jd-gui-$version.jar $PKG/usr/share/jd-gui/jd-gui.jar
+	install -m 644 -D jd-gui-$version.jar $PKG/opt/jd-gui/jd-gui.jar
 	install -m 755 -D $SRC/jd-gui.sh      $PKG/usr/bin/jd-gui
 }

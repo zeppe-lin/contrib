@@ -1,4 +1,2 @@
-#!/bin/sh
-. ~/.bash_profile
-exec java -jar /usr/share/jd-gui/jd-gui.jar
-# End of file.
+#!/bin/sh -e
+exec java -jar /opt/jd-gui/jd-gui.jar
