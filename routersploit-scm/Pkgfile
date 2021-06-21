@@ -11,15 +11,14 @@ source=(git+https://github.com/threat9/${name/-scm}@master
 build() {
 	cd ${name/-scm}@master
 
-	install -dm755 $PKG/usr/share/routersploit
-	/usr/bin/pip3 install . --target $PKG/usr/share/routersploit
+	install -dm755 $PKG/opt/routersploit
+	/usr/bin/pip3 install . --target $PKG/opt/routersploit
 
-	# Create an indirect launcher in /opt/bin
-	install -m644 rsf.py $PKG/usr/share/routersploit/rsf.py
+	# Create an indirect launcher in /usr/bin
+	install -m644 rsf.py $PKG/opt/routersploit/rsf.py
 	install -Dm755 $SRC/routersploit.sh $PKG/usr/bin/routersploit
 
 	# Remove junk files
-	rm -rf $PKG/usr/share/routersploit/*.dist-info
-	rm -rf $PKG/usr/share/routersploit/*.egg-info
+	rm -rf $PKG/opt/routersploit/*.{dist-info,egg-info}
 	find $PKG -name README.txt | xargs rm -f
 }

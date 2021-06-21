@@ -1,3 +1,2 @@
-#!/bin/sh
-export PYTHONPATH="/usr/share/routersploit"
-python3 /usr/share/routersploit/rsf.py $@
+#!/bin/sh -e
+PYTHONPATH="/opt/routersploit" python3 /opt/routersploit/rsf.py $@
