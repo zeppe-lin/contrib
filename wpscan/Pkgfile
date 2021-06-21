@@ -3,7 +3,7 @@
 # Depends on:  curl libxslt ruby
 
 name=wpscan
-version=3.8.17
+version=3.8.18
 release=1
 source=(https://github.com/wpscanteam/$name/archive/v$version/$name-$version.tar.gz
 	$name.sh)
@@ -27,7 +27,7 @@ build() {
 	sed '/BUNDLE_JOBS/d' -i .bundle/config
 
 	install -d $PKG/opt/$name
-	cp -ra --no-preserve=owner . $PKG/opt/$name
+	cp -pra . $PKG/opt/$name
 
 	install -Dm755 $SRC/$name.sh $PKG/opt/bin/$name
 
