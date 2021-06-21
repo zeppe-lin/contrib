@@ -1,3 +1,2 @@
-#!/bin/sh
-set -e
-exec /usr/share/jadx/bin/jadx-gui "$@"
+#!/bin/sh -e
+exec /opt/jadx/bin/jadx-gui "$@"
