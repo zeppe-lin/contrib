@@ -10,13 +10,11 @@ source=(https://github.com/pxb1988/${name/-bin}/files/1867564/dex-tools-$version
 build () {
 	cd dex-tools-$version-SNAPSHOT
 
-	install -dm 755 $PKG/usr/bin
-	install -dm 755 $PKG/usr/share/${name/-bin}/lib
-
-	install -m 644 lib/*.jar $PKG/usr/share/${name/-bin}/lib
-	install -m 755 *.sh      $PKG/usr/share/${name/-bin}
+	install -m 755 -d $PKG/usr/bin $PKG/opt/dex2jar/lib
+	install -m 644 lib/*.jar $PKG/opt/dex2jar/lib/
+	install -m 755 *.sh      $PKG/opt/dex2jar/
 
 	for bin in d2j-*.sh; do
-		ln -s /usr/share/${name/-bin}/$bin $PKG/usr/bin/${bin%.*}
+		ln -s /opt/dex2jar/$bin $PKG/usr/bin/${bin%.*}
 	done
 }
