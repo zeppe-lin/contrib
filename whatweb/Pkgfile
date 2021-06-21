@@ -1,0 +1,31 @@
+# Description: Web scanner that identifies what websites are running
+# URL:         https://github.com/urbanadventurer/WhatWeb
+# Depends on:  ruby libxslt
+
+name=whatweb
+version=0.5.5-ae89986
+_commit=${version##*-}
+release=1
+source=(https://github.com/urbanadventurer/WhatWeb/archive/$_commit/WhatWeb-$_commit.tar.gz
+	$name.sh)
+
+build() {
+	cd WhatWeb-$_commit*
+
+        bundle config build.nokogiri --use-system-libraries
+	bundle config set deployment 'false'
+        bundle config set no-cache 'false'
+	bundle install -j $JOBS --path vendor/bundle
+
+        find vendor/bundle/ruby -exec chmod o+r '{}' \;
+        find vendor/bundle/ruby -name gem_make.out -o -name mkmf.log -delete
+
+        install -d $PKG/opt/$name $PKG/usr/bin $PKG/usr/share/man/man1
+	install -m 644 $name.1 $PKG/usr/share/man/man1
+        cp -r . $PKG/opt/$name
+	install -m 755 -D $SRC/$name.sh $PKG/usr/bin/$name
+
+	# Remove junk
+	rm -r $PKG/opt/$name/*.md $PKG/opt/$name/$name.xsl \
+		$PKG/opt/$name/test
+}
