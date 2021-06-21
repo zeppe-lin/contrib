@@ -1,0 +1,16 @@
+# Description: DNS toolkit for Python3
+# URL:         https://pypi.org/project/dnspython/
+# Depends on:  python3-setuptools
+
+name=python3-dnspython
+version=1.16.0
+release=1
+source=(http://www.dnspython.org/kits/$version/dnspython-$version.tar.gz)
+
+build() {
+	cd dnspython-$version
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+}
