@@ -29,7 +29,7 @@ build() {
 	install -d $PKG/opt/$name
 	cp -pra . $PKG/opt/$name
 
-	install -Dm755 $SRC/$name.sh $PKG/opt/bin/$name
+	install -Dm755 $SRC/$name.sh $PKG/usr/bin/$name
 
 	# remove junk
 	find $PKG \( \

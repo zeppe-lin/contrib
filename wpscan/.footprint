@@ -1,6 +1,4 @@
 drwxr-xr-x	root/root	opt/
-drwxr-xr-x	root/root	opt/bin/
--rwxr-xr-x	root/root	opt/bin/wpscan
 drwxrwxr-x	root/root	opt/wpscan/
 drwxr-xr-x	root/root	opt/wpscan/.bundle/
 -rw-r--r--	root/root	opt/wpscan/.bundle/config
@@ -15841,3 +15839,6 @@ drwxr-xr-x	root/root	opt/wpscan/vendor/bundle/ruby/2.7/specifications/
 -rw-r--r--	root/root	opt/wpscan/vendor/bundle/ruby/2.7/specifications/yajl-ruby-1.4.1.gemspec
 -rw-r--r--	root/root	opt/wpscan/vendor/bundle/ruby/2.7/specifications/zeitwerk-2.4.2.gemspec
 -rw-rw-r--	root/root	opt/wpscan/wpscan.gemspec
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/wpscan
