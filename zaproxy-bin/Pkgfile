@@ -11,10 +11,10 @@ source=(https://github.com/zaproxy/zaproxy/releases/download/v$version/ZAP_${ver
 build() {
 	cd ZAP_$version
 
-	install -d $PKG/usr/share/${name/-bin}
+	install -d $PKG/opt/zaproxy
 
 	rm -rf zap.bat README plugin/Readme.txt license/ lang/
-	cp -pR . $PKG/usr/share/${name/-bin}
+	cp -pR . $PKG/opt/zaproxy
 
-	install -m 755 -D $SRC/${name/-bin}.sh $PKG/usr/bin/${name/-bin}
+	install -m 755 -D $SRC/zaproxy.sh $PKG/usr/bin/zaproxy
 }

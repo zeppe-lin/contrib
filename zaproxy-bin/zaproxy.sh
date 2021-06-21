@@ -1,3 +1,2 @@
-#!/bin/bash
-. ~/.bash_profile
-/usr/share/zaproxy/zap.sh
+#!/bin/sh -e
+exec /opt/zaproxy/zap.sh
