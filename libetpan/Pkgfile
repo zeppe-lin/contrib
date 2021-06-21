@@ -1,0 +1,25 @@
+# Description: Library for low-level mail work
+# URL:         http://www.etpan.org/
+# Depends on:  curl db expat
+
+name=libetpan
+version=1.9.4
+release=1
+source=(https://github.com/dinhviethoa/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	NOCONFIGURE=1 ./autogen.sh
+	./configure \
+		--prefix=/usr     \
+		--with-poll       \
+		--without-gnutls  \
+		--disable-static  \
+
+	# Don't build tests.
+	sed '/^SUBDIRS = /s/tests//' -i Makefile
+
+	make V=1
+	make DESTDIR=$PKG install
+}
