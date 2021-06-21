@@ -1,9 +1,2 @@
-#!/bin/sh
-# apktool wrapper
-
-jarpath="/usr/share/apktool/apktool.jar"
-javaOpts="-Xmx512M -Dfile.encoding=utf-8"
-
-exec java $javaOpts -jar "$jarpath" "$@"
-
-# End of file
+#!/bin/sh -e
+exec java -Dfile.encoding=utf8 -Xmx512M -jar /opt/apktool/apktool.jar

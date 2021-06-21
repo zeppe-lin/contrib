@@ -8,17 +8,7 @@ release=1
 source=(https://github.com/iBotPeaches/Apktool/releases/download/v$version/apktool_$version.jar
 	apktool.sh)
 
-unpack_source() {
-	install -d $SRC/$name-$version
-
-	cp $PKGMK_SOURCE_DIR/apktool_$version.jar $SRC/$name-$version/
-	cp apktool.sh $SRC/$name-$version
-}
-
 build() {
-	cd $name-$version
-
-	install -dm0755                      $PKG/usr/{bin,share/apktool}
-	install -m0755 apktool.sh            $PKG/usr/bin/apktool
-	install -m0755 apktool_$version.jar  $PKG/usr/share/apktool/apktool.jar
+	install -m 755 -D apktool.sh $PKG/usr/bin/apktool
+	install -m 644 -D $SRC/apktool_$version.jar $PKG/opt/apktool/apktool.jar
 }
