@@ -1,7 +1,6 @@
 # Description: Complete solution to record, convert and stream audio and video
 # URL:         http://ffmpeg.org/
-# Depends on:  yasm
-# Optional:    alsa-lib cuda dav1d fdk-aac ffnvcodec-headers gnutls gsm lame libass libsdl2 libtheora libva libvdpau libvorbis libvpx libwebp opus pulseaudio x264 x265
+# Depends on:  alsa-lib dav1d fdk-aac ffnvcodec-headers gnutls gsm lame libass libtheora libva libvdpau libvpx libwebp opus x264 x265 yasm
 
 name=ffmpeg
 version=4.4
