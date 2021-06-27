@@ -1,15 +1,19 @@
-# Description: send usb device traffic over a network connection
+# Description: Send usb device traffic over a network connection
 # URL:         https://www.spice-space.org/usbredir.html
+# Depends on:  libusb
 
 name=usbredir
 version=0.8.0
 release=1
-source=(https://spice-space.org/download/usbredir/usbredir-$version.tar.bz2)
+source=(https://spice-space.org/download/$name/$name-$version.tar.bz2)
 
 build() {
-  cd $name-$version
-  ./configure --prefix=/usr
+	cd $name-$version
 
-  make
-  make install DESTDIR=$PKG
+	./configure \
+		--prefix=/usr    \
+		--disable-static \
+
+	make V=1
+	make install DESTDIR=$PKG
 }
