@@ -1,0 +1,13 @@
+# Description: SSL-capable man-in-the-middle HTTP proxy
+# URL:         https://mitmproxy.org
+
+name=mitmproxy-bin
+version=6.0.2
+release=1
+source=(https://snapshots.mitmproxy.org/$version/${name/-bin/}-$version-linux.tar.gz)
+
+build() {
+	install -m 755 -D mitmdump   $PKG/usr/bin/mitmdump
+	install -m 755 -D mitmproxy  $PKG/usr/bin/mitmproxy
+	install -m 755 -D mitmweb    $PKG/usr/bin/mitmweb
+}
