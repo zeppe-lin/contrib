@@ -1,11 +1,10 @@
 # Description: General Purpose video player based on MPlayer and mplayer2
 # URL:         https://mpv.io
-# Depends on:  ffmpeg libass libplacebo util-linux xorg-libxscrnsaver docutils
-# Optional:    libbluray libcdio-paranoia libdvdnav libvdpau rubberband 
+# Depends on:  ffmpeg libepoxy libplacebo xorg-libxscrnsaver docutils
 
 name=mpv
 version=0.33.1
-release=2
+release=3
 source=(https://github.com/$name-player/$name/archive/v$version/$name-v$version.tar.gz
 	https://waf.io/waf-2.0.9
 	mpv-libplacebo-3.104.0-api-change.patch)
@@ -29,5 +28,5 @@ build() {
 	/usr/bin/python3 waf build -v
 	/usr/bin/python3 waf install --destdir=$PKG
 
-	rm -r $PKG/usr/share/doc
+	rm -r $PKG/usr/share/{doc,zsh}
 }
