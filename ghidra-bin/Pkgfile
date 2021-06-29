@@ -1,0 +1,27 @@
+# Description: Software reverse engineering framework (WIP)
+# URL:         https://www.nsa.gov/ghidra
+# Depends on:  jdk11-bin
+
+name=ghidra-bin
+version=10.0-20210621
+release=1
+source=(https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${version%%-*}_build/ghidra_${version%%-*}_PUBLIC_${version##*-}.zip
+	https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_${version%%-*}_build/Ghidra/Framework/Generic/src/main/resources/images/GhidraIcon256.png
+	ghidra.desktop)
+
+build() {
+	install -d $PKG/opt $PKG/usr/bin
+
+	cp -a ghidra_${version%%-*}_PUBLIC $PKG/opt/ghidra
+
+	ln -s /opt/ghidra/ghidraRun $PKG/usr/bin/ghidra
+
+	ln -s /opt/ghidra/support/analyzeHeadless \
+		$PKG/usr/bin/ghidra-headless
+
+	install -m 644 -D ghidra.desktop \
+		$PKG/usr/share/applications/ghidra.desktop
+
+	install -m 644 -D GhidraIcon256.png \
+		$PKG/usr/share/pixmaps/ghidra.png
+}
