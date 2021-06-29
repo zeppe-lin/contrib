@@ -3,7 +3,7 @@
 # Depends on:  p5-html-parser p5-uri
 
 name=p5-libwww
-version=6.54
+version=6.55
 release=1
 source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-$version.tar.gz)
 
