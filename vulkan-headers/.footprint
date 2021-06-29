@@ -18,12 +18,17 @@ drwxr-xr-x	root/root	usr/include/vulkan/
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_beta.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_core.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_directfb.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_enums.hpp
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_fuchsia.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_funcs.hpp
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_ggp.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_handles.hpp
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_ios.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_macos.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_metal.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_raii.hpp
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_screen.h
+-rw-r--r--	root/root	usr/include/vulkan/vulkan_structs.hpp
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_vi.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_wayland.h
 -rw-r--r--	root/root	usr/include/vulkan/vulkan_win32.h
