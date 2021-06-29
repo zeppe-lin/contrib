@@ -1,6 +1,6 @@
 # Description: Fast CPU emulator and virtualizer for the x86 platform
 # URL:         https://www.qemu.org/
-# Depends on:  gtk3 libusb linux-pam
+# Depends on:  gtk3 libusb linux-pam usbredir
 
 name=qemu
 version=5.2.0
