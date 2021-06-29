@@ -3,7 +3,7 @@
 # Depends on:  vulkan-headers samurai xorg-libxrandr
 
 name=vulkan-loader
-version=1.2.179
+version=1.2.182
 release=1
 source=(https://github.com/KhronosGroup/Vulkan-Loader/archive/v$version/Vulkan-Loader-$version.tar.gz)
 
