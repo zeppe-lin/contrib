@@ -10,7 +10,7 @@ source=(git+https://github.com/volgk/${name/-scm}@master)
 build() {
 	cd ${name/-scm}@master
 
-	install -Dm 0644 engines.json -t $PKG/usr/share/qrot
-	install -Dm 0644 search.py    -t $PKG/usr/share/qrot
-	install -Dm 0755 qrot.py         $PKG/usr/bin/qrot
+	install -d $PKG/usr/share/qrot $PKG/usr/bin
+	install -m 0644 engines.json search.py $PKG/usr/share/qrot/
+	install -m 0755 qrot.py                $PKG/usr/bin/qrot
 }
