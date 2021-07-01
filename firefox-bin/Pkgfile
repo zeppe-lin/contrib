@@ -4,7 +4,7 @@
 
 name=firefox-bin
 version=89.0.2
-release=1
+release=2
 source=(http://ftp.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2
 	policies.json firefox.desktop firefox.sh)
 
