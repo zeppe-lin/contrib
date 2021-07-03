@@ -6651,16 +6651,6 @@ drwxr-xr-x	root/root	usr/include/qt5/QtVirtualKeyboard/5.15.2/QtVirtualKeyboard/
 -rw-r--r--	root/root	usr/include/qt5/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
 -rw-r--r--	root/root	usr/include/qt5/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 -rw-r--r--	root/root	usr/include/qt5/QtVirtualKeyboard/qvirtualkeyboardtrace.h
-drwxr-xr-x	root/root	usr/include/qt5/QtVulkanSupport/
-drwxr-xr-x	root/root	usr/include/qt5/QtVulkanSupport/5.15.2/
-drwxr-xr-x	root/root	usr/include/qt5/QtVulkanSupport/5.15.2/QtVulkanSupport/
-drwxr-xr-x	root/root	usr/include/qt5/QtVulkanSupport/5.15.2/QtVulkanSupport/private/
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/5.15.2/QtVulkanSupport/private/qbasicvulkanplatforminstance_p.h
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/5.15.2/QtVulkanSupport/private/qvkconvenience_p.h
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/QtVulkanSupport
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/QtVulkanSupportDepends
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/QtVulkanSupportVersion
--rw-r--r--	root/root	usr/include/qt5/QtVulkanSupport/qtvulkansupportversion.h
 drwxr-xr-x	root/root	usr/include/qt5/QtWebChannel/
 drwxr-xr-x	root/root	usr/include/qt5/QtWebChannel/5.15.2/
 drwxr-xr-x	root/root	usr/include/qt5/QtWebChannel/5.15.2/QtWebChannel/
@@ -8022,7 +8012,6 @@ drwxr-xr-x	root/root	usr/lib/cmake/Qt5ServiceSupport/
 drwxr-xr-x	root/root	usr/lib/cmake/Qt5Sql/
 -rw-r--r--	root/root	usr/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake
 -rw-r--r--	root/root	usr/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake
--rw-r--r--	root/root	usr/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake
 -rw-r--r--	root/root	usr/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake
 drwxr-xr-x	root/root	usr/lib/cmake/Qt5Svg/
 -rw-r--r--	root/root	usr/lib/cmake/Qt5Svg/Qt5SvgConfig.cmake
@@ -8051,9 +8040,6 @@ drwxr-xr-x	root/root	usr/lib/cmake/Qt5VirtualKeyboard/
 -rw-r--r--	root/root	usr/lib/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboard_QtVirtualKeyboardPinyinPlugin.cmake
 -rw-r--r--	root/root	usr/lib/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboard_QtVirtualKeyboardTCImePlugin.cmake
 -rw-r--r--	root/root	usr/lib/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboard_QtVirtualKeyboardThaiPlugin.cmake
-drwxr-xr-x	root/root	usr/lib/cmake/Qt5VulkanSupport/
--rw-r--r--	root/root	usr/lib/cmake/Qt5VulkanSupport/Qt5VulkanSupportConfig.cmake
--rw-r--r--	root/root	usr/lib/cmake/Qt5VulkanSupport/Qt5VulkanSupportConfigVersion.cmake
 drwxr-xr-x	root/root	usr/lib/cmake/Qt5WebChannel/
 -rw-r--r--	root/root	usr/lib/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake
 -rw-r--r--	root/root	usr/lib/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
@@ -8526,9 +8512,6 @@ lrwxrwxrwx	root/root	usr/lib/libQt5VirtualKeyboard.so -> libQt5VirtualKeyboard.s
 lrwxrwxrwx	root/root	usr/lib/libQt5VirtualKeyboard.so.5 -> libQt5VirtualKeyboard.so.5.15.2
 lrwxrwxrwx	root/root	usr/lib/libQt5VirtualKeyboard.so.5.15 -> libQt5VirtualKeyboard.so.5.15.2
 -rwxr-xr-x	root/root	usr/lib/libQt5VirtualKeyboard.so.5.15.2
--rw-r--r--	root/root	usr/lib/libQt5VulkanSupport.a
--rw-r--r--	root/root	usr/lib/libQt5VulkanSupport.la
--rw-r--r--	root/root	usr/lib/libQt5VulkanSupport.prl
 -rw-r--r--	root/root	usr/lib/libQt5WebChannel.la
 -rw-r--r--	root/root	usr/lib/libQt5WebChannel.prl
 lrwxrwxrwx	root/root	usr/lib/libQt5WebChannel.so -> libQt5WebChannel.so.5.15.2
@@ -9405,7 +9388,6 @@ drwxr-xr-x	root/root	usr/lib/qt5/mkspecs/modules/
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_uitools_private.pri
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_virtualkeyboard.pri
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_virtualkeyboard_private.pri
--rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_webchannel.pri
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_webchannel_private.pri
 -rw-r--r--	root/root	usr/lib/qt5/mkspecs/modules/qt_lib_websockets.pri
@@ -9646,7 +9628,6 @@ drwxr-xr-x	root/root	usr/lib/qt5/plugins/sensors/
 -rwxr-xr-x	root/root	usr/lib/qt5/plugins/sensors/libqtsensors_linuxsys.so
 drwxr-xr-x	root/root	usr/lib/qt5/plugins/sqldrivers/
 -rwxr-xr-x	root/root	usr/lib/qt5/plugins/sqldrivers/libqsqlite.so
--rwxr-xr-x	root/root	usr/lib/qt5/plugins/sqldrivers/libqsqlpsql.so
 drwxr-xr-x	root/root	usr/lib/qt5/plugins/virtualkeyboard/
 -rwxr-xr-x	root/root	usr/lib/qt5/plugins/virtualkeyboard/libqtvirtualkeyboard_hangul.so
 -rwxr-xr-x	root/root	usr/lib/qt5/plugins/virtualkeyboard/libqtvirtualkeyboard_openwnn.so
