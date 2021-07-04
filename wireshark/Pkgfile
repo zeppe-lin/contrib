@@ -1,6 +1,6 @@
 # Description: Network Sniffer
 # URL:         https://www.wireshark.org
-# Depends on:  c-ares hicolor-icon-theme libgcrypt libpcap qt5
+# Depends on:  c-ares hicolor-icon-theme libcap libgcrypt libpcap lz4 qt5
 
 name=wireshark
 version=3.4.6
