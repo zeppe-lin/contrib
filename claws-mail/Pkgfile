@@ -1,10 +1,10 @@
 # Description: E-mail client and news reader
 # URL:         https://www.claws-mail.org
-# Depends on:  gpgme gtk libetpan perl poppler python xorg-libsm
+# Depends on:  gpgme gtk libbsd libetpan lz4 perl poppler xorg-libsm
 
 name=claws-mail
 version=3.17.8
-release=1
+release=2
 source=(https://www.claws-mail.org/releases/$name-$version.tar.xz)
 
 build() {
@@ -14,6 +14,12 @@ build() {
 		--enable-alternate-addressbook        \
 		--with-config-dir=.config/claws-mail  \
 		--disable-manual                      \
+		--disable-dbus                        \
+		--disable-enchant                     \
+		--disable-ldap                        \
+		--disable-jpilot                      \
+		--disable-networkmanager              \
+		--disable-compface                    \
 		--enable-gnutls                       \
 		--disable-static                      \
 		--disable-nls                         \
