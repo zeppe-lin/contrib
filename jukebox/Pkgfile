@@ -1,0 +1,16 @@
+# Description:  Customizable open-source jukebox for large collections
+# URL:          https://gmusicbrowser.org/
+# Depends on:   p5-gtk2
+
+name=jukebox
+version=1.1.15.10
+release=1
+source=(https://github.com/chinarulezzz-de/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+        cd $name-$version
+
+        make DESTDIR=$PKG install
+
+        rm -rf $PKG/usr/share/{doc,appdata,locale}
+}
