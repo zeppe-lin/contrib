@@ -2,11 +2,9 @@
 # URL:         https://github.com/GNOME/pango
 # Depends on:  fribidi xorg-libxft
 
-# XXX !!! Don't upgrade since pango broke non-ttf fonts!!!
-
 name=pango
-version=1.43.0
-release=2
+version=1.48.7
+release=1
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
@@ -20,7 +18,4 @@ build() {
 
 	ninja -C build -j $JOBS -v
 	DESTDIR=$PKG ninja -C build install
-
-	# remove installed-tests
-	rm -r $PKG/usr/{libexec,share/installed-tests}
 }
