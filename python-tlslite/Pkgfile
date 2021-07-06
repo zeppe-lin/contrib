@@ -1,0 +1,14 @@
+# Description: SSL/TLS library in pure Python supporting RSA/SRP ciphersuits
+# URL:         http://trevp.net/tlslite
+
+name=python-tlslite
+version=0.4.9
+release=1
+source=(https://pypi.org/packages/source/t/tlslite/tlslite-$version.tar.gz)
+
+build() {
+	cd tlslite-$version
+
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --root=$PKG --optimize=1
+}
