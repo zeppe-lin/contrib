@@ -1,4 +1,4 @@
--=[ README for sp-flash-tool-bin ]=-
+README for sp-flash-tool-bin.
 
 
 NOTES
@@ -9,7 +9,8 @@ NOTES
 
   1. Connect the device to USB and check the information:
 
-     $ lsusb Bus 001 Device 009: ID 04e8:6860 Samsung Electronics Co.,
+     $ lsusb
+     Bus 001 Device 009: ID 04e8:6860 Samsung Electronics Co.,
      Ltd Galaxy series, misc. (MTP mode)
 
   2. Write /etc/udev/rules.d/99-ttyacms.rules using ID numbers:
