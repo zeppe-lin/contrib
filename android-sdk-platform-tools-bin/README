@@ -1,10 +1,10 @@
--=[ README for android-sdk-platform-tools ]=-
+README for android-sdk-platform-tools-bin.
 
 
 POST-INSTALL
 ============
 
-  Don't forget to add "/usr/share/android-sdk/platform-tools"
+  Don't forget to add "/opt/android-sdk/platform-tools"
   to your PATH env.
 
 

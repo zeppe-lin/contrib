@@ -3,15 +3,17 @@
 
 name=android-sdk-platform-tools-bin
 version=30.0.5
-release=1
+release=2
 source=(http://dl-ssl.google.com/android/repository/platform-tools_r$version-linux.zip
-	rc.adb)
+	adb.rc)
 
 build() {
-	install -d $PKG/usr/share/android-sdk
-	cp -a $SRC/platform-tools $PKG/usr/share/android-sdk
-	chmod -R +Xr $PKG/usr/share/android-sdk/platform-tools
-	install -Dm755 $SRC/rc.adb $PKG/etc/rc.d/adb
+	install -d $PKG/opt/android-sdk
+
+	cp -a $SRC/platform-tools $PKG/opt/android-sdk
+
+	chmod -R +Xr $PKG/opt/android-sdk/platform-tools
+	install -m 755 -D $SRC/adb.rc $PKG/etc/rc.d/adb
 
 	find $PKG \( -name README*           \
 		-o   -name COPYING           \
